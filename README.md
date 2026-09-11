@@ -7,6 +7,7 @@
 ## 致謝與資料來源
 - 商品抽選連結來源：[uxux11/funbox-line](https://uxux11.github.io/funbox-line/)，本站只是自動同步並重新排版，感謝原維護者。
 - 各門市 FB 粉絲頁與 LINE 官方帳號為 Funbox 公開資訊，如需下架或修正請開 Issue。
+- 商品縮圖來自 [beybladehub.app](https://beybladehub.app/parts/combos)（combos / accessories 頁），已縮至 240px 僅供辨識商品；版權屬原權利人，如有疑慮請開 Issue，會立即移除。
 - 本專案與 Funbox / 麗嬰國際、TAKARA TOMY 無關，純粹玩家自用工具。
 
 ## 授權
@@ -73,7 +74,7 @@ window.FUNBOX_DATA = {
 4. 換新活動時可先按「🧹 清空所有商品連結」，門市 / FB / LINE 都會保留。
 
 ## 商品圖片
-把正方形圖放進 `img/`，在 `img/products.js` 填上對應型號的路徑，商品篩選列就會顯示圖片；商品篩選可多選。
+`img/products/<型號>.webp`（例如 `BX-26.webp`）放進去就會自動顯示，不用改任何檔；要指定別的檔名或外部網址才需要改 `img/products.js`。目前 41 款已齊，新型號補一張圖即可。商品篩選可多選。
 
 ## 使用者端功能
 - 縣市 / 商品型號 / 開抽時間篩選，選擇會記住。

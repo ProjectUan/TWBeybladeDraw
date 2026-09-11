@@ -493,7 +493,7 @@ function visibleStores(){
 function visibleItems(s){ return s.items.filter(function(it){ return !curProducts.length || curProducts.indexOf(modelOf(it.product))>=0; }); }
 var PRODUCT_IMG=(window.PRODUCT_IMAGES&&typeof window.PRODUCT_IMAGES==='object')?window.PRODUCT_IMAGES:{};
 var PH=(window.__funboxBase||'')+'img/placeholder.svg';
-function imgOf(m){ var v=PRODUCT_IMG[m]; if(!v) return PH; return /^(https?:)?\//.test(v)?v:(window.__funboxBase||'')+v; }
+function imgOf(m){ var v=PRODUCT_IMG[m]||('img/products/'+m+'.webp'); return /^(https?:)?\//.test(v)?v:(window.__funboxBase||'')+v; }
 function queue(){ var q=[]; visibleStores().forEach(function(s){ visibleItems(s).forEach(function(it){ if(it.url && !isDrawn(s,it) && started(it)) q.push({store:s,item:it}); }); }); return q; }
 
 /* ---------- render: header/filters ---------- */
