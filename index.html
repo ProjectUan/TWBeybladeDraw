@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#1f497d">
+<title>Funbox 抽陀螺 LINE 快速抽選</title>
+<style>
+:root{
+  --navy:#1f497d; --navy-d:#163a66; --line:#06c755; --line-d:#05a847; --fb:#1877f2;
+  --bg:#f4f6f9; --card:#fff; --text:#222; --muted:#666; --border:#e3e7ee; --gray:#a0a0a0; --warn:#d35400;
+  --bar-h:76px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;background:var(--bg);color:var(--text);padding:12px 12px calc(var(--bar-h) + 24px + env(safe-area-inset-bottom));-webkit-tap-highlight-color:transparent}
+button{font-family:inherit}
+a{color:inherit}
+.wrap{max-width:1000px;margin:0 auto}
+.hidden{display:none!important}
+
+/* header */
+.top{display:flex;flex-direction:column;align-items:center;gap:4px;margin-bottom:10px}
+.title{font-size:28px;font-weight:800;color:var(--navy);text-align:center;margin:4px 0 0;line-height:1.2}
+.sub{font-size:13px;color:var(--muted);text-align:center}
+.sub strong{color:var(--warn)}
+.updated{font-size:12px;color:#888}
+.syncline{font-size:12px;color:#777;display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:center}
+.syncline .ok{color:#2e7d32}.syncline .err{color:#c0392b}
+.syncbtn{border:1px solid #cfd6df;background:#fff;border-radius:999px;padding:3px 10px;font-size:12px;font-weight:700;cursor:pointer;color:var(--navy)}
+.syncbtn:disabled{opacity:.5}
+.tabs{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:10px 0 14px}
+.tab{padding:9px 18px;border:0;border-radius:20px;background:#e0e0e0;font-weight:700;cursor:pointer;font-size:14px}
+.tab.active{background:var(--navy);color:#fff}
+.tab.admin{background:#fff;border:1px dashed #bbb;color:#555}
+.tab.admin.active{background:#444;color:#fff;border-color:#444}
+
+/* chips */
+.chips{display:flex;justify-content:center;gap:7px;flex-wrap:wrap;margin-bottom:12px}
+.chip{padding:7px 13px;border:0;border-radius:999px;background:#e5e5e5;color:#222;font-weight:700;cursor:pointer;font-size:13px;line-height:1.2}
+.chip.active{background:var(--line);color:#fff}
+.chip.pin.active{background:#f5a623}
+.chip:disabled{opacity:.4;cursor:not-allowed}
+.filters2{display:flex;flex-direction:column;align-items:center;gap:8px;margin:0 auto 14px;width:100%;max-width:520px}
+.frow{display:flex;align-items:center;gap:8px;width:100%}
+.frow label{font-size:13px;font-weight:700;color:var(--navy);min-width:66px;text-align:right}
+.frow select{flex:1;min-width:0;padding:9px 12px;border:1px solid #cfd6df;border-radius:10px;background:#fff;font-size:14px;font-weight:700;color:var(--text)}
+.frow .chips{margin:0;justify-content:flex-start;flex:1}
+
+/* boxes */
+.box{background:var(--card);border-radius:14px;padding:14px 16px;box-shadow:0 2px 6px rgba(0,0,0,.06);margin:0 auto 14px}
+.guide{font-size:13px;color:#444;line-height:1.75;background:#f5f5f5;box-shadow:none}
+.guide strong{display:block;font-size:14px;color:#222;margin-bottom:2px}
+.missing{border:1px solid #f1c8b5;background:#fff8f3}
+.missing .h{font-weight:800;color:var(--warn);margin-bottom:4px}
+.missing div{font-size:13px;line-height:1.6}
+
+/* quick draw */
+.quick{max-width:720px;text-align:center;position:relative}
+.quick .qt{font-size:20px;font-weight:800;color:var(--navy);margin-bottom:6px}
+.quick .qp{font-size:14px;color:var(--muted)}
+.quick .qs{font-size:14px;color:var(--muted);margin-top:8px}
+.quick .qs a{color:var(--fb);text-decoration:none;font-weight:700;margin-left:6px}
+.quick .qprod{font-size:21px;font-weight:800;margin:6px 0 12px;word-break:break-word;line-height:1.3}
+.quick .qbtns{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.qbtn{border:0;border-radius:10px;padding:13px 10px;font-size:16px;font-weight:800;cursor:pointer;color:#fff}
+.qbtn:disabled{opacity:.45;cursor:not-allowed}
+.qbtn.open{grid-column:1/-1;background:var(--line);font-size:18px;padding:15px}
+.qbtn.next{background:var(--navy)}
+.qbtn.skip{background:#e0e0e0;color:#222}
+.qbtn:active:not(:disabled){transform:translateY(1px)}
+.qopts{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 16px;margin-top:12px;font-size:13px;color:#555}
+.qopts label{display:flex;align-items:center;gap:5px;cursor:pointer}
+.qopts button{border:0;background:none;color:#a33;font-weight:700;cursor:pointer;font-size:13px;text-decoration:underline}
+.qdone{font-size:15px;color:var(--line-d);font-weight:800;padding:10px 0}
+
+/* store list */
+.city{font-size:18px;font-weight:800;color:var(--navy);margin:22px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--navy);display:flex;justify-content:space-between;align-items:baseline}
+.city small{font-size:12px;color:var(--muted);font-weight:600}
+.store{background:var(--card);border-radius:12px;padding:12px 14px;margin-bottom:12px;box-shadow:0 2px 5px rgba(0,0,0,.05)}
+.store.pinned{outline:2px solid #f5a623}
+.shead{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+.sname{font-size:16px;font-weight:800;line-height:1.3}
+.smeta{font-size:12px;color:var(--muted);margin-top:3px}
+.sacts{display:flex;gap:6px;flex-shrink:0;flex-wrap:wrap;justify-content:flex-end}
+.sbtn{display:inline-flex;align-items:center;gap:4px;text-decoration:none;color:#fff;font-weight:700;font-size:12px;padding:6px 10px;border-radius:8px;border:0;cursor:pointer;white-space:nowrap;line-height:1.2}
+.sbtn.fb{background:var(--fb)}
+.sbtn.ln{background:var(--line)}
+.sbtn.pin{background:#fff;color:#999;border:1px solid #ddd}
+.sbtn.pin.on{background:#fff5e0;color:#e08a00;border-color:#f5a623}
+.sbtn.dis{background:#ddd;color:#888;pointer-events:none}
+.sbtn.only{background:#fff;color:var(--navy);border:1px solid var(--navy)}
+.sbtn.only.on{background:var(--navy);color:#fff}
+.store.focus{outline:2px solid var(--navy)}
+.chip.store-scope.active{background:var(--navy)}
+.items{margin-top:8px}
+.item{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 8px;border-top:1px solid #eee;cursor:pointer;border-radius:8px;transition:background .15s}
+.item:hover{background:#f3f7fb}
+.item:active{transform:translateY(1px)}
+.item .p{font-size:14px;line-height:1.35;flex:1}
+.item .go{background:var(--line);color:#fff;font-weight:700;font-size:12px;padding:6px 12px;border-radius:7px;white-space:nowrap}
+.item.drawn{background:#efefef;color:#777}
+.item.drawn .go{background:var(--gray)}
+.item.notyet{cursor:not-allowed;color:#999}
+.item.notyet .go{background:#d9d9d9;color:#999}
+.item .undo{border:0;background:none;color:#888;font-size:12px;cursor:pointer;padding:4px 6px;text-decoration:underline}
+.empty{font-size:13px;color:#999;padding:8px 0 0}
+.nores{text-align:center;color:#888;padding:30px 0;font-size:14px}
+
+/* stores page */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
+.card{background:#fff;border-radius:12px;padding:12px 14px;box-shadow:0 2px 5px rgba(0,0,0,.05);display:flex;flex-direction:column;gap:8px}
+.card.pinned{outline:2px solid #f5a623}
+.card .cn{font-size:15px;font-weight:800}
+.card .ci{font-size:12px;color:var(--muted)}
+.card .ca{display:flex;gap:6px;flex-wrap:wrap}
+.card .ca .sbtn{flex:1;justify-content:center;padding:9px 8px;font-size:13px}
+.card .ca .sbtn.pin{flex:0 0 auto}
+.sbtn.visited{background:var(--gray)!important}
+
+/* bottom bar */
+.bar{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--border);box-shadow:0 -4px 16px rgba(0,0,0,.08);padding:8px 12px calc(8px + env(safe-area-inset-bottom));z-index:50;display:flex;gap:8px;align-items:center}
+.bar .bi{flex:1;min-width:0}
+.bar .bs{font-size:11px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar .bp{font-size:14px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar .bb{border:0;border-radius:10px;padding:11px 14px;font-weight:800;font-size:14px;color:#fff;cursor:pointer;white-space:nowrap}
+.bar .bb.open{background:var(--line)}
+.bar .bb.next{background:var(--navy)}
+.bar .bb:disabled{opacity:.4}
+@media(min-width:900px){.bar{display:none}body{padding-bottom:24px}}
+
+/* toast */
+.toast{position:fixed;left:50%;bottom:calc(var(--bar-h) + 16px + env(safe-area-inset-bottom));transform:translateX(-50%) translateY(20px);background:rgba(30,30,30,.92);color:#fff;padding:10px 16px;border-radius:10px;font-size:14px;opacity:0;pointer-events:none;transition:all .25s;z-index:60;max-width:90vw;text-align:center}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.banner{background:#fff4d6;border:1px solid #f1d28a;border-radius:10px;padding:8px 12px;font-size:13px;display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap}
+.banner button{border:0;background:#c98600;color:#fff;border-radius:6px;padding:5px 10px;font-weight:700;cursor:pointer}
+
+/* admin */
+.admin .box{max-width:none}
+.admin h2{font-size:17px;color:var(--navy);margin:0 0 8px}
+.admin .hint{font-size:13px;color:#555;line-height:1.7;background:#f5f7fa;border-radius:8px;padding:10px 12px;margin-bottom:12px}
+.admin .hint code{background:#e9edf2;padding:1px 5px;border-radius:4px}
+.fld{display:flex;flex-direction:column;gap:3px;margin-bottom:8px}
+.fld label{font-size:12px;font-weight:700;color:#555}
+.fld input,.fld textarea,.fld select{padding:8px 10px;border:1px solid #cfd6df;border-radius:8px;font-size:14px;font-family:inherit;width:100%}
+.fld textarea{min-height:70px;resize:vertical}
+.frow2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media(max-width:560px){.frow2{grid-template-columns:1fr}}
+.abtns{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+.abtn{border:0;border-radius:8px;padding:9px 14px;font-weight:700;cursor:pointer;font-size:13px;background:var(--navy);color:#fff}
+.abtn.g{background:var(--line)}
+.abtn.w{background:#fff;color:#333;border:1px solid #ccc}
+.abtn.r{background:#c0392b}
+.abtn.s{padding:6px 10px;font-size:12px}
+.astore{border:1px solid var(--border);border-radius:12px;background:#fff;margin-bottom:10px}
+.astore summary{cursor:pointer;padding:12px 14px;font-weight:800;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.astore summary::-webkit-details-marker{display:none}
+.astore summary .c{font-size:12px;color:var(--muted);font-weight:600}
+.astore .body{padding:0 14px 14px;border-top:1px solid #eee}
+.aitem{display:grid;grid-template-columns:1fr 1fr auto;gap:6px;margin-bottom:6px;align-items:center}
+.aitem input{padding:7px 9px;border:1px solid #cfd6df;border-radius:7px;font-size:13px;min-width:0}
+.aitem input.bad{border-color:#e74c3c;background:#fff5f5}
+@media(max-width:560px){.aitem{grid-template-columns:1fr;} .aitem .rm{justify-self:end}}
+.aitem .rm{border:0;background:#f1f1f1;color:#a33;border-radius:6px;padding:7px 9px;cursor:pointer;font-weight:700}
+.asearch{width:100%;padding:10px 12px;border:1px solid #cfd6df;border-radius:10px;font-size:14px;margin-bottom:10px}
+.status{font-size:12px;color:#2e7d32;font-weight:700;min-height:16px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <h1 class="title" id="title">抽陀螺</h1>
+    <div class="sub" id="period"></div>
+    <div class="updated" id="updated"></div>
+    <div class="syncline" id="syncLine"><span id="syncInfo">資料來源：data.js</span> <button class="syncbtn" id="syncBtn" onclick="syncNow(true)" title="從 funbox-line 抓最新商品連結">🔄 同步最新</button></div>
+  </div>
+  <div class="banner hidden" id="localBanner">
+    <span>⚠️ 目前顯示的是<strong>此瀏覽器本機修改</strong>的資料（管理模式儲存）。</span>
+    <button onclick="resetLocalData()">還原成網站資料</button>
+  </div>
+  <div class="tabs">
+    <button class="tab active" data-page="draws" onclick="showPage('draws')">🎯 抽選</button>
+    <button class="tab" data-page="stores" onclick="showPage('stores')">🏬 門市 FB / LINE</button>
+    <button class="tab admin" data-page="admin" onclick="showPage('admin')">⚙️ 管理</button>
+  </div>
+
+  <!-- ===== 抽選頁 ===== -->
+  <div id="page-draws">
+    <div class="box guide">
+      <strong>快速抽選（手機來回切換用）</strong>
+      1. 先選縣市（也可用「商品」「時間」再篩），或按 ⭐ 只抽「我的門市」；每間店旁有「▶ 只抽這店」可以一店一店抽<br>
+      2. 按「開啟抽選」會跳到 LINE；抽完切回瀏覽器，會自動標記完成並排好下一個<br>
+      3. 再按一次「開啟下一個」即可，一路按到底。下方每一列也可以直接點<br>
+      💡 若切回來時停在 LINE 的網頁分頁，請切回本頁分頁；或勾「用同一分頁開啟」改用返回鍵回來
+    </div>
+    <div class="box missing hidden" id="missingBox"><div class="h">目前缺少 / 未進貨</div><div id="missingList"></div></div>
+
+    <div class="chips" id="cityChips"></div>
+    <div class="filters2">
+      <div class="frow"><label for="prodSel">商品篩選：</label><select id="prodSel" onchange="setProduct(this.value)"></select></div>
+      <div class="frow"><label>時間篩選：</label><div class="chips" id="timeChips"></div></div>
+    </div>
+
+    <div class="box quick" id="quick">
+      <div class="qt">📱 連續抽選模式</div>
+      <div class="qp" id="qProgress">載入中...</div>
+      <div class="qs" id="qStore"></div>
+      <div class="qprod" id="qProduct"></div>
+      <div class="qbtns">
+        <button class="qbtn open" id="qOpen" onclick="quickOpen()" disabled>🔗 開啟抽選</button>
+        <button class="qbtn next" id="qNext" onclick="quickNext()" disabled>✅ 完成，開啟下一個</button>
+        <button class="qbtn skip" id="qSkip" onclick="quickSkip()" disabled>⏭ 略過這個</button>
+      </div>
+      <div class="qopts">
+        <label><input type="checkbox" id="optAuto" checked onchange="saveOpts()"> 切回瀏覽器自動標記完成</label>
+        <label><input type="checkbox" id="optSameTab" onchange="saveOpts()"> 用同一分頁開啟 LINE</label>
+        <button onclick="resetDrawn()">重設全部已抽紀錄</button>
+      </div>
+    </div>
+
+    <div id="storeList"></div>
+  </div>
+
+  <!-- ===== 門市頁 ===== -->
+  <div id="page-stores" class="hidden">
+    <div class="box guide">
+      <strong>門市粉絲頁 / LINE 官方帳號</strong>
+      📘 打開各店 FB 粉絲頁看抽選公告與商品清單；＋ 加好友會開啟 LINE App（點過會變灰）。<br>
+      ⭐ 可以「鎖定」常跑的門市，抽選頁選「我的門市」就只會出現這些店。
+    </div>
+    <div class="chips" id="cityChips2"></div>
+    <div class="grid" id="storeGrid"></div>
+  </div>
+
+  <!-- ===== 管理頁 ===== -->
+  <div id="page-admin" class="hidden admin">
+    <div class="box">
+      <h2>連結更新（管理模式）</h2>
+      <div class="hint">
+        改完會<strong>立刻存在這台裝置的瀏覽器</strong>，抽選頁馬上生效。要讓大家看到，請按「下載 data.js」後把檔案覆蓋到網站的 <code>data.js</code>（例如 GitHub Pages 直接 commit）。<br>
+        每間門市可以直接「貼上 FB 貼文」：只要貼文裡每個商品旁有 <code>lin.ee/…</code> 或 <code>line.me/…</code> 連結，就會自動解析成商品列表。
+      </div>
+      <div class="fld" style="background:#f0f6ff;border-radius:8px;padding:10px 12px"><label style="display:flex;align-items:center;gap:8px;font-size:13px;color:#222;cursor:pointer"><input type="checkbox" id="optSync" onchange="saveSyncOpt()"> 自動從 <code>uxux11.github.io/funbox-line</code> 同步商品抽選連結（開頁時與每 10 分鐘）</label><div style="font-size:12px;color:#555;margin-top:4px;line-height:1.6">開啟時：商品連結、抽選時間、缺少門市以來源為準，FB 粉絲頁與 LINE ID 仍用本頁資料。關閉時：完全用 data.js / 本頁手動輸入的資料。</div></div>
+      <div class="frow2">
+        <div class="fld"><label>活動標題</label><input id="aTitle" onchange="aMeta()"></div>
+        <div class="fld"><label>抽選時間（顯示用）</label><input id="aPeriod" onchange="aMeta()" placeholder="2026/09/11 11:00~2026/09/12 21:00"></div>
+        <div class="fld"><label>最後更新（留空＝儲存時自動填現在時間）</label><input id="aUpdated" onchange="aMeta()"></div>
+        <div class="fld"><label>缺少 / 未進貨門市（一行一筆）</label><textarea id="aMissing" onchange="aMeta()"></textarea></div>
+      </div>
+      <div class="abtns">
+        <button class="abtn g" onclick="downloadDataJs()">⬇ 下載 data.js</button>
+        <button class="abtn" onclick="copyJson()">📋 複製 JSON</button>
+        <button class="abtn w" onclick="document.getElementById('impFile').click()">📂 匯入 JSON / data.js</button>
+        <input type="file" id="impFile" class="hidden" accept=".json,.js,.txt" onchange="importFile(this)">
+        <button class="abtn w" onclick="addStore()">＋ 新增門市</button>
+        <button class="abtn w" onclick="clearAllItems()">🧹 清空所有商品連結（換活動用）</button>
+        <button class="abtn r" onclick="resetLocalData()">↩ 還原成網站 data.js</button>
+      </div>
+      <div class="status" id="aStatus"></div>
+    </div>
+    <div class="box">
+      <h2>門市清單</h2>
+      <input class="asearch" id="aSearch" placeholder="搜尋門市名稱 / 縣市…" oninput="renderAdminStores()">
+      <div id="adminStores"></div>
+    </div>
+  </div>
+</div>
+
+<div class="bar" id="bar">
+  <div class="bi"><div class="bs" id="barStore">—</div><div class="bp" id="barProd">選縣市後開始</div></div>
+  <button class="bb open" id="barOpen" onclick="quickOpen()" disabled>開啟</button>
+  <button class="bb next" id="barNext" onclick="quickNext()" disabled>下一個 ▶</button>
+</div>
+<div class="toast" id="toast"></div>
+
+<script src="data.js?v=202609111209"></script>
+<script>
+(function(){
+"use strict";
+/* ---------- storage helpers ---------- */
+var LS_DATA='fbdraw_data_v1', LS_PIN='fbdraw_pins_v1', LS_OPT='fbdraw_opts_v1', LS_REGION='fbdraw_region_v1', LS_VISITED_LINE='fbdraw_visited_line_v1';
+function lsGet(k,d){try{var v=localStorage.getItem(k);return v==null?d:JSON.parse(v);}catch(e){return d;}}
+function lsSet(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
+function $(id){return document.getElementById(id);}
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+function uid(){return 's'+Math.random().toString(36).slice(2,8);}
+
+/* ---------- data ---------- */
+var BASE = (window.FUNBOX_DATA && typeof window.FUNBOX_DATA==='object') ? window.FUNBOX_DATA : {title:'抽陀螺',period:'',updated:'',missing:[],stores:[]};
+var DATA = lsGet(LS_DATA,null);
+var usingLocal = !!DATA;
+if(!DATA) DATA = JSON.parse(JSON.stringify(BASE));
+DATA.stores = DATA.stores||[]; DATA.missing = DATA.missing||[];
+DATA.stores.forEach(function(s){ s.id=s.id||uid(); s.items=s.items||[]; s.fb=s.fb||''; s.lineId=s.lineId||''; s.start=s.start||''; });
+
+var pins = lsGet(LS_PIN,{});
+var opts = lsGet(LS_OPT,{auto:true,sameTab:false,sync:true});
+if(opts.sync===undefined) opts.sync=true;
+var DRAWN_KEY, drawn;
+function loadDrawn(){ DRAWN_KEY='fbdraw_drawn_'+String(DATA.period||'default').replace(/\W+/g,'_'); drawn=lsGet(DRAWN_KEY,{}); }
+loadDrawn();
+
+/* ---------- 自動同步：從 funbox-line 抓最新商品連結 ---------- */
+var SYNC_URL='https://uxux11.github.io/funbox-line/', LS_SYNC='fbdraw_sync_cache_v1', syncState={status:'',at:0,remoteUpdated:''};
+function normName(s){ return String(s||'').toLowerCase().replace(/fun\s*box(\s*toys?)?|來玩聚|店|[-－_\s()（）陀螺販售]/g,''); }
+function parseRemote(html){
+  var doc=new DOMParser().parseFromString(html,'text/html');
+  var txt=function(sel,root){ var el=(root||doc).querySelector(sel); return el?el.textContent.trim():''; };
+  var stores=[], period='';
+  doc.querySelectorAll('.draw-store').forEach(function(el){
+    var name=txt('.draw-store-name',el); if(!name) return;
+    var per=txt('.draw-start',el).replace(/^抽選時間[:：]\s*/,''); if(per && !period) period=per;
+    var items=[]; el.querySelectorAll('.draw-item[data-draw-href]').forEach(function(it){ var pr=txt('.draw-product',it), u=it.getAttribute('data-draw-href'); if(pr&&u) items.push({product:pr,url:u}); });
+    stores.push({city:el.getAttribute('data-draw-city')||'未分類',start:el.getAttribute('data-draw-start-time')||'',name:name,items:items});
+  });
+  if(!stores.length) return null;
+  var missing=[]; doc.querySelectorAll('.draw-missing-box div').forEach(function(d){ if(d.classList.contains('draw-missing-title')) return; d.textContent.split(/(?<=[）)])\s+/).forEach(function(x){ x=x.trim(); if(x) missing.push(x); }); });
+  return {title:txt('.draw-main-title'),updated:txt('.draw-last-updated').replace(/^最後更新[:：]\s*/,''),period:period,missing:missing,stores:stores};
+}
+function applyRemote(r){
+  if(!r||!r.stores||!r.stores.length) return false;
+  var byNorm={}; DATA.stores.forEach(function(s){ byNorm[normName(s.name)]=s; s._seen=false; });
+  r.stores.forEach(function(rs){
+    var s=byNorm[normName(rs.name)];
+    if(!s){ s={id:'r_'+normName(rs.name).replace(/[^a-z0-9\u4e00-\u9fff]/g,'').slice(0,20),city:rs.city,name:rs.name,lineId:'',fb:'',start:rs.start,items:[]}; DATA.stores.push(s); byNorm[normName(rs.name)]=s; }
+    s._seen=true; s.city=rs.city||s.city; s.start=rs.start||s.start; s.items=rs.items;
+  });
+  DATA.stores.forEach(function(s){ if(!s._seen) s.items=[]; delete s._seen; });
+  if(r.title) DATA.title=r.title; if(r.period) DATA.period=r.period; if(r.updated) DATA.updated=r.updated; DATA.missing=r.missing||DATA.missing;
+  loadDrawn();
+  return true;
+}
+function renderSync(){
+  var el=$('syncInfo'); if(!el) return;
+  if(!opts.sync){ el.innerHTML='資料來源：data.js（自動同步已關閉）'; $('syncBtn').classList.add('hidden'); return; }
+  $('syncBtn').classList.remove('hidden');
+  var at=syncState.at?new Date(syncState.at):null, hh=at?(String(at.getHours()).padStart(2,'0')+':'+String(at.getMinutes()).padStart(2,'0')):'';
+  if(syncState.status==='loading') el.innerHTML='🔄 正在同步來源…';
+  else if(syncState.status==='ok') el.innerHTML='<span class="ok">✔ 已同步來源 funbox-line</span>（'+hh+'）';
+  else if(syncState.status==='cache') el.innerHTML='<span class="err">⚠ 來源暫時抓不到</span>，顯示上次同步（'+hh+'）';
+  else if(syncState.status==='fail') el.innerHTML='<span class="err">⚠ 來源抓不到</span>，顯示 data.js 內建資料';
+  else el.innerHTML='資料來源：data.js';
+}
+var syncing=false;
+window.syncNow=function(manual){
+  if(!opts.sync||syncing) return; syncing=true; syncState.status='loading'; renderSync(); $('syncBtn').disabled=true;
+  fetch(SYNC_URL+'?t='+Date.now(),{cache:'no-store'}).then(function(res){ if(!res.ok) throw new Error(res.status); return res.text(); }).then(function(html){
+    var r=parseRemote(html); if(!r) throw new Error('parse');
+    applyRemote(r); syncState={status:'ok',at:Date.now(),remoteUpdated:r.updated}; lsSet(LS_SYNC,{at:syncState.at,data:r});
+    currentItem=null; setPending(null); renderAll(); if(curPage==='admin') renderAdmin(); if(manual) toast('已同步：'+(r.updated?'來源更新 '+r.updated:'完成')+'，共 '+r.stores.reduce(function(a,s){return a+s.items.length;},0)+' 個連結');
+  }).catch(function(e){
+    var c=lsGet(LS_SYNC,null); if(c&&c.data&&applyRemote(c.data)){ syncState={status:'cache',at:c.at}; } else syncState={status:'fail',at:0};
+    renderAll(); if(manual) toast('來源抓不到，顯示'+(syncState.status==='cache'?'上次同步':'內建')+'資料');
+  }).finally(function(){ syncing=false; $('syncBtn').disabled=false; renderSync(); });
+};
+window.saveSyncOpt=function(){ opts.sync=$('optSync').checked; lsSet(LS_OPT,opts); if(opts.sync){ syncNow(true); } else { location.reload(); } };
+
+var visitedLine = lsGet(LS_VISITED_LINE,{});
+
+var curRegion = lsGet(LS_REGION,'all'), curProduct='all', curTime='all', curStore=null, currentItem=null, pendingItem=null;
+
+/* ---------- helpers ---------- */
+function fbUrl(s){ if(s.fb) return s.fb; return 'https://www.facebook.com/search/pages/?q='+encodeURIComponent(s.name.replace(/[-－_]/g,' ')); }
+function lineUrl(s){ if(!s.lineId) return ''; var id=s.lineId.trim(); if(/^https?:/i.test(id)) return id; if(id[0]!=='@') id='@'+id; return 'https://line.me/R/ti/p/'+id; }
+function modelOf(t){ var m=String(t||'').toUpperCase().match(/\b(BXG|BGX|BX|UX|CX)\s*-\s*(\d{2})\b/); if(!m) return ''; return (m[1]==='BGX'?'BXG':m[1])+'-'+m[2]; }
+function startOf(text){ var m=String(text||'').match(/[（(]\s*(\d{1,2})\s*\/\s*(\d{1,2})\s+([01]?\d|2[0-3]):([0-5]\d)\s*(?:才)?開始\s*[）)]/); if(!m) return null; var n=new Date(), d=new Date(n.getFullYear(),+m[1]-1,+m[2],+m[3],+m[4],0,0); if(d<n && +m[1] < n.getMonth()+1-6) d.setFullYear(n.getFullYear()+1); return d; }
+function started(item){ var st=startOf(item.product); return !st || new Date()>=st; }
+function itemKey(s,it){ return it.url||(s.id+'|'+it.product); }
+function isDrawn(s,it){ return !!drawn[itemKey(s,it)]; }
+function markDrawn(s,it){ drawn[itemKey(s,it)]=Date.now(); lsSet(DRAWN_KEY,drawn); }
+function unmarkDrawn(s,it){ delete drawn[itemKey(s,it)]; lsSet(DRAWN_KEY,drawn); }
+function openLink(url){ if(!url) return; if(opts.sameTab){ location.href=url; return; } var w=null; try{ w=window.open(url,'_blank','noopener'); }catch(e){} if(!w){ location.href=url; } }
+var toastT; function toast(msg){ var t=$('toast'); t.textContent=msg; t.classList.add('show'); clearTimeout(toastT); toastT=setTimeout(function(){t.classList.remove('show');},2200); }
+
+function visibleStores(){
+  return DATA.stores.filter(function(s){
+    if(curStore) return s.id===curStore;
+    if(curRegion==='pin') { if(!pins[s.id]) return false; }
+    else if(curRegion!=='all' && s.city!==curRegion) return false;
+    if(curTime!=='all' && (s.start||'')!==curTime) return false;
+    return true;
+  });
+}
+function visibleItems(s){ return s.items.filter(function(it){ return curProduct==='all' || modelOf(it.product)===curProduct; }); }
+function queue(){ var q=[]; visibleStores().forEach(function(s){ visibleItems(s).forEach(function(it){ if(it.url && !isDrawn(s,it) && started(it)) q.push({store:s,item:it}); }); }); return q; }
+
+/* ---------- render: header/filters ---------- */
+function renderHeader(){
+  $('title').textContent=DATA.title||'抽陀螺';
+  $('period').innerHTML=DATA.period?('抽選時間：<strong>'+esc(DATA.period)+'</strong>'):'';
+  $('updated').textContent=DATA.updated?('最後更新：'+DATA.updated):'';
+  document.title=(DATA.title||'抽陀螺')+' | Funbox LINE 快速抽選';
+  renderSync();
+  $('localBanner').classList.toggle('hidden',!usingLocal);
+  var mb=$('missingBox'); if(DATA.missing.length){ mb.classList.remove('hidden'); $('missingList').innerHTML=DATA.missing.map(function(m){return '<div>'+esc(m)+'</div>';}).join(''); } else mb.classList.add('hidden');
+}
+function cityCounts(){ var c={}; DATA.stores.forEach(function(s){ c[s.city]=(c[s.city]||0)+1; }); return c; }
+var CITY_ORDER=['台北市','新北市','基隆市','桃園市','新竹市','新竹縣','苗栗縣','台中市','彰化縣','南投縣','雲林縣','嘉義市','嘉義縣','台南市','高雄市','屏東縣','宜蘭縣','花蓮縣','台東縣','澎湖縣','金門縣','連江縣'];
+function cities(){ var c=cityCounts(); var arr=Object.keys(c); arr.sort(function(a,b){ var ia=CITY_ORDER.indexOf(a), ib=CITY_ORDER.indexOf(b); if(ia<0)ia=99; if(ib<0)ib=99; return ia-ib||a.localeCompare(b,'zh-Hant'); }); return arr; }
+function renderChips(){
+  var c=cityCounts(), pc=Object.keys(pins).filter(function(id){return DATA.stores.some(function(s){return s.id===id;});}).length;
+  var html='<button class="chip'+(curRegion==='all'?' active':'')+'" onclick="setRegion(\'all\')">全部 ('+DATA.stores.length+')</button>';
+  html+='<button class="chip pin'+(curRegion==='pin'?' active':'')+'" onclick="setRegion(\'pin\')"'+(pc?'':' disabled')+'>⭐ 我的門市 ('+pc+')</button>';
+  cities().forEach(function(city){ html+='<button class="chip'+(curRegion===city?' active':'')+'" onclick="setRegion('+JSON.stringify(city).replace(/"/g,'&quot;')+')">'+esc(city)+' ('+c[city]+')</button>'; });
+  $('cityChips2').innerHTML=html; if(curStore){ var fs=findStore(curStore); html+='<button class="chip store-scope active" onclick="setStore(null)">▶ 只抽 '+esc(fs?fs.name:'')+'　✕</button>'; } $('cityChips').innerHTML=html;
+  var models={}; DATA.stores.forEach(function(s){ s.items.forEach(function(it){ var m=modelOf(it.product); if(m) models[m]=1; }); });
+  var ms=Object.keys(models).sort(); if(ms.indexOf(curProduct)<0) curProduct='all';
+  $('prodSel').innerHTML='<option value="all">全部商品</option>'+ms.map(function(m){return '<option value="'+m+'"'+(m===curProduct?' selected':'')+'>'+m+'</option>';}).join('');
+  var times={}; DATA.stores.forEach(function(s){ if(s.start) times[s.start]=1; }); var ts=Object.keys(times).sort(); if(ts.indexOf(curTime)<0) curTime='all';
+  $('timeChips').innerHTML='<button class="chip'+(curTime==='all'?' active':'')+'" onclick="setTime(\'all\')">全部</button>'+ts.map(function(t){return '<button class="chip'+(curTime===t?' active':'')+'" onclick="setTime(\''+t+'\')">'+t+'</button>';}).join('');
+}
+
+/* ---------- render: draw list ---------- */
+function renderList(){
+  var stores=visibleStores(), html='', now=new Date();
+  var byCity={}; stores.forEach(function(s){ (byCity[s.city]=byCity[s.city]||[]).push(s); });
+  cities().forEach(function(city){
+    var list=byCity[city]; if(!list) return;
+    html+='<div class="city"><span>'+esc(city)+'</span><small>'+list.length+' 間</small></div>';
+    list.forEach(function(s){
+      var items=visibleItems(s);
+      var ln=lineUrl(s);
+      html+='<div class="store'+(pins[s.id]?' pinned':'')+(curStore===s.id?' focus':'')+'" id="store-'+s.id+'"><div class="shead"><div><div class="sname">'+esc(s.name)+'</div><div class="smeta">'+(s.start?'開抽時間 '+esc(s.start)+' · ':'')+(items.length?items.filter(function(it){return !isDrawn(s,it);}).length+' / '+items.length+' 未抽':'尚無商品連結')+'</div></div>';
+      html+='<div class="sacts"><button class="sbtn pin'+(pins[s.id]?' on':'')+'" onclick="togglePin(\''+s.id+'\')" title="鎖定門市">'+(pins[s.id]?'⭐':'☆')+'</button><button class="sbtn only'+(curStore===s.id?' on':'')+'" onclick="setStore('+(curStore===s.id?'null':'\''+s.id+'\'')+')">'+(curStore===s.id?'✕ 取消只抽':'▶ 只抽這店')+'</button><a class="sbtn fb" href="'+esc(fbUrl(s))+'" target="_blank" rel="noopener">📘 FB</a>'+(ln?'<a class="sbtn ln" href="'+esc(ln)+'" target="_blank" rel="noopener" onclick="visitLine(\''+s.id+'\')"'+(visitedLine[s.id]?' style="background:#a0a0a0"':'')+'>LINE</a>':'')+'</div></div>';
+      html+='<div class="items">';
+      if(!items.length) html+='<div class="empty">此門市目前沒有符合篩選的商品</div>';
+      items.forEach(function(it,idx){
+        var d=isDrawn(s,it), st=startOf(it.product), ny=st && now<st;
+        var realIdx=s.items.indexOf(it);
+        html+='<div class="item'+(d?' drawn':'')+(ny&&!d?' notyet':'')+'" role="link" tabindex="0" onclick="rowOpen(\''+s.id+'\','+realIdx+')" onkeydown="if(event.key===\'Enter\'||event.key===\' \'){event.preventDefault();rowOpen(\''+s.id+'\','+realIdx+')}">';
+        html+='<div class="p">'+esc(it.product)+'</div>';
+        if(d) html+='<button class="undo" onclick="event.stopPropagation();rowUndo(\''+s.id+'\','+realIdx+')">復原</button>';
+        html+='<span class="go">'+(d?'已抽':(ny?'尚未開始':(it.url?'抽選':'無連結')))+'</span></div>';
+      });
+      html+='</div></div>';
+    });
+  });
+  if(!stores.length) html='<div class="nores">沒有符合條件的門市'+(curRegion==='pin'?'，請先到「門市」頁按 ☆ 鎖定門市':'')+'</div>';
+  $('storeList').innerHTML=html;
+}
+
+/* ---------- render: stores page ---------- */
+function renderGrid(){
+  var stores=DATA.stores.filter(function(s){ return curRegion==='all' || (curRegion==='pin'?!!pins[s.id]:s.city===curRegion); });
+  var byCity={}; stores.forEach(function(s){ (byCity[s.city]=byCity[s.city]||[]).push(s); });
+  var html='';
+  cities().forEach(function(city){ (byCity[city]||[]).forEach(function(s){
+    var ln=lineUrl(s);
+    html+='<div class="card'+(pins[s.id]?' pinned':'')+'"><div><div class="cn">'+esc(s.name)+'</div><div class="ci">'+esc(s.city)+(s.lineId?' · '+esc(s.lineId):'')+(s.fb?'':' · <span style="color:#c98600">FB 尚未設定，會開搜尋</span>')+'</div></div>';
+    html+='<div class="ca"><button class="sbtn pin'+(pins[s.id]?' on':'')+'" onclick="togglePin(\''+s.id+'\')">'+(pins[s.id]?'⭐ 已鎖定':'☆ 鎖定')+'</button><a class="sbtn fb" href="'+esc(fbUrl(s))+'" target="_blank" rel="noopener">📘 粉絲頁</a>'+(ln?'<a class="sbtn ln'+(visitedLine[s.id]?' visited':'')+'" href="'+esc(ln)+'" target="_blank" rel="noopener" onclick="visitLine(\''+s.id+'\')">＋ 加好友</a>':'<span class="sbtn dis">無 LINE</span>')+'</div></div>';
+  }); });
+  $('storeGrid').innerHTML=html||'<div class="nores">沒有門市</div>';
+}
+
+/* ---------- quick draw ---------- */
+function renderQuick(){
+  var q=queue(), total=0, done=0;
+  visibleStores().forEach(function(s){ visibleItems(s).forEach(function(it){ if(!it.url) return; total++; if(isDrawn(s,it)) done++; }); });
+  if(currentItem && (isDrawn(currentItem.store,currentItem.item) || !q.some(function(x){return x.item===currentItem.item;}))) currentItem=null;
+  if(!currentItem) currentItem=q[0]||null;
+  var scope=curStore?('只抽 '+(findStore(curStore)||{}).name):(curRegion==='all'?'全部':(curRegion==='pin'?'我的門市':curRegion));
+  $('qProgress').textContent=scope+(curProduct!=='all'?' · '+curProduct:'')+(curTime!=='all'?' · '+curTime:'')+'　已抽 '+done+' / '+total+'，剩 '+q.length;
+  if(currentItem){
+    var s=currentItem.store;
+    $('qStore').innerHTML=esc(s.name)+' <a href="'+esc(fbUrl(s))+'" target="_blank" rel="noopener">📘 FB</a>';
+    $('qProduct').textContent=currentItem.item.product;
+    $('qProduct').className='qprod';
+    $('qOpen').disabled=false; $('qSkip').disabled=q.length<2; $('qNext').disabled=!pendingItem;
+    $('barStore').textContent=s.name; $('barProd').textContent=currentItem.item.product; $('barOpen').disabled=false; $('barNext').disabled=!pendingItem;
+  } else {
+    $('qStore').textContent='';
+    $('qProduct').textContent= total? '🎉 這個範圍都抽完了！換個縣市或商品試試':'此範圍沒有可抽的商品';
+    $('qProduct').className='qprod qdone';
+    $('qOpen').disabled=true; $('qNext').disabled=true; $('qSkip').disabled=true;
+    $('barStore').textContent=scope; $('barProd').textContent=total?'都抽完了 🎉':'沒有可抽商品'; $('barOpen').disabled=true; $('barNext').disabled=true;
+  }
+  $('qNext').textContent=pendingItem?'✅ 完成，開啟下一個':'✅ 完成，開啟下一個';
+}
+function setPending(x){ pendingItem=x; try{ if(x) sessionStorage.setItem('fbdraw_pending',itemKey(x.store,x.item)); else sessionStorage.removeItem('fbdraw_pending'); }catch(e){} }
+function quickOpen(){ if(!currentItem) return; setPending(currentItem); openLink(currentItem.item.url); renderQuick(); }
+function finishPending(){ if(!pendingItem) return false; markDrawn(pendingItem.store,pendingItem.item); setPending(null); currentItem=null; return true; }
+function quickNext(){ var had=finishPending(); renderAll(); if(currentItem){ setPending(currentItem); openLink(currentItem.item.url); renderQuick(); } else if(had) toast('這個範圍都抽完了 🎉'); }
+function quickSkip(){ if(!currentItem) return; var q=queue(); var i=q.findIndex(function(x){return x.item===currentItem.item;}); currentItem=q[(i+1)%q.length]||null; setPending(null); renderQuick(); }
+document.addEventListener('visibilitychange',function(){ if(document.visibilityState==='visible' && opts.auto && pendingItem){ var name=pendingItem.item.product; finishPending(); renderAll(); toast('已標記完成：'+name+(currentItem?'　▶ 下一個已排好':'')); } });
+window.addEventListener('pageshow',function(){ if(opts.auto && pendingItem){ finishPending(); renderAll(); } });
+
+/* ---------- row actions ---------- */
+window.rowOpen=function(sid,idx){ var s=DATA.stores.find(function(x){return x.id===sid;}); if(!s) return; var it=s.items[idx]; if(!it||!it.url) return; if(!started(it)){ toast('尚未到開始時間'); return; } markDrawn(s,it); if(currentItem && currentItem.item===it){ currentItem=null; setPending(null); } openLink(it.url); renderAll(); };
+window.rowUndo=function(sid,idx){ var s=DATA.stores.find(function(x){return x.id===sid;}); if(!s) return; unmarkDrawn(s,s.items[idx]); renderAll(); };
+window.togglePin=function(sid){ if(pins[sid]) delete pins[sid]; else pins[sid]=1; lsSet(LS_PIN,pins); if(curRegion==='pin' && !Object.keys(pins).length) curRegion='all'; renderAll(); };
+window.visitLine=function(sid){ visitedLine[sid]=1; lsSet(LS_VISITED_LINE,visitedLine); setTimeout(renderAll,100); };
+window.setRegion=function(r){ curRegion=r; curStore=null; lsSet(LS_REGION,r); currentItem=null; pendingItem=null; renderAll(); };
+window.setStore=function(id){ curStore=id; currentItem=null; setPending(null); renderAll(); if(id){ var el=$('quick'); if(el) el.scrollIntoView({behavior:'smooth',block:'start'}); toast('只抽：'+(findStore(id)||{}).name); } };
+window.setProduct=function(p){ curProduct=p; currentItem=null; pendingItem=null; renderAll(); };
+window.setTime=function(t){ curTime=t; currentItem=null; pendingItem=null; renderAll(); };
+window.resetDrawn=function(){ if(!confirm('確定要清除全部「已抽」紀錄？')) return; drawn={}; lsSet(DRAWN_KEY,drawn); currentItem=null; pendingItem=null; renderAll(); toast('已重設'); };
+window.saveOpts=function(){ opts.auto=$('optAuto').checked; opts.sameTab=$('optSameTab').checked; lsSet(LS_OPT,opts); };
+window.quickOpen=quickOpen; window.quickNext=quickNext; window.quickSkip=quickSkip;
+
+/* ---------- pages ---------- */
+var curPage='draws';
+window.showPage=function(p){ curPage=p; document.querySelectorAll('.tab').forEach(function(b){ b.classList.toggle('active',b.getAttribute('data-page')===p); }); ['draws','stores','admin'].forEach(function(x){ $('page-'+x).classList.toggle('hidden',x!==p); }); $('bar').classList.toggle('hidden',p!=='draws'); if(p==='admin') renderAdmin(); else renderAll(); try{ history.replaceState(null,'',p==='draws'?location.pathname:'#'+p); }catch(e){} };
+function renderAll(){ renderHeader(); renderChips(); if(curPage==='draws'){ renderList(); renderQuick(); } if(curPage==='stores') renderGrid(); }
+
+/* ---------- admin ---------- */
+function saveData(silent){ DATA.updated = $('aUpdated').value.trim() || fmtNow(); $('aUpdated').value=DATA.updated; lsSet(LS_DATA,DATA); usingLocal=true; if(!silent){ $('aStatus').textContent='✔ 已儲存到此瀏覽器 '+DATA.updated; } renderHeader(); renderChips(); }
+function fmtNow(){ var d=new Date(), p=function(n){return String(n).padStart(2,'0');}; return d.getFullYear()+'/'+p(d.getMonth()+1)+'/'+p(d.getDate())+' '+p(d.getHours())+':'+p(d.getMinutes()); }
+function renderAdmin(){ $('optSync').checked=!!opts.sync; $('aTitle').value=DATA.title||''; $('aPeriod').value=DATA.period||''; $('aUpdated').value=DATA.updated||''; $('aMissing').value=DATA.missing.join('\n'); renderAdminStores(); }
+window.aMeta=function(){ DATA.title=$('aTitle').value.trim(); DATA.period=$('aPeriod').value.trim(); DATA.updated=$('aUpdated').value.trim(); DATA.missing=$('aMissing').value.split('\n').map(function(x){return x.trim();}).filter(Boolean); saveData(); };
+window.renderAdminStores=function(){
+  var kw=($('aSearch').value||'').trim().toLowerCase();
+  var html='';
+  DATA.stores.forEach(function(s,i){
+    if(kw && (s.name+s.city).toLowerCase().indexOf(kw)<0) return;
+    html+='<details class="astore" id="ast-'+s.id+'"'+(openSet[s.id]?' open':'')+' ontoggle="openSet[\''+s.id+'\']=this.open"><summary><span>'+esc(s.city)+'　'+esc(s.name)+'</span><span class="c">'+s.items.length+' 項'+(s.fb?'':' · 無FB')+(s.lineId?'':' · 無LINE')+'</span></summary><div class="body">';
+    html+='<div class="frow2" style="margin-top:10px">';
+    html+='<div class="fld"><label>門市名稱</label><input value="'+esc(s.name)+'" onchange="aField(\''+s.id+'\',\'name\',this.value)"></div>';
+    html+='<div class="fld"><label>縣市</label><input value="'+esc(s.city)+'" list="cityList" onchange="aField(\''+s.id+'\',\'city\',this.value)"></div>';
+    html+='<div class="fld"><label>FB 粉絲頁網址（鎖定後不會隨活動變動）</label><input value="'+esc(s.fb)+'" placeholder="https://www.facebook.com/…" onchange="aField(\''+s.id+'\',\'fb\',this.value)"></div>';
+    html+='<div class="fld"><label>LINE 官方帳號 ID 或網址</label><input value="'+esc(s.lineId)+'" placeholder="@xxxxxxx 或 https://lin.ee/…" onchange="aField(\''+s.id+'\',\'lineId\',this.value)"></div>';
+    html+='<div class="fld"><label>開抽時間（HH:MM，篩選用）</label><input value="'+esc(s.start)+'" placeholder="11:00" onchange="aField(\''+s.id+'\',\'start\',this.value)"></div>';
+    html+='</div>';
+    html+='<div class="fld"><label>商品抽選連結</label></div><div id="aitems-'+s.id+'">';
+    s.items.forEach(function(it,j){ html+=aItemRow(s,j,it); });
+    html+='</div>';
+    html+='<div class="abtns"><button class="abtn s w" onclick="aAddItem(\''+s.id+'\')">＋ 新增商品</button><button class="abtn s w" onclick="aTogglePaste(\''+s.id+'\')">📋 貼上 FB 貼文解析</button><button class="abtn s w" onclick="aClearItems(\''+s.id+'\')">清空商品</button><button class="abtn s r" onclick="aDelStore(\''+s.id+'\')">刪除門市</button></div>';
+    html+='<div class="fld hidden" id="paste-'+s.id+'" style="margin-top:8px"><label>貼上貼文內容（每個商品一行，行內含 lin.ee 或 line.me 連結；連結單獨一行時會抓上一行當商品名）</label><textarea id="pastetxt-'+s.id+'" placeholder="BX-00 暴風天馬（$595） https://lin.ee/xxxxxx&#10;BX-26 獨角刺心（$295）&#10;https://lin.ee/yyyyyy"></textarea><div class="abtns"><button class="abtn s g" onclick="aParse(\''+s.id+'\',false)">解析並取代</button><button class="abtn s" onclick="aParse(\''+s.id+'\',true)">解析並加在後面</button></div></div>';
+    html+='</div></details>';
+  });
+  $('adminStores').innerHTML=(html||'<div class="nores">沒有門市</div>')+'<datalist id="cityList">'+CITY_ORDER.map(function(c){return '<option value="'+c+'">';}).join('')+'</datalist>';
+};
+var openSet={}; window.openSet=openSet;
+function aItemRow(s,j,it){ var bad=it.url && !/^https?:\/\//i.test(it.url); return '<div class="aitem"><input value="'+esc(it.product)+'" placeholder="商品名稱（含型號、價格）" onchange="aItem(\''+s.id+'\','+j+',\'product\',this.value)"><input class="'+(bad?'bad':'')+'" value="'+esc(it.url)+'" placeholder="https://lin.ee/…" onchange="aItem(\''+s.id+'\','+j+',\'url\',this.value)"><button class="rm" onclick="aDelItem(\''+s.id+'\','+j+')">✕</button></div>'; }
+function findStore(id){ return DATA.stores.find(function(x){return x.id===id;}); }
+window.aField=function(id,f,v){ var s=findStore(id); if(!s) return; s[f]=v.trim(); saveData(); if(f==='name'||f==='city') renderAdminStores(); };
+window.aItem=function(id,j,f,v){ var s=findStore(id); if(!s||!s.items[j]) return; s.items[j][f]=v.trim(); saveData(); };
+window.aAddItem=function(id){ var s=findStore(id); s.items.push({product:'',url:''}); saveData(true); renderAdminStores(); };
+window.aDelItem=function(id,j){ var s=findStore(id); s.items.splice(j,1); saveData(); renderAdminStores(); };
+window.aClearItems=function(id){ var s=findStore(id); if(!confirm('清空「'+s.name+'」的商品連結？')) return; s.items=[]; saveData(); renderAdminStores(); };
+window.aDelStore=function(id){ var s=findStore(id); if(!confirm('刪除門市「'+s.name+'」？')) return; DATA.stores=DATA.stores.filter(function(x){return x.id!==id;}); saveData(); renderAdminStores(); };
+window.aTogglePaste=function(id){ $('paste-'+id).classList.toggle('hidden'); };
+window.addStore=function(){ var s={id:uid(),city:'台北市',name:'新門市',lineId:'',fb:'',start:'11:00',items:[]}; DATA.stores.push(s); openSet[s.id]=true; saveData(); renderAdminStores(); $('ast-'+s.id).scrollIntoView({behavior:'smooth'}); };
+window.clearAllItems=function(){ if(!confirm('清空「所有門市」的商品連結？門市、FB、LINE 資料會保留。')) return; DATA.stores.forEach(function(s){ s.items=[]; }); saveData(); renderAdminStores(); toast('已清空所有商品連結'); };
+function parsePost(text){
+  var lines=text.split(/\r?\n/), out=[], prev='';
+  var re=/(https?:\/\/(?:lin\.ee|line\.me|liff\.line\.me)\/[^\s)）」』>]+)/i;
+  lines.forEach(function(raw){
+    var line=raw.trim(); if(!line) return;
+    var m=line.match(re);
+    if(!m){ prev=line; return; }
+    var name=line.replace(m[0],'').replace(/^[^\p{L}\p{N}$（(\[「【]+|[^\p{L}\p{N}$）)\]」】%]+$/gu,'').trim();
+    if(!name) name=prev;
+    if(name) out.push({product:name,url:m[1]});
+    prev='';
+  });
+  return out;
+}
+window.aParse=function(id,append){ var s=findStore(id); var items=parsePost($('pastetxt-'+id).value||''); if(!items.length){ alert('沒有解析到任何連結，請確認貼文裡有 lin.ee 或 line.me 網址'); return; } s.items=append?s.items.concat(items):items; saveData(); renderAdminStores(); toast('解析到 '+items.length+' 個商品'); };
+function dataJsText(){ var d=JSON.parse(JSON.stringify(DATA)); d.updated=d.updated||fmtNow(); return '// Funbox 抽陀螺 資料檔：更新連結時只需修改此檔（或用網頁的「管理模式」匯出後覆蓋）\nwindow.FUNBOX_DATA = '+JSON.stringify(d,null,1)+';\n'; }
+window.downloadDataJs=function(){ var blob=new Blob([dataJsText()],{type:'text/javascript;charset=utf-8'}); var a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='data.js'; document.body.appendChild(a); a.click(); setTimeout(function(){URL.revokeObjectURL(a.href);a.remove();},500); $('aStatus').textContent='✔ 已下載 data.js，覆蓋到網站即可更新'; };
+window.copyJson=function(){ var t=JSON.stringify(DATA,null,1); (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){toast('已複製 JSON');},function(){ prompt('請手動複製：',t); }); };
+window.importFile=function(inp){ var f=inp.files[0]; if(!f) return; var r=new FileReader(); r.onload=function(){ try{ var txt=String(r.result); var i=txt.indexOf('{'); var j=txt.lastIndexOf('}'); var obj=JSON.parse(txt.slice(i,j+1)); if(!obj||!Array.isArray(obj.stores)) throw new Error('格式不符'); DATA=obj; DATA.missing=DATA.missing||[]; DATA.stores.forEach(function(s){ s.id=s.id||uid(); s.items=s.items||[]; s.fb=s.fb||''; s.lineId=s.lineId||''; s.start=s.start||''; }); saveData(); renderAdmin(); renderAll(); toast('已匯入 '+DATA.stores.length+' 間門市'); }catch(e){ alert('匯入失敗：'+e.message); } inp.value=''; }; r.readAsText(f,'utf-8'); };
+window.resetLocalData=function(){ if(!confirm('捨棄此瀏覽器的本機修改，改用網站的 data.js？')) return; try{localStorage.removeItem(LS_DATA);}catch(e){} location.reload(); };
+
+/* ---------- init ---------- */
+$('optAuto').checked=!!opts.auto; $('optSameTab').checked=!!opts.sameTab;
+if(curRegion!=='all' && curRegion!=='pin' && !DATA.stores.some(function(s){return s.city===curRegion;})) curRegion='all';
+try{ var pk=sessionStorage.getItem('fbdraw_pending'); if(pk && opts.auto){ if(!drawn[pk]){ drawn[pk]=Date.now(); lsSet(DRAWN_KEY,drawn); } sessionStorage.removeItem('fbdraw_pending'); } }catch(e){}
+var h=(location.hash||'').replace('#','');
+if(opts.sync){ var sc=lsGet(LS_SYNC,null); if(sc&&sc.data&&applyRemote(sc.data)) syncState={status:'cache',at:sc.at}; }
+showPage(h==='stores'||h==='admin'?h:'draws');
+renderAll();
+if(opts.sync){ syncNow(false); setInterval(function(){ syncNow(false); },10*60*1000); document.addEventListener('visibilitychange',function(){ if(document.visibilityState==='visible' && Date.now()-syncState.at>10*60*1000) syncNow(false); }); }
+setInterval(function(){ if(curPage==='draws' && DATA.stores.some(function(s){return s.items.some(function(it){return startOf(it.product);});})) renderAll(); },30000);
+})();
+</script>
+</body>
+</html>

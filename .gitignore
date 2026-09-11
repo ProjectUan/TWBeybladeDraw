@@ -1,0 +1,6 @@
+# 本機預覽 / 暫存
+.claude/
+__pycache__/
+*.pyc
+Thumbs.db
+.DS_Store

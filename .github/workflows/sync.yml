@@ -1,0 +1,34 @@
+name: Sync draw links from funbox-line
+
+on:
+  schedule:
+    # 台灣時間 週四 09:00 ~ 週五 14:00 每小時跑一次（cron 是 UTC，台灣 = UTC+8）
+    - cron: "0 1-23 * * 4"     # 週四 09:00–翌日 07:00（台灣）
+    - cron: "0 0-6 * * 5"      # 週五 08:00–14:00（台灣）
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Sync data.js
+        id: sync
+        run: python scripts/sync_data.py
+      - name: Commit & push if changed
+        run: |
+          if [ -n "$(git status --porcelain data.js index.html)" ]; then
+            git config user.name  "funbox-sync-bot"
+            git config user.email "actions@users.noreply.github.com"
+            git add data.js index.html
+            git commit -m "chore: sync draw links $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git push
+          else
+            echo "no changes"
+          fi
