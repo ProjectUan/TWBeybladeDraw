@@ -3,216 +3,309 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#1f497d">
+<meta name="theme-color" content="#0f1f3d">
+<meta name="description" content="Funbox 各門市戰鬥陀螺 LINE 抽選連結，依縣市與門市分組，手機一鍵連續抽。">
 <title>Funbox 抽陀螺 LINE 快速抽選</title>
-<style>
-:root{
-  --navy:#1f497d; --navy-d:#163a66; --line:#06c755; --line-d:#05a847; --fb:#1877f2;
-  --bg:#f4f6f9; --card:#fff; --text:#222; --muted:#666; --border:#e3e7ee; --gray:#a0a0a0; --warn:#d35400;
-  --bar-h:76px;
+<link rel="icon" href="img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>:root{
+  --ink:#0f1f3d; --navy:#1f3f6e; --navy-soft:#e8eef7; --line:#06c755; --line-d:#059a45; --line-soft:#e6f8ee; --fb:#1877f2;
+  --amber:#e0930a; --amber-soft:#fff3dc; --warn:#c2410c; --warn-soft:#fff1ea;
+  --bg:#f4f3ef; --card:#fff; --text:#1c1f26; --muted:#6b7079; --faint:#9a9fa8; --border:#e4e2dc; --border-2:#eeece7;
+  --r:16px; --r-s:10px; --bar-h:76px;
+  --shadow:0 1px 2px rgba(20,25,40,.04),0 6px 20px -8px rgba(20,25,40,.10);
 }
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;background:var(--bg);color:var(--text);padding:12px 12px calc(var(--bar-h) + 24px + env(safe-area-inset-bottom));-webkit-tap-highlight-color:transparent}
-button{font-family:inherit}
-a{color:inherit}
-.wrap{max-width:1000px;margin:0 auto}
+html{scroll-behavior:smooth}
+body{font-family:"Noto Sans TC",-apple-system,BlinkMacSystemFont,"PingFang TC","Microsoft JhengHei",sans-serif;background:var(--bg);color:var(--text);padding:0 0 calc(var(--bar-h) + 24px + env(safe-area-inset-bottom));-webkit-tap-highlight-color:transparent;line-height:1.5;-webkit-font-smoothing:antialiased}
+button{font-family:inherit;touch-action:manipulation}
+a{color:var(--navy)}a:hover{color:var(--ink)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 14px}
 .hidden{display:none!important}
+::selection{background:var(--navy-soft)}
 
-/* header */
-.top{display:flex;flex-direction:column;align-items:center;gap:4px;margin-bottom:10px}
-.title{font-size:28px;font-weight:800;color:var(--navy);text-align:center;margin:4px 0 0;line-height:1.2}
-.sub{font-size:13px;color:var(--muted);text-align:center}
-.sub strong{color:var(--warn)}
-.updated{font-size:12px;color:#888}
-.syncline{font-size:12px;color:#777;display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:center}
-.syncline .ok{color:#2e7d32}.syncline .err{color:#c0392b}
-.syncbtn{border:1px solid #cfd6df;background:#fff;border-radius:999px;padding:3px 10px;font-size:12px;font-weight:700;cursor:pointer;color:var(--navy)}
+/* ===== header ===== */
+.hdr{position:sticky;top:0;z-index:40;background:rgba(244,243,239,.88);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid var(--border-2)}
+.hdr .wrap{display:flex;flex-direction:column;gap:0}
+.top{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding:14px 0 8px;flex-wrap:wrap}
+.top .tl{display:flex;flex-direction:column;gap:2px;min-width:0}
+.brand{display:flex;align-items:center;gap:10px;margin-bottom:4px}
+.logo{height:18px;width:auto;display:block}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.14em;color:var(--faint);text-transform:uppercase}
+.title{font-size:24px;font-weight:900;color:var(--ink);margin:0;line-height:1.15;letter-spacing:-.01em}
+.sub{font-size:13px;color:var(--muted)}
+.sub strong{color:var(--text);font-weight:700}
+.meta{display:flex;flex-direction:column;align-items:flex-end;gap:4px;font-size:12px;color:var(--faint);flex-shrink:0}
+.updated{white-space:nowrap}
+.syncline{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end;color:var(--muted)}
+.syncline .ok{color:var(--line-d);font-weight:700}.syncline .err{color:var(--warn);font-weight:700}
+.syncbtn{white-space:nowrap;flex-shrink:0;border:1px solid var(--border);background:#fff;border-radius:999px;padding:4px 11px;font-size:12px;font-weight:700;cursor:pointer;color:var(--navy);transition:background .15s,border-color .15s}
+.syncbtn:hover{background:var(--navy-soft);border-color:var(--navy)}
 .syncbtn:disabled{opacity:.5}
-.tabs{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:10px 0 14px}
-.tab{padding:9px 18px;border:0;border-radius:20px;background:#e0e0e0;font-weight:700;cursor:pointer;font-size:14px}
-.tab.active{background:var(--navy);color:#fff}
-.tab.admin{background:#fff;border:1px dashed #bbb;color:#555}
-.tab.admin.active{background:#444;color:#fff;border-color:#444}
+.tabs{display:flex;gap:2px;margin:0 -4px}
+.tab{position:relative;padding:10px 14px 12px;border:0;background:none;font-weight:700;cursor:pointer;font-size:14px;color:var(--muted);border-radius:8px 8px 0 0;transition:color .15s}
+.tab:hover{color:var(--ink)}
+.tab::after{content:"";position:absolute;left:14px;right:14px;bottom:-1px;height:2px;border-radius:2px;background:transparent;transition:background .15s}
+.tab.active{color:var(--ink)}
+.tab.active::after{background:var(--ink)}
+.tab.admin{margin-left:auto;color:var(--faint);font-weight:600}
+.tab.admin.active{color:var(--ink)}
+
+/* ===== page body ===== */
+.page{padding-top:16px}
+.banner{background:var(--amber-soft);border:1px solid #f3dcae;border-radius:var(--r-s);padding:10px 14px;font-size:13px;display:flex;justify-content:space-between;align-items:center;gap:10px;margin:14px 0 0;flex-wrap:wrap;color:#6b4a06}
+.banner button{border:0;background:var(--amber);color:#fff;border-radius:8px;padding:6px 12px;font-weight:700;cursor:pointer}
 
 /* chips */
-.chips{display:flex;justify-content:center;gap:7px;flex-wrap:wrap;margin-bottom:12px}
-.chip{padding:7px 13px;border:0;border-radius:999px;background:#e5e5e5;color:#222;font-weight:700;cursor:pointer;font-size:13px;line-height:1.2}
-.chip.active{background:var(--line);color:#fff}
-.chip.pin.active{background:#f5a623}
+.chips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:2px 14px 6px;margin:0 -14px 8px;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;scroll-snap-align:start;padding:8px 13px;border:1px solid var(--border);border-radius:999px;background:#fff;color:var(--text);font-weight:600;cursor:pointer;font-size:13px;line-height:1.2;white-space:nowrap;transition:background .15s,border-color .15s,color .15s}
+.chip:hover{border-color:var(--navy)}
+.chip.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+.chip.pin.active{background:var(--amber);border-color:var(--amber)}
+.chip.store-scope.active{background:var(--navy);border-color:var(--navy)}
 .chip:disabled{opacity:.4;cursor:not-allowed}
-.filters2{display:flex;flex-direction:column;align-items:center;gap:8px;margin:0 auto 14px;width:100%;max-width:520px}
-.frow{display:flex;align-items:center;gap:8px;width:100%}
-.frow label{font-size:13px;font-weight:700;color:var(--navy);min-width:66px;text-align:right}
-.frow select{flex:1;min-width:0;padding:9px 12px;border:1px solid #cfd6df;border-radius:10px;background:#fff;font-size:14px;font-weight:700;color:var(--text)}
-.frow .chips{margin:0;justify-content:flex-start;flex:1}
+.filters2{display:flex;flex-direction:column;gap:8px;margin:0 0 16px}
+.fsec{display:flex;flex-direction:column;gap:6px}
+.flabel{display:flex;align-items:center;justify-content:space-between;font-size:12px;font-weight:700;color:var(--muted);padding:0 2px}
+.flabel em{font-style:normal;color:var(--navy)}
+.flink{border:0;background:none;color:var(--navy);font-weight:700;font-size:12px;cursor:pointer;text-decoration:underline;text-underline-offset:3px;padding:0}
+.ptiles{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:2px 14px 6px;margin:0 -14px;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch}
+.ptiles::-webkit-scrollbar{display:none}
+.ptile{flex:0 0 auto;scroll-snap-align:start;width:78px;border:0;background:none;padding:0;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:5px;font-family:inherit;-webkit-tap-highlight-color:transparent}
+.ptile .pimg{position:relative;width:70px;height:70px;border-radius:14px;overflow:hidden;background:#fff;border:2px solid var(--border);transition:border-color .15s,transform .08s,box-shadow .15s}
+.ptile .pimg img{width:100%;height:100%;object-fit:cover;display:block}
+.ptile .pimg::after{content:"✓";position:absolute;right:4px;top:4px;width:18px;height:18px;border-radius:50%;background:var(--ink);color:#fff;font-size:11px;font-weight:900;display:flex;align-items:center;justify-content:center;opacity:0;transform:scale(.6);transition:opacity .15s,transform .15s}
+.ptile .pl{font-size:11px;font-weight:700;color:var(--muted);line-height:1.2;white-space:nowrap}
+.ptile:hover .pimg{border-color:var(--navy)}
+.ptile:active .pimg{transform:scale(.96)}
+.ptile.active .pimg{border-color:var(--ink);box-shadow:0 0 0 2px var(--ink)}
+.ptile.active .pimg::after{opacity:1;transform:scale(1)}
+.ptile.active .pl{color:var(--ink)}
+.ptile.all .pimg{display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:var(--muted);background:var(--bg)}
+.ptile.all .pimg::after{display:none}
+.ptile.all.active .pimg{color:#fff;background:var(--ink)}
+@media(min-width:900px){.ptiles{flex-wrap:wrap;overflow:visible;padding:2px 0 6px;margin:0}}
+.frow{display:flex;align-items:center;gap:8px;min-width:0}
+.frow label{font-size:12px;font-weight:700;color:var(--muted);white-space:nowrap}
+.frow select{padding:8px 32px 8px 12px;border:1px solid var(--border);border-radius:999px;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' fill='none' stroke='%236b7079' stroke-width='1.6'/%3E%3C/svg%3E") no-repeat right 12px center;appearance:none;-webkit-appearance:none;font-size:13px;font-weight:600;color:var(--text);font-family:inherit;max-width:180px}
+.frow .chips{margin:0;padding:0;flex:1}
 
 /* boxes */
-.box{background:var(--card);border-radius:14px;padding:14px 16px;box-shadow:0 2px 6px rgba(0,0,0,.06);margin:0 auto 14px}
-.guide{font-size:13px;color:#444;line-height:1.75;background:#f5f5f5;box-shadow:none}
-.guide strong{display:block;font-size:14px;color:#222;margin-bottom:2px}
-.missing{border:1px solid #f1c8b5;background:#fff8f3}
-.missing .h{font-weight:800;color:var(--warn);margin-bottom:4px}
-.missing div{font-size:13px;line-height:1.6}
+.box{background:var(--card);border-radius:var(--r);padding:16px 18px;box-shadow:var(--shadow);margin:0 0 14px;border:1px solid var(--border-2)}
+.guide{font-size:13px;color:var(--muted);line-height:1.8;background:transparent;box-shadow:none;border:1px dashed var(--border);padding:0}
+.guide summary{list-style:none;cursor:pointer;padding:10px 16px;font-size:13px;font-weight:700;color:var(--navy);display:flex;align-items:center;justify-content:space-between}
+.guide summary::-webkit-details-marker{display:none}
+.guide summary::after{content:"＋";font-weight:400;color:var(--faint)}
+.guide[open] summary::after{content:"－"}
+.guide .gb{padding:0 16px 14px}
+.guide .gb b{color:var(--text);font-weight:700}
+.missing{border:1px solid #f6d3c0;background:var(--warn-soft);padding:12px 16px}
+.missing .h{font-weight:800;color:var(--warn);margin-bottom:4px;font-size:13px}
+.missing div{font-size:13px;line-height:1.6;color:#7a3a17}
 
-/* quick draw */
-.quick{max-width:720px;text-align:center;position:relative}
-.quick .qt{font-size:20px;font-weight:800;color:var(--navy);margin-bottom:6px}
-.quick .qp{font-size:14px;color:var(--muted)}
-.quick .qs{font-size:14px;color:var(--muted);margin-top:8px}
-.quick .qs a{color:var(--fb);text-decoration:none;font-weight:700;margin-left:6px}
-.quick .qprod{font-size:21px;font-weight:800;margin:6px 0 12px;word-break:break-word;line-height:1.3}
-.quick .qbtns{display:grid;grid-template-columns:1fr 1fr;gap:9px}
-.qbtn{border:0;border-radius:10px;padding:13px 10px;font-size:16px;font-weight:800;cursor:pointer;color:#fff}
-.qbtn:disabled{opacity:.45;cursor:not-allowed}
-.qbtn.open{grid-column:1/-1;background:var(--line);font-size:18px;padding:15px}
-.qbtn.next{background:var(--navy)}
-.qbtn.skip{background:#e0e0e0;color:#222}
-.qbtn:active:not(:disabled){transform:translateY(1px)}
-.qopts{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 16px;margin-top:12px;font-size:13px;color:#555}
-.qopts label{display:flex;align-items:center;gap:5px;cursor:pointer}
-.qopts button{border:0;background:none;color:#a33;font-weight:700;cursor:pointer;font-size:13px;text-decoration:underline}
-.qdone{font-size:15px;color:var(--line-d);font-weight:800;padding:10px 0}
+/* ===== quick draw (hero) ===== */
+.quick{background:var(--ink);color:#fff;border:0;padding:20px 20px 18px;position:relative;overflow:hidden;box-shadow:0 12px 32px -12px rgba(15,31,61,.45)}
+.quick::before{content:"";position:absolute;inset:auto -40px -80px auto;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.04);pointer-events:none}
+.quick .qt{font-size:11px;font-weight:700;letter-spacing:.14em;color:rgba(255,255,255,.55);text-transform:uppercase;margin-bottom:6px}
+.quick .qp{font-size:13px;color:rgba(255,255,255,.75)}
+.qbar{height:3px;background:rgba(255,255,255,.14);border-radius:2px;margin:10px 0 16px;overflow:hidden}
+.qbar i{display:block;height:100%;width:0;background:var(--line);border-radius:2px;transition:width .3s ease}
+.quick .qs{font-size:13px;color:rgba(255,255,255,.7);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.quick .qs a{color:#fff;text-decoration:none;font-weight:700;font-size:12px;border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:2px 9px}
+.quick .qs a:hover{background:rgba(255,255,255,.12)}
+.quick .qprod{font-size:24px;font-weight:900;margin:6px 0 18px;word-break:break-word;line-height:1.3;letter-spacing:-.01em;text-wrap:pretty}
+.quick .qbtns{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.qbtn{border:0;border-radius:12px;padding:13px 10px;font-size:15px;font-weight:700;cursor:pointer;color:#fff;transition:transform .08s,filter .15s,opacity .15s}
+.qbtn:disabled{opacity:.35;cursor:not-allowed}
+.qbtn:not(:disabled):hover{filter:brightness(1.06)}
+.qbtn.open{grid-column:1/-1;background:var(--line);font-size:18px;font-weight:900;padding:17px;border-radius:14px;box-shadow:0 8px 20px -8px rgba(6,199,85,.6)}
+.qbtn.next{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18)}
+.qbtn.skip{background:transparent;color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.18)}
+.qbtn:active:not(:disabled){transform:scale(.985)}
+.qopts{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:16px;font-size:12px;color:rgba(255,255,255,.6)}
+.qopts label{display:flex;align-items:center;gap:6px;cursor:pointer}
+.qopts input{accent-color:var(--line);width:15px;height:15px;margin:0}
+.qopts button{border:0;background:none;color:rgba(255,255,255,.5);font-weight:600;cursor:pointer;font-size:12px;text-decoration:underline;text-underline-offset:3px;margin-left:auto;padding:0}
+.qopts button:hover{color:#fff}
+.qdone{color:#7ee2a5!important;font-size:18px!important}
 
-/* store list */
-.city{font-size:18px;font-weight:800;color:var(--navy);margin:22px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--navy);display:flex;justify-content:space-between;align-items:baseline}
-.city small{font-size:12px;color:var(--muted);font-weight:600}
-.store{background:var(--card);border-radius:12px;padding:12px 14px;margin-bottom:12px;box-shadow:0 2px 5px rgba(0,0,0,.05)}
-.store.pinned{outline:2px solid #f5a623}
-.shead{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
-.sname{font-size:16px;font-weight:800;line-height:1.3}
+/* ===== store list ===== */
+.city{font-size:13px;font-weight:700;color:var(--muted);margin:22px 0 10px;padding:0 4px;display:flex;justify-content:space-between;align-items:baseline;letter-spacing:.04em}
+.city small{font-size:12px;color:var(--faint);font-weight:500}
+.store{background:var(--card);border-radius:var(--r);padding:14px 16px;margin-bottom:10px;border:1px solid var(--border-2);box-shadow:var(--shadow);transition:border-color .15s}
+.store.pinned{border-color:#f0c470}
+.store.focus{border-color:var(--navy);box-shadow:0 0 0 3px var(--navy-soft)}
+.shead{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.sname{font-size:16px;font-weight:800;line-height:1.3;letter-spacing:-.01em}
 .smeta{font-size:12px;color:var(--muted);margin-top:3px}
 .sacts{display:flex;gap:6px;flex-shrink:0;flex-wrap:wrap;justify-content:flex-end}
-.sbtn{display:inline-flex;align-items:center;gap:4px;text-decoration:none;color:#fff;font-weight:700;font-size:12px;padding:6px 10px;border-radius:8px;border:0;cursor:pointer;white-space:nowrap;line-height:1.2}
+.sbtn{display:inline-flex;align-items:center;justify-content:center;gap:4px;text-decoration:none;color:#fff;font-weight:700;font-size:12px;padding:7px 11px;border-radius:999px;border:1px solid transparent;cursor:pointer;white-space:nowrap;line-height:1.2;transition:background .15s,color .15s,border-color .15s,filter .15s;min-height:32px}
+.sbtn:hover{filter:brightness(1.05)}
 .sbtn.fb{background:var(--fb)}
 .sbtn.ln{background:var(--line)}
-.sbtn.pin{background:#fff;color:#999;border:1px solid #ddd}
-.sbtn.pin.on{background:#fff5e0;color:#e08a00;border-color:#f5a623}
-.sbtn.dis{background:#ddd;color:#888;pointer-events:none}
-.sbtn.only{background:#fff;color:var(--navy);border:1px solid var(--navy)}
-.sbtn.only.on{background:var(--navy);color:#fff}
-.store.focus{outline:2px solid var(--navy)}
-.chip.store-scope.active{background:var(--navy)}
-.items{margin-top:8px}
-.item{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 8px;border-top:1px solid #eee;cursor:pointer;border-radius:8px;transition:background .15s}
-.item:hover{background:#f3f7fb}
-.item:active{transform:translateY(1px)}
-.item .p{font-size:14px;line-height:1.35;flex:1}
-.item .go{background:var(--line);color:#fff;font-weight:700;font-size:12px;padding:6px 12px;border-radius:7px;white-space:nowrap}
-.item.drawn{background:#efefef;color:#777}
-.item.drawn .go{background:var(--gray)}
-.item.notyet{cursor:not-allowed;color:#999}
-.item.notyet .go{background:#d9d9d9;color:#999}
-.item .undo{border:0;background:none;color:#888;font-size:12px;cursor:pointer;padding:4px 6px;text-decoration:underline}
-.empty{font-size:13px;color:#999;padding:8px 0 0}
-.nores{text-align:center;color:#888;padding:30px 0;font-size:14px}
+.sbtn.pin{background:#fff;color:var(--faint);border-color:var(--border);padding:7px 10px}
+.sbtn.pin.on{background:var(--amber-soft);color:var(--amber);border-color:#f0c470}
+.sbtn.dis{background:var(--border-2);color:var(--faint);pointer-events:none}
+.sbtn.only{background:#fff;color:var(--navy);border-color:var(--border)}
+.sbtn.only:hover{border-color:var(--navy)}
+.sbtn.only.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.sbtn.visited{background:#b4b8bf!important}
+.items{margin-top:10px;border-top:1px solid var(--border-2)}
+.item{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 8px 11px 10px;border-bottom:1px solid var(--border-2);cursor:pointer;margin:0 -6px;border-radius:0;transition:background .12s;min-height:48px}
+.item:last-child{border-bottom:0}
+.item:hover{background:#f7f8fa}
+.item:active{background:var(--navy-soft)}
+.item:focus-visible{outline:2px solid var(--navy);outline-offset:-2px;border-radius:8px}
+.item .p{font-size:14px;line-height:1.4;flex:1;font-weight:500}
+.item .go{background:var(--line);color:#fff;font-weight:700;font-size:12px;padding:6px 12px;border-radius:999px;white-space:nowrap;flex-shrink:0}
+.item.drawn{color:var(--faint)}
+.item.drawn .p{text-decoration:line-through;text-decoration-color:var(--border);font-weight:400}
+.item.drawn .go{background:transparent;color:var(--faint);border:1px solid var(--border)}
+.item.notyet{cursor:not-allowed;color:var(--faint)}
+.item.notyet .go{background:var(--border-2);color:var(--faint)}
+.item .undo{border:0;background:none;color:var(--navy);font-size:12px;cursor:pointer;padding:4px 6px;text-decoration:underline;text-underline-offset:3px;font-weight:600}
+.empty{font-size:13px;color:var(--faint);padding:10px 0 2px}
+.nores{text-align:center;color:var(--faint);padding:40px 0;font-size:14px}
 
-/* stores page */
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
-.card{background:#fff;border-radius:12px;padding:12px 14px;box-shadow:0 2px 5px rgba(0,0,0,.05);display:flex;flex-direction:column;gap:8px}
-.card.pinned{outline:2px solid #f5a623}
-.card .cn{font-size:15px;font-weight:800}
-.card .ci{font-size:12px;color:var(--muted)}
+/* ===== stores page ===== */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px}
+.card{background:#fff;border-radius:var(--r);padding:14px 16px;border:1px solid var(--border-2);box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px;transition:border-color .15s}
+.card.pinned{border-color:#f0c470}
+.card .cn{font-size:15px;font-weight:800;letter-spacing:-.01em}
+.card .ci{font-size:12px;color:var(--muted);margin-top:2px}
 .card .ca{display:flex;gap:6px;flex-wrap:wrap}
-.card .ca .sbtn{flex:1;justify-content:center;padding:9px 8px;font-size:13px}
+.card .ca .sbtn{flex:1;padding:9px 8px;font-size:13px;min-height:38px}
 .card .ca .sbtn.pin{flex:0 0 auto}
-.sbtn.visited{background:var(--gray)!important}
 
-/* bottom bar */
-.bar{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--border);box-shadow:0 -4px 16px rgba(0,0,0,.08);padding:8px 12px calc(8px + env(safe-area-inset-bottom));z-index:50;display:flex;gap:8px;align-items:center}
+/* ===== bottom bar ===== */
+.bar{position:fixed;left:0;right:0;bottom:0;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--border);box-shadow:0 -8px 24px -12px rgba(15,31,61,.18);padding:10px 14px calc(10px + env(safe-area-inset-bottom));z-index:50;display:flex;gap:8px;align-items:center}
 .bar .bi{flex:1;min-width:0}
 .bar .bs{font-size:11px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.bar .bp{font-size:14px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.bar .bb{border:0;border-radius:10px;padding:11px 14px;font-weight:800;font-size:14px;color:#fff;cursor:pointer;white-space:nowrap}
+.bar .bp{font-size:14px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;letter-spacing:-.01em}
+.bar .bb{border:0;border-radius:999px;padding:12px 16px;font-weight:800;font-size:14px;color:#fff;cursor:pointer;white-space:nowrap;min-height:44px;transition:transform .08s}
+.bar .bb:active:not(:disabled){transform:scale(.97)}
 .bar .bb.open{background:var(--line)}
-.bar .bb.next{background:var(--navy)}
-.bar .bb:disabled{opacity:.4}
-@media(min-width:900px){.bar{display:none}body{padding-bottom:24px}}
+.bar .bb.next{background:var(--ink)}
+.bar .bb:disabled{opacity:.35}
+
+/* ===== desktop: two-column draw page ===== */
+@media(min-width:900px){
+  .bar{display:none}body{padding-bottom:40px}
+  .title{font-size:30px}
+  #page-draws{display:grid;grid-template-columns:minmax(0,1fr) 360px;column-gap:20px;align-items:start;grid-template-areas:"guide guide" "missing missing" "chips chips" "filters filters" "list quick"}
+  #page-draws>.guide{grid-area:guide}#missingBox{grid-area:missing}#cityChips{grid-area:chips}#page-draws>.filters2{grid-area:filters}
+  #quick{grid-area:quick;position:sticky;top:calc(var(--hdr-h,140px) + 12px)}
+  #storeList{grid-area:list}
+  #storeList .city:first-child{margin-top:0}
+  .chips{flex-wrap:wrap;overflow:visible;padding:2px 0 6px;margin:0 0 8px}
+}
 
 /* toast */
-.toast{position:fixed;left:50%;bottom:calc(var(--bar-h) + 16px + env(safe-area-inset-bottom));transform:translateX(-50%) translateY(20px);background:rgba(30,30,30,.92);color:#fff;padding:10px 16px;border-radius:10px;font-size:14px;opacity:0;pointer-events:none;transition:all .25s;z-index:60;max-width:90vw;text-align:center}
+.toast{position:fixed;left:50%;bottom:calc(var(--bar-h) + 16px + env(safe-area-inset-bottom));transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:11px 18px;border-radius:999px;font-size:14px;font-weight:600;opacity:0;pointer-events:none;transition:all .25s;z-index:60;max-width:90vw;text-align:center;box-shadow:0 10px 30px -10px rgba(15,31,61,.5)}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-.banner{background:#fff4d6;border:1px solid #f1d28a;border-radius:10px;padding:8px 12px;font-size:13px;display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap}
-.banner button{border:0;background:#c98600;color:#fff;border-radius:6px;padding:5px 10px;font-weight:700;cursor:pointer}
+@media(min-width:900px){.toast{bottom:32px}}
 
-/* admin */
+/* ===== admin ===== */
 .admin .box{max-width:none}
-.admin h2{font-size:17px;color:var(--navy);margin:0 0 8px}
-.admin .hint{font-size:13px;color:#555;line-height:1.7;background:#f5f7fa;border-radius:8px;padding:10px 12px;margin-bottom:12px}
-.admin .hint code{background:#e9edf2;padding:1px 5px;border-radius:4px}
-.fld{display:flex;flex-direction:column;gap:3px;margin-bottom:8px}
-.fld label{font-size:12px;font-weight:700;color:#555}
-.fld input,.fld textarea,.fld select{padding:8px 10px;border:1px solid #cfd6df;border-radius:8px;font-size:14px;font-family:inherit;width:100%}
+.admin h2{font-size:16px;color:var(--ink);margin:0 0 10px;letter-spacing:-.01em}
+.admin .hint{font-size:13px;color:var(--muted);line-height:1.7;background:var(--bg);border-radius:var(--r-s);padding:10px 14px;margin-bottom:12px}
+.admin .hint strong{color:var(--text)}
+.admin .hint code,.admin code{background:#eceae4;padding:1px 6px;border-radius:5px;font-size:12px}
+.fld{display:flex;flex-direction:column;gap:4px;margin-bottom:10px}
+.fld label{font-size:12px;font-weight:700;color:var(--muted)}
+.fld input,.fld textarea,.fld select{padding:9px 12px;border:1px solid var(--border);border-radius:var(--r-s);font-size:14px;font-family:inherit;width:100%;background:#fff;transition:border-color .15s,box-shadow .15s}
+.fld input:focus,.fld textarea:focus,.asearch:focus,.aitem input:focus{outline:0;border-color:var(--navy);box-shadow:0 0 0 3px var(--navy-soft)}
 .fld textarea{min-height:70px;resize:vertical}
-.frow2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.frow2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 @media(max-width:560px){.frow2{grid-template-columns:1fr}}
 .abtns{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
-.abtn{border:0;border-radius:8px;padding:9px 14px;font-weight:700;cursor:pointer;font-size:13px;background:var(--navy);color:#fff}
+.abtn{border:1px solid transparent;border-radius:999px;padding:9px 15px;font-weight:700;cursor:pointer;font-size:13px;background:var(--ink);color:#fff;transition:filter .15s}
+.abtn:hover{filter:brightness(1.08)}
 .abtn.g{background:var(--line)}
-.abtn.w{background:#fff;color:#333;border:1px solid #ccc}
-.abtn.r{background:#c0392b}
-.abtn.s{padding:6px 10px;font-size:12px}
-.astore{border:1px solid var(--border);border-radius:12px;background:#fff;margin-bottom:10px}
-.astore summary{cursor:pointer;padding:12px 14px;font-weight:800;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.abtn.w{background:#fff;color:var(--text);border-color:var(--border)}
+.abtn.w:hover{border-color:var(--navy)}
+.abtn.r{background:var(--warn)}
+.abtn.s{padding:6px 12px;font-size:12px}
+.astore{border:1px solid var(--border-2);border-radius:var(--r-s);background:#fff;margin-bottom:8px}
+.astore summary{cursor:pointer;padding:12px 14px;font-weight:700;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:14px}
 .astore summary::-webkit-details-marker{display:none}
-.astore summary .c{font-size:12px;color:var(--muted);font-weight:600}
-.astore .body{padding:0 14px 14px;border-top:1px solid #eee}
+.astore summary .c{font-size:12px;color:var(--muted);font-weight:500;white-space:nowrap}
+.astore .body{padding:0 14px 14px;border-top:1px solid var(--border-2)}
 .aitem{display:grid;grid-template-columns:1fr 1fr auto;gap:6px;margin-bottom:6px;align-items:center}
-.aitem input{padding:7px 9px;border:1px solid #cfd6df;border-radius:7px;font-size:13px;min-width:0}
+.aitem input{padding:8px 10px;border:1px solid var(--border);border-radius:8px;font-size:13px;min-width:0;font-family:inherit}
 .aitem input.bad{border-color:#e74c3c;background:#fff5f5}
 @media(max-width:560px){.aitem{grid-template-columns:1fr;} .aitem .rm{justify-self:end}}
-.aitem .rm{border:0;background:#f1f1f1;color:#a33;border-radius:6px;padding:7px 9px;cursor:pointer;font-weight:700}
-.asearch{width:100%;padding:10px 12px;border:1px solid #cfd6df;border-radius:10px;font-size:14px;margin-bottom:10px}
-.status{font-size:12px;color:#2e7d32;font-weight:700;min-height:16px}
-</style>
+.aitem .rm{border:0;background:var(--bg);color:var(--warn);border-radius:8px;padding:8px 10px;cursor:pointer;font-weight:700}
+.asearch{width:100%;padding:10px 14px;border:1px solid var(--border);border-radius:999px;font-size:14px;margin-bottom:10px;font-family:inherit}
+.status{font-size:12px;color:var(--line-d);font-weight:700;min-height:16px;margin-top:6px}
+.optsync{background:var(--navy-soft);border-radius:var(--r-s);padding:12px 14px}
+.optsync label{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text);cursor:pointer;font-weight:600}
+.optsync input{accent-color:var(--navy);width:16px;height:16px;margin:0}
+.optsync .d{font-size:12px;color:var(--muted);margin-top:4px;line-height:1.6}</style>
 </head>
 <body>
-<div class="wrap">
-  <div class="top">
-    <h1 class="title" id="title">抽陀螺</h1>
-    <div class="sub" id="period"></div>
-    <div class="updated" id="updated"></div>
-    <div class="syncline" id="syncLine"><span id="syncInfo">資料來源：data.js</span> <button class="syncbtn" id="syncBtn" onclick="syncNow(true)" title="從 funbox-line 抓最新商品連結">🔄 同步最新</button></div>
+<header class="hdr">
+  <div class="wrap">
+    <div class="top">
+      <div class="tl">
+        <div class="brand"><img class="logo" src="img/logo.png" alt="BEYBLADE X"><span class="eyebrow">Funbox · LINE 快速抽選</span></div>
+        <h1 class="title" id="title">抽陀螺</h1>
+        <div class="sub" id="period"></div>
+      </div>
+      <div class="meta">
+        <div class="updated" id="updated"></div>
+        <div class="syncline" id="syncLine"><span id="syncInfo">資料來源：data.js</span><button class="syncbtn" id="syncBtn" onclick="syncNow(true)" title="從 funbox-line 抓最新商品連結">同步最新</button></div>
+      </div>
+    </div>
+    <div class="banner hidden" id="localBanner">
+      <span>目前顯示的是<strong>此瀏覽器本機修改</strong>的資料（管理模式儲存）。</span>
+      <button onclick="resetLocalData()">還原成網站資料</button>
+    </div>
+    <nav class="tabs">
+      <button class="tab active" data-page="draws" onclick="showPage('draws')">抽選</button>
+      <button class="tab" data-page="stores" onclick="showPage('stores')">門市 FB / LINE</button>
+      <button class="tab admin" data-page="admin" onclick="showPage('admin')">管理</button>
+    </nav>
   </div>
-  <div class="banner hidden" id="localBanner">
-    <span>⚠️ 目前顯示的是<strong>此瀏覽器本機修改</strong>的資料（管理模式儲存）。</span>
-    <button onclick="resetLocalData()">還原成網站資料</button>
-  </div>
-  <div class="tabs">
-    <button class="tab active" data-page="draws" onclick="showPage('draws')">🎯 抽選</button>
-    <button class="tab" data-page="stores" onclick="showPage('stores')">🏬 門市 FB / LINE</button>
-    <button class="tab admin" data-page="admin" onclick="showPage('admin')">⚙️ 管理</button>
-  </div>
+</header>
+<div class="wrap page">
 
   <!-- ===== 抽選頁 ===== -->
   <div id="page-draws">
-    <div class="box guide">
-      <strong>快速抽選（手機來回切換用）</strong>
-      1. 先選縣市（也可用「商品」「時間」再篩），或按 ⭐ 只抽「我的門市」；每間店旁有「▶ 只抽這店」可以一店一店抽<br>
-      2. 按「開啟抽選」會跳到 LINE；抽完切回瀏覽器，會自動標記完成並排好下一個<br>
-      3. 再按一次「開啟下一個」即可，一路按到底。下方每一列也可以直接點<br>
-      💡 若切回來時停在 LINE 的網頁分頁，請切回本頁分頁；或勾「用同一分頁開啟」改用返回鍵回來
-    </div>
+    <details class="box guide">
+      <summary>怎麼用：手機來回切換快速抽</summary>
+      <div class="gb">
+        <b>1.</b> 先選縣市（也可用「商品」「時間」再篩），或按 ⭐ 只抽「我的門市」；每間店旁有「只抽這店」可以一店一店抽<br>
+        <b>2.</b> 按「開啟抽選」會跳到 LINE；抽完切回瀏覽器，會自動標記完成並排好下一個<br>
+        <b>3.</b> 再按一次「完成，開啟下一個」即可，一路按到底。下方每一列也可以直接點<br>
+        <b>提示</b> 若切回來時停在 LINE 的網頁分頁，請切回本頁分頁；或勾「用同一分頁開啟」改用返回鍵回來
+      </div>
+    </details>
     <div class="box missing hidden" id="missingBox"><div class="h">目前缺少 / 未進貨</div><div id="missingList"></div></div>
 
     <div class="chips" id="cityChips"></div>
     <div class="filters2">
-      <div class="frow"><label for="prodSel">商品篩選：</label><select id="prodSel" onchange="setProduct(this.value)"></select></div>
-      <div class="frow"><label>時間篩選：</label><div class="chips" id="timeChips"></div></div>
+      <div class="fsec"><div class="flabel"><span>商品 <em id="prodCount"></em></span><button class="flink hidden" id="prodClear" onclick="setProduct('all')">清除篩選</button></div><div class="ptiles" id="prodTiles"></div></div>
+      <div class="frow"><label>時間</label><div class="chips" id="timeChips"></div></div>
     </div>
 
     <div class="box quick" id="quick">
-      <div class="qt">📱 連續抽選模式</div>
+      <div class="qt">連續抽選</div>
       <div class="qp" id="qProgress">載入中...</div>
+      <div class="qbar"><i id="qBar"></i></div>
       <div class="qs" id="qStore"></div>
       <div class="qprod" id="qProduct"></div>
       <div class="qbtns">
-        <button class="qbtn open" id="qOpen" onclick="quickOpen()" disabled>🔗 開啟抽選</button>
-        <button class="qbtn next" id="qNext" onclick="quickNext()" disabled>✅ 完成，開啟下一個</button>
-        <button class="qbtn skip" id="qSkip" onclick="quickSkip()" disabled>⏭ 略過這個</button>
+        <button class="qbtn open" id="qOpen" onclick="quickOpen()" disabled="">開啟抽選</button>
+        <button class="qbtn next" id="qNext" onclick="quickNext()" disabled="">完成，開啟下一個 →</button>
+        <button class="qbtn skip" id="qSkip" onclick="quickSkip()" disabled="">略過這個</button>
       </div>
       <div class="qopts">
-        <label><input type="checkbox" id="optAuto" checked onchange="saveOpts()"> 切回瀏覽器自動標記完成</label>
+        <label><input type="checkbox" id="optAuto" checked="" onchange="saveOpts()"> 切回瀏覽器自動標記完成</label>
         <label><input type="checkbox" id="optSameTab" onchange="saveOpts()"> 用同一分頁開啟 LINE</label>
         <button onclick="resetDrawn()">重設全部已抽紀錄</button>
       </div>
@@ -223,11 +316,13 @@ a{color:inherit}
 
   <!-- ===== 門市頁 ===== -->
   <div id="page-stores" class="hidden">
-    <div class="box guide">
-      <strong>門市粉絲頁 / LINE 官方帳號</strong>
-      📘 打開各店 FB 粉絲頁看抽選公告與商品清單；＋ 加好友會開啟 LINE App（點過會變灰）。<br>
-      ⭐ 可以「鎖定」常跑的門市，抽選頁選「我的門市」就只會出現這些店。
-    </div>
+    <details class="box guide">
+      <summary>門市粉絲頁 / LINE 官方帳號</summary>
+      <div class="gb">
+        打開各店 FB 粉絲頁看抽選公告與商品清單；「＋ 加好友」會開啟 LINE App（點過會變灰）。<br>
+        ⭐ 可以「鎖定」常跑的門市，抽選頁選「我的門市」就只會出現這些店。
+      </div>
+    </details>
     <div class="chips" id="cityChips2"></div>
     <div class="grid" id="storeGrid"></div>
   </div>
@@ -240,7 +335,7 @@ a{color:inherit}
         改完會<strong>立刻存在這台裝置的瀏覽器</strong>，抽選頁馬上生效。要讓大家看到，請按「下載 data.js」後把檔案覆蓋到網站的 <code>data.js</code>（例如 GitHub Pages 直接 commit）。<br>
         每間門市可以直接「貼上 FB 貼文」：只要貼文裡每個商品旁有 <code>lin.ee/…</code> 或 <code>line.me/…</code> 連結，就會自動解析成商品列表。
       </div>
-      <div class="fld" style="background:#f0f6ff;border-radius:8px;padding:10px 12px"><label style="display:flex;align-items:center;gap:8px;font-size:13px;color:#222;cursor:pointer"><input type="checkbox" id="optSync" onchange="saveSyncOpt()"> 自動從 <code>uxux11.github.io/funbox-line</code> 同步商品抽選連結（開頁時與每 10 分鐘）</label><div style="font-size:12px;color:#555;margin-top:4px;line-height:1.6">開啟時：商品連結、抽選時間、缺少門市以來源為準，FB 粉絲頁與 LINE ID 仍用本頁資料。關閉時：完全用 data.js / 本頁手動輸入的資料。</div></div>
+      <div class="fld optsync"><label><input type="checkbox" id="optSync" onchange="saveSyncOpt()"> 自動從 <code>uxux11.github.io/funbox-line</code> 同步商品抽選連結（開頁時與每 10 分鐘）</label><div class="d">開啟時：商品連結、抽選時間、缺少門市以來源為準，FB 粉絲頁與 LINE ID 仍用本頁資料。關閉時：完全用 data.js / 本頁手動輸入的資料。</div></div>
       <div class="frow2">
         <div class="fld"><label>活動標題</label><input id="aTitle" onchange="aMeta()"></div>
         <div class="fld"><label>抽選時間（顯示用）</label><input id="aPeriod" onchange="aMeta()" placeholder="2026/09/11 11:00~2026/09/12 21:00"></div>
@@ -248,13 +343,13 @@ a{color:inherit}
         <div class="fld"><label>缺少 / 未進貨門市（一行一筆）</label><textarea id="aMissing" onchange="aMeta()"></textarea></div>
       </div>
       <div class="abtns">
-        <button class="abtn g" onclick="downloadDataJs()">⬇ 下載 data.js</button>
-        <button class="abtn" onclick="copyJson()">📋 複製 JSON</button>
-        <button class="abtn w" onclick="document.getElementById('impFile').click()">📂 匯入 JSON / data.js</button>
+        <button class="abtn g" onclick="downloadDataJs()">下載 data.js</button>
+        <button class="abtn" onclick="copyJson()">複製 JSON</button>
+        <button class="abtn w" onclick="document.getElementById('impFile').click()">匯入 JSON / data.js</button>
         <input type="file" id="impFile" class="hidden" accept=".json,.js,.txt" onchange="importFile(this)">
         <button class="abtn w" onclick="addStore()">＋ 新增門市</button>
-        <button class="abtn w" onclick="clearAllItems()">🧹 清空所有商品連結（換活動用）</button>
-        <button class="abtn r" onclick="resetLocalData()">↩ 還原成網站 data.js</button>
+        <button class="abtn w" onclick="clearAllItems()">清空所有商品連結（換活動用）</button>
+        <button class="abtn r" onclick="resetLocalData()">還原成網站 data.js</button>
       </div>
       <div class="status" id="aStatus"></div>
     </div>
@@ -268,19 +363,24 @@ a{color:inherit}
 
 <div class="bar" id="bar">
   <div class="bi"><div class="bs" id="barStore">—</div><div class="bp" id="barProd">選縣市後開始</div></div>
-  <button class="bb open" id="barOpen" onclick="quickOpen()" disabled>開啟</button>
-  <button class="bb next" id="barNext" onclick="quickNext()" disabled>下一個 ▶</button>
+  <button class="bb open" id="barOpen" onclick="quickOpen()" disabled="">開啟</button>
+  <button class="bb next" id="barNext" onclick="quickNext()" disabled="">下一個 →</button>
 </div>
 <div class="toast" id="toast"></div>
 
 <script>
-/* 載入 data.js：同時支援 /BeybladeX/Draw 與 /BeybladeX/Draw/ 兩種網址，載入後才啟動主程式 */
+/* 載入 img/products.js（商品圖對照）與 data.js：同時支援 /BeybladeX/Draw 與 /BeybladeX/Draw/ 兩種網址，載入後才啟動主程式 */
 (function(){
   var V="data.js?v=202609111215";
   var path=location.pathname, base=/\.[a-z0-9]+$/i.test(path)?path.replace(/[^\/]*$/,""):(path.slice(-1)==="/"?path:path+"/");
+  window.__funboxBase=base;
   function boot(){ if(typeof window.__funboxBoot==="function") window.__funboxBoot(); }
-  function load(src,onfail){ var s=document.createElement("script"); s.src=src; s.onload=boot; s.onerror=onfail; document.head.appendChild(s); }
-  window.addEventListener("DOMContentLoaded",function(){ load(base+V,function(){ load(V,boot); }); });
+  function load(src,ok,fail){ var s=document.createElement("script"); s.src=src; s.onload=ok; s.onerror=fail; document.head.appendChild(s); }
+  window.addEventListener("DOMContentLoaded",function(){
+    document.querySelectorAll("img.logo").forEach(function(i){ i.src=base+"img/logo.png"; });
+    load(base+"img/products.js",next,next);
+    function next(){ load(base+V,boot,function(){ load(V,boot,boot); }); }
+  });
 })();
 </script>
 <script>
@@ -344,10 +444,10 @@ function renderSync(){
   if(!opts.sync){ el.innerHTML='資料來源：data.js（自動同步已關閉）'; $('syncBtn').classList.add('hidden'); return; }
   $('syncBtn').classList.remove('hidden');
   var at=syncState.at?new Date(syncState.at):null, hh=at?(String(at.getHours()).padStart(2,'0')+':'+String(at.getMinutes()).padStart(2,'0')):'';
-  if(syncState.status==='loading') el.innerHTML='🔄 正在同步來源…';
-  else if(syncState.status==='ok') el.innerHTML='<span class="ok">✔ 已同步來源 funbox-line</span>（'+hh+'）';
-  else if(syncState.status==='cache') el.innerHTML='<span class="err">⚠ 來源暫時抓不到</span>，顯示上次同步（'+hh+'）';
-  else if(syncState.status==='fail') el.innerHTML='<span class="err">⚠ 來源抓不到</span>，顯示 data.js 內建資料';
+  if(syncState.status==='loading') el.innerHTML='正在同步來源…';
+  else if(syncState.status==='ok') el.innerHTML='<span class="ok">● 已同步</span> funbox-line · '+hh;
+  else if(syncState.status==='cache') el.innerHTML='<span class="err">● 來源暫時抓不到</span>，顯示上次同步 '+hh;
+  else if(syncState.status==='fail') el.innerHTML='<span class="err">● 來源抓不到</span>，顯示內建資料';
   else el.innerHTML='資料來源：data.js';
 }
 var syncing=false;
@@ -366,7 +466,7 @@ window.saveSyncOpt=function(){ opts.sync=$('optSync').checked; lsSet(LS_OPT,opts
 
 var visitedLine = lsGet(LS_VISITED_LINE,{});
 
-var curRegion = lsGet(LS_REGION,'all'), curProduct='all', curTime='all', curStore=null, currentItem=null, pendingItem=null;
+var curRegion = lsGet(LS_REGION,'all'), curProducts=[], curTime='all', curStore=null, currentItem=null, pendingItem=null;
 
 /* ---------- helpers ---------- */
 function fbUrl(s){ if(s.fb) return s.fb; return 'https://www.facebook.com/search/pages/?q='+encodeURIComponent(s.name.replace(/[-－_]/g,' ')); }
@@ -390,7 +490,10 @@ function visibleStores(){
     return true;
   });
 }
-function visibleItems(s){ return s.items.filter(function(it){ return curProduct==='all' || modelOf(it.product)===curProduct; }); }
+function visibleItems(s){ return s.items.filter(function(it){ return !curProducts.length || curProducts.indexOf(modelOf(it.product))>=0; }); }
+var PRODUCT_IMG=(window.PRODUCT_IMAGES&&typeof window.PRODUCT_IMAGES==='object')?window.PRODUCT_IMAGES:{};
+var PH=(window.__funboxBase||'')+'img/placeholder.svg';
+function imgOf(m){ var v=PRODUCT_IMG[m]; if(!v) return PH; return /^(https?:)?\//.test(v)?v:(window.__funboxBase||'')+v; }
 function queue(){ var q=[]; visibleStores().forEach(function(s){ visibleItems(s).forEach(function(it){ if(it.url && !isDrawn(s,it) && started(it)) q.push({store:s,item:it}); }); }); return q; }
 
 /* ---------- render: header/filters ---------- */
@@ -413,8 +516,10 @@ function renderChips(){
   cities().forEach(function(city){ html+='<button class="chip'+(curRegion===city?' active':'')+'" onclick="setRegion('+JSON.stringify(city).replace(/"/g,'&quot;')+')">'+esc(city)+' ('+c[city]+')</button>'; });
   $('cityChips2').innerHTML=html; if(curStore){ var fs=findStore(curStore); html+='<button class="chip store-scope active" onclick="setStore(null)">▶ 只抽 '+esc(fs?fs.name:'')+'　✕</button>'; } $('cityChips').innerHTML=html;
   var models={}; DATA.stores.forEach(function(s){ s.items.forEach(function(it){ var m=modelOf(it.product); if(m) models[m]=1; }); });
-  var ms=Object.keys(models).sort(); if(ms.indexOf(curProduct)<0) curProduct='all';
-  $('prodSel').innerHTML='<option value="all">全部商品</option>'+ms.map(function(m){return '<option value="'+m+'"'+(m===curProduct?' selected':'')+'>'+m+'</option>';}).join('');
+  var ms=Object.keys(models).sort(); curProducts=curProducts.filter(function(m){return ms.indexOf(m)>=0;});
+  var pt='<button class="ptile all'+(curProducts.length?'':' active')+'" onclick="setProduct(\'all\')"><span class="pimg">全部</span><span class="pl">'+ms.length+' 款</span></button>';
+  ms.forEach(function(m){ var on=curProducts.indexOf(m)>=0; pt+='<button class="ptile'+(on?' active':'')+'" onclick="setProduct(\''+m+'\')" aria-pressed="'+on+'" title="'+m+'"><span class="pimg"><img src="'+esc(imgOf(m))+'" alt="" loading="lazy" onerror="this.onerror=null;this.src=\''+PH+'\'"></span><span class="pl">'+m+'</span></button>'; });
+  $('prodTiles').innerHTML=pt; $('prodCount').textContent=curProducts.length?'已選 '+curProducts.length+' 款':''; $('prodClear').classList.toggle('hidden',!curProducts.length);
   var times={}; DATA.stores.forEach(function(s){ if(s.start) times[s.start]=1; }); var ts=Object.keys(times).sort(); if(ts.indexOf(curTime)<0) curTime='all';
   $('timeChips').innerHTML='<button class="chip'+(curTime==='all'?' active':'')+'" onclick="setTime(\'all\')">全部</button>'+ts.map(function(t){return '<button class="chip'+(curTime===t?' active':'')+'" onclick="setTime(\''+t+'\')">'+t+'</button>';}).join('');
 }
@@ -430,7 +535,7 @@ function renderList(){
       var items=visibleItems(s);
       var ln=lineUrl(s);
       html+='<div class="store'+(pins[s.id]?' pinned':'')+(curStore===s.id?' focus':'')+'" id="store-'+s.id+'"><div class="shead"><div><div class="sname">'+esc(s.name)+'</div><div class="smeta">'+(s.start?'開抽時間 '+esc(s.start)+' · ':'')+(items.length?items.filter(function(it){return !isDrawn(s,it);}).length+' / '+items.length+' 未抽':'尚無商品連結')+'</div></div>';
-      html+='<div class="sacts"><button class="sbtn pin'+(pins[s.id]?' on':'')+'" onclick="togglePin(\''+s.id+'\')" title="鎖定門市">'+(pins[s.id]?'⭐':'☆')+'</button><button class="sbtn only'+(curStore===s.id?' on':'')+'" onclick="setStore('+(curStore===s.id?'null':'\''+s.id+'\'')+')">'+(curStore===s.id?'✕ 取消只抽':'▶ 只抽這店')+'</button><a class="sbtn fb" href="'+esc(fbUrl(s))+'" target="_blank" rel="noopener">📘 FB</a>'+(ln?'<a class="sbtn ln" href="'+esc(ln)+'" target="_blank" rel="noopener" onclick="visitLine(\''+s.id+'\')"'+(visitedLine[s.id]?' style="background:#a0a0a0"':'')+'>LINE</a>':'')+'</div></div>';
+      html+='<div class="sacts"><button class="sbtn pin'+(pins[s.id]?' on':'')+'" onclick="togglePin(\''+s.id+'\')" title="鎖定門市">'+(pins[s.id]?'⭐':'☆')+'</button><button class="sbtn only'+(curStore===s.id?' on':'')+'" onclick="setStore('+(curStore===s.id?'null':'\''+s.id+'\'')+')">'+(curStore===s.id?'✕ 取消只抽':'只抽這店')+'</button><a class="sbtn fb" href="'+esc(fbUrl(s))+'" target="_blank" rel="noopener">FB</a>'+(ln?'<a class="sbtn ln" href="'+esc(ln)+'" target="_blank" rel="noopener" onclick="visitLine(\''+s.id+'\')"'+(visitedLine[s.id]?' style="background:#a0a0a0"':'')+'>LINE</a>':'')+'</div></div>';
       html+='<div class="items">';
       if(!items.length) html+='<div class="empty">此門市目前沒有符合篩選的商品</div>';
       items.forEach(function(it,idx){
@@ -456,7 +561,7 @@ function renderGrid(){
   cities().forEach(function(city){ (byCity[city]||[]).forEach(function(s){
     var ln=lineUrl(s);
     html+='<div class="card'+(pins[s.id]?' pinned':'')+'"><div><div class="cn">'+esc(s.name)+'</div><div class="ci">'+esc(s.city)+(s.lineId?' · '+esc(s.lineId):'')+(s.fb?'':' · <span style="color:#c98600">FB 尚未設定，會開搜尋</span>')+'</div></div>';
-    html+='<div class="ca"><button class="sbtn pin'+(pins[s.id]?' on':'')+'" onclick="togglePin(\''+s.id+'\')">'+(pins[s.id]?'⭐ 已鎖定':'☆ 鎖定')+'</button><a class="sbtn fb" href="'+esc(fbUrl(s))+'" target="_blank" rel="noopener">📘 粉絲頁</a>'+(ln?'<a class="sbtn ln'+(visitedLine[s.id]?' visited':'')+'" href="'+esc(ln)+'" target="_blank" rel="noopener" onclick="visitLine(\''+s.id+'\')">＋ 加好友</a>':'<span class="sbtn dis">無 LINE</span>')+'</div></div>';
+    html+='<div class="ca"><button class="sbtn pin'+(pins[s.id]?' on':'')+'" onclick="togglePin(\''+s.id+'\')">'+(pins[s.id]?'⭐ 已鎖定':'☆ 鎖定')+'</button><a class="sbtn fb" href="'+esc(fbUrl(s))+'" target="_blank" rel="noopener">FB 粉絲頁</a>'+(ln?'<a class="sbtn ln'+(visitedLine[s.id]?' visited':'')+'" href="'+esc(ln)+'" target="_blank" rel="noopener" onclick="visitLine(\''+s.id+'\')">＋ 加好友</a>':'<span class="sbtn dis">無 LINE</span>')+'</div></div>';
   }); });
   $('storeGrid').innerHTML=html||'<div class="nores">沒有門市</div>';
 }
@@ -468,10 +573,10 @@ function renderQuick(){
   if(currentItem && (isDrawn(currentItem.store,currentItem.item) || !q.some(function(x){return x.item===currentItem.item;}))) currentItem=null;
   if(!currentItem) currentItem=q[0]||null;
   var scope=curStore?('只抽 '+(findStore(curStore)||{}).name):(curRegion==='all'?'全部':(curRegion==='pin'?'我的門市':curRegion));
-  $('qProgress').textContent=scope+(curProduct!=='all'?' · '+curProduct:'')+(curTime!=='all'?' · '+curTime:'')+'　已抽 '+done+' / '+total+'，剩 '+q.length;
+  $('qProgress').textContent=scope+(curProducts.length?' · '+curProducts.join(' / '):'')+(curTime!=='all'?' · '+curTime:'')+'　已抽 '+done+' / '+total+'，剩 '+q.length;
   if(currentItem){
     var s=currentItem.store;
-    $('qStore').innerHTML=esc(s.name)+' <a href="'+esc(fbUrl(s))+'" target="_blank" rel="noopener">📘 FB</a>';
+    $('qStore').innerHTML=esc(s.name)+' <a href="'+esc(fbUrl(s))+'" target="_blank" rel="noopener">FB ↗</a>';
     $('qProduct').textContent=currentItem.item.product;
     $('qProduct').className='qprod';
     $('qOpen').disabled=false; $('qSkip').disabled=q.length<2; $('qNext').disabled=!pendingItem;
@@ -483,7 +588,7 @@ function renderQuick(){
     $('qOpen').disabled=true; $('qNext').disabled=true; $('qSkip').disabled=true;
     $('barStore').textContent=scope; $('barProd').textContent=total?'都抽完了 🎉':'沒有可抽商品'; $('barOpen').disabled=true; $('barNext').disabled=true;
   }
-  $('qNext').textContent=pendingItem?'✅ 完成，開啟下一個':'✅ 完成，開啟下一個';
+  $('qNext').textContent='完成，開啟下一個 →'; var qb=$('qBar'); if(qb) qb.style.width=(total?Math.round(done/total*100):0)+'%';
 }
 function setPending(x){ pendingItem=x; try{ if(x) sessionStorage.setItem('fbdraw_pending',itemKey(x.store,x.item)); else sessionStorage.removeItem('fbdraw_pending'); }catch(e){} }
 function quickOpen(){ if(!currentItem) return; setPending(currentItem); openLink(currentItem.item.url); renderQuick(); }
@@ -499,8 +604,8 @@ window.rowUndo=function(sid,idx){ var s=DATA.stores.find(function(x){return x.id
 window.togglePin=function(sid){ if(pins[sid]) delete pins[sid]; else pins[sid]=1; lsSet(LS_PIN,pins); if(curRegion==='pin' && !Object.keys(pins).length) curRegion='all'; renderAll(); };
 window.visitLine=function(sid){ visitedLine[sid]=1; lsSet(LS_VISITED_LINE,visitedLine); setTimeout(renderAll,100); };
 window.setRegion=function(r){ curRegion=r; curStore=null; lsSet(LS_REGION,r); currentItem=null; pendingItem=null; renderAll(); };
-window.setStore=function(id){ curStore=id; currentItem=null; setPending(null); renderAll(); if(id){ var el=$('quick'); if(el) el.scrollIntoView({behavior:'smooth',block:'start'}); toast('只抽：'+(findStore(id)||{}).name); } };
-window.setProduct=function(p){ curProduct=p; currentItem=null; pendingItem=null; renderAll(); };
+window.setStore=function(id){ curStore=id; currentItem=null; setPending(null); renderAll(); if(id){ var el=$('quick'); if(el) window.scrollTo({top:el.getBoundingClientRect().top+window.scrollY-72,behavior:'smooth'}); toast('只抽：'+(findStore(id)||{}).name); } };
+window.setProduct=function(p){ if(p==='all') curProducts=[]; else { var i=curProducts.indexOf(p); if(i>=0) curProducts.splice(i,1); else curProducts.push(p); } currentItem=null; pendingItem=null; renderAll(); };
 window.setTime=function(t){ curTime=t; currentItem=null; pendingItem=null; renderAll(); };
 window.resetDrawn=function(){ if(!confirm('確定要清除全部「已抽」紀錄？')) return; drawn={}; lsSet(DRAWN_KEY,drawn); currentItem=null; pendingItem=null; renderAll(); toast('已重設'); };
 window.saveOpts=function(){ opts.auto=$('optAuto').checked; opts.sameTab=$('optSameTab').checked; lsSet(LS_OPT,opts); };
@@ -548,7 +653,7 @@ window.aDelItem=function(id,j){ var s=findStore(id); s.items.splice(j,1); saveDa
 window.aClearItems=function(id){ var s=findStore(id); if(!confirm('清空「'+s.name+'」的商品連結？')) return; s.items=[]; saveData(); renderAdminStores(); };
 window.aDelStore=function(id){ var s=findStore(id); if(!confirm('刪除門市「'+s.name+'」？')) return; DATA.stores=DATA.stores.filter(function(x){return x.id!==id;}); saveData(); renderAdminStores(); };
 window.aTogglePaste=function(id){ $('paste-'+id).classList.toggle('hidden'); };
-window.addStore=function(){ var s={id:uid(),city:'台北市',name:'新門市',lineId:'',fb:'',start:'11:00',items:[]}; DATA.stores.push(s); openSet[s.id]=true; saveData(); renderAdminStores(); $('ast-'+s.id).scrollIntoView({behavior:'smooth'}); };
+window.addStore=function(){ var s={id:uid(),city:'台北市',name:'新門市',lineId:'',fb:'',start:'11:00',items:[]}; DATA.stores.push(s); openSet[s.id]=true; saveData(); renderAdminStores(); window.scrollTo({top:$('ast-'+s.id).getBoundingClientRect().top+window.scrollY-72,behavior:'smooth'}); };
 window.clearAllItems=function(){ if(!confirm('清空「所有門市」的商品連結？門市、FB、LINE 資料會保留。')) return; DATA.stores.forEach(function(s){ s.items=[]; }); saveData(); renderAdminStores(); toast('已清空所有商品連結'); };
 function parsePost(text){
   var lines=text.split(/\r?\n/), out=[], prev='';

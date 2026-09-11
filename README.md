@@ -18,12 +18,14 @@ MIT，見 [LICENSE](LICENSE)。
 |---|---|
 | `index.html` | 網頁本體（抽選頁、門市 FB/LINE 頁、管理模式） |
 | `data.js` | **所有資料**：活動標題、抽選時間、各門市（縣市 / 名稱 / LINE ID / FB 粉絲頁 / 開抽時間）與商品抽選連結 |
+| `img/products.js` | 商品型號 → 圖片路徑對照（例如 `"BX-00": "img/bx-00.png"`），留空顯示 `img/placeholder.svg` |
+| `img/logo.png`、`img/placeholder.svg` | 標頭 Logo 與商品預設圖 |
 | `scripts/sync_data.py` / `sync.bat` | 從來源同步最新連結進 `data.js` |
 | `.github/workflows/sync.yml` | 排程自動同步（GitHub Actions） |
 
 ## 部署
 
-只需要 `index.html` 與 `data.js` 兩個檔案，放到網站任何子目錄都可以（例如 `/BeybladeX/Draw/`），網址有無結尾斜線皆可。
+需要 `index.html`、`data.js` 與 `img/` 資料夾，放到網站任何子目錄都可以（例如 `/BeybladeX/Draw/`），網址有無結尾斜線皆可。
 
 若要用 GitHub Pages：Settings → Pages → Source 選 `Deploy from a branch`，Branch `main` / `/ (root)`。`index.html` 用 `data.js?v=20260911` 載入資料，若更新後手機看到舊資料，把 `v=` 後面的數字改掉即可強制重新下載。
 
@@ -69,6 +71,9 @@ window.FUNBOX_DATA = {
 2. 改完會立刻存在**該瀏覽器**（抽選頁會出現黃色提示）。
 3. 按「⬇ 下載 data.js」→ 覆蓋到網站的 `data.js` → 推上去，所有人就更新了。
 4. 換新活動時可先按「🧹 清空所有商品連結」，門市 / FB / LINE 都會保留。
+
+## 商品圖片
+把正方形圖放進 `img/`，在 `img/products.js` 填上對應型號的路徑，商品篩選列就會顯示圖片；商品篩選可多選。
 
 ## 使用者端功能
 - 縣市 / 商品型號 / 開抽時間篩選，選擇會記住。
