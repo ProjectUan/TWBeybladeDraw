@@ -2,7 +2,7 @@
 window.FUNBOX_DATA = {
  "title": "9/11 9/12抽陀螺",
  "period": "2026/09/11 11:00~2026/09/12 21:00",
- "updated": "2026/09/11 11:48",
+ "updated": "2026/09/11 12:09",
  "missing": [
   "Funbox Toys-大葉高島屋（施工中）",
   "Funbox 宏匯廣場店（施工中）",

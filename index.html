@@ -273,9 +273,18 @@ a{color:inherit}
 </div>
 <div class="toast" id="toast"></div>
 
-<script src="data.js?v=202609111209"></script>
 <script>
+/* 載入 data.js：同時支援 /BeybladeX/Draw 與 /BeybladeX/Draw/ 兩種網址，載入後才啟動主程式 */
 (function(){
+  var V="data.js?v=202609111215";
+  var path=location.pathname, base=/\.[a-z0-9]+$/i.test(path)?path.replace(/[^\/]*$/,""):(path.slice(-1)==="/"?path:path+"/");
+  function boot(){ if(typeof window.__funboxBoot==="function") window.__funboxBoot(); }
+  function load(src,onfail){ var s=document.createElement("script"); s.src=src; s.onload=boot; s.onerror=onfail; document.head.appendChild(s); }
+  window.addEventListener("DOMContentLoaded",function(){ load(base+V,function(){ load(V,boot); }); });
+})();
+</script>
+<script>
+window.__funboxBoot=function(){
 "use strict";
 /* ---------- storage helpers ---------- */
 var LS_DATA='fbdraw_data_v1', LS_PIN='fbdraw_pins_v1', LS_OPT='fbdraw_opts_v1', LS_REGION='fbdraw_region_v1', LS_VISITED_LINE='fbdraw_visited_line_v1';
@@ -572,7 +581,7 @@ showPage(h==='stores'||h==='admin'?h:'draws');
 renderAll();
 if(opts.sync){ syncNow(false); setInterval(function(){ syncNow(false); },10*60*1000); document.addEventListener('visibilitychange',function(){ if(document.visibilityState==='visible' && Date.now()-syncState.at>10*60*1000) syncNow(false); }); }
 setInterval(function(){ if(curPage==='draws' && DATA.stores.some(function(s){return s.items.some(function(it){return startOf(it.product);});})) renderAll(); },30000);
-})();
+};
 </script>
 </body>
 </html>

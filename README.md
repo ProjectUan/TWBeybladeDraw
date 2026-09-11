@@ -1,6 +1,6 @@
 # TW Beyblade Draw｜Funbox 抽陀螺 LINE 快速抽選頁
 
-網址：https://projectuan.github.io/TWBeybladeDraw/
+網址：https://osuan.dev/BeybladeX/Draw/（原始碼：https://github.com/ProjectUan/TWBeybladeDraw）
 
 仿 https://uxux11.github.io/funbox-line/ 製作的單頁網站，手機上可在 LINE 與瀏覽器之間快速來回切換抽陀螺。純靜態，無後端、不蒐集任何資料，已抽紀錄只存在自己手機的瀏覽器。
 
@@ -23,14 +23,16 @@ MIT，見 [LICENSE](LICENSE)。
 
 ## 部署
 
-GitHub Pages：Settings → Pages → Source 選 `Deploy from a branch`，Branch `main` / `/ (root)`。`index.html` 用 `data.js?v=20260911` 載入資料，若更新後手機看到舊資料，把 `v=` 後面的數字改掉即可強制重新下載。
+只需要 `index.html` 與 `data.js` 兩個檔案，放到網站任何子目錄都可以（例如 `/BeybladeX/Draw/`），網址有無結尾斜線皆可。
+
+若要用 GitHub Pages：Settings → Pages → Source 選 `Deploy from a branch`，Branch `main` / `/ (root)`。`index.html` 用 `data.js?v=20260911` 載入資料，若更新後手機看到舊資料，把 `v=` 後面的數字改掉即可強制重新下載。
 
 ## 自動更新（不用人工）
 
 商品抽選連結的來源是 https://uxux11.github.io/funbox-line/ （該站有開 CORS），有兩層自動化：
 
 1. **網頁端即時同步（預設開）**：開頁時、每 10 分鐘、切回頁面超過 10 分鐘時，直接抓來源合併顯示；FB 粉專與 LINE ID 仍以 `data.js` 為準。抓不到就顯示上次同步的快取，再不行才用 `data.js`。標題下方會顯示「✔ 已同步來源」，也可按「🔄 同步最新」。管理頁可關閉。
-2. **GitHub Actions 排程備份**：`.github/workflows/sync.yml` 在台灣時間週四 09:00 到週五 14:00 每小時跑 `scripts/sync_data.py`，有變動就把最新連結寫進 `data.js` 並 commit（同時換 `data.js?v=` 讓手機不吃舊快取）。這樣就算來源站掛了，網站本身也有最後一版。推上 GitHub 後到 Actions 分頁可手動 Run workflow。
+2. **GitHub Actions 排程備份**：`.github/workflows/sync.yml` 在台灣時間週四 09:00 到週五 14:00 每小時跑 `scripts/sync_data.py`，有變動就把最新連結寫進 `data.js` 並 commit（同時換 `data.js?v=` 讓手機不吃舊快取）。這樣就算來源站掛了，倉庫裡也有最後一版；若網站是手動上傳到 osuan.dev，偶爾把倉庫最新的 `data.js` 重新上傳即可，平常靠網頁端即時同步就夠。推上 GitHub 後到 Actions 分頁可手動 Run workflow。
 
 本機也能跑：雙擊 `sync.bat`（或 `python scripts/sync_data.py`）。
 
