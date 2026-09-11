@@ -2,7 +2,7 @@
 window.FUNBOX_DATA = {
  "title": "9/11 9/12抽陀螺",
  "period": "2026/09/11 11:00~2026/09/12 21:00",
- "updated": "2026/09/11 12:09",
+ "updated": "2026/09/11 13:52",
  "missing": [
   "Funbox Toys-大葉高島屋（施工中）",
   "Funbox 宏匯廣場店（施工中）",
@@ -2203,7 +2203,40 @@ window.FUNBOX_DATA = {
    "lineId": "@660hextn",
    "fb": "https://www.facebook.com/profile.php?id=61592730395195",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "BX-00 神劍V2（$350）",
+     "url": "https://lin.ee/RsCd9NB"
+    },
+    {
+     "product": "BX-26 獨角刺心（$295）",
+     "url": "https://lin.ee/Vm2M7Bh"
+    },
+    {
+     "product": "BX-37 雙重極限衝擊戰鬥盤（$2,750）",
+     "url": "https://lin.ee/vjO48GI"
+    },
+    {
+     "product": "UX-20 榮耀武神（$595）",
+     "url": "https://lin.ee/xHH6KQu"
+    },
+    {
+     "product": "CX-00 新世紀福音戰士陀螺套組（$1,395）",
+     "url": "https://lin.ee/q28tidC"
+    },
+    {
+     "product": "CX-13 龍王閃擊（$495）",
+     "url": "https://lin.ee/RrvOl4Q"
+    },
+    {
+     "product": "BXG-01 烈焰飛鳳S（$350）",
+     "url": "https://lin.ee/TNmwplS"
+    },
+    {
+     "product": "BXG-04 銀牙烈虎S（$350）",
+     "url": "https://lin.ee/7bXJxiY"
+    }
+   ]
   },
   {
    "id": "s73",
