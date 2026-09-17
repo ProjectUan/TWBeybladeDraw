@@ -2,7 +2,7 @@
 window.FUNBOX_DATA = {
  "title": "9/18 9/19 抽選",
  "period": "2026/09/18 11:00~2026/09/19 21:00",
- "updated": "2026/09/17 23:39",
+ "updated": "2026/09/18 06:21",
  "missing": [
   "Funbox Toys-大葉高島屋（施工中）",
   "Funbox 宏匯廣場店（施工中）",
@@ -656,7 +656,40 @@ window.FUNBOX_DATA = {
    "lineId": "@062qoqex",
    "fb": "https://www.facebook.com/share/193j7smii9/?mibextid=wwXIfr",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "BX-00 暴風天馬3-70RA",
+     "url": "https://lin.ee/7b2igo6"
+    },
+    {
+     "product": "BX-00 蒼龍神劍3-60F",
+     "url": "https://lin.ee/71FGNku"
+    },
+    {
+     "product": "UX-03 魔導神杖",
+     "url": "https://lin.ee/5oDWBbG"
+    },
+    {
+     "product": "UX-21 惡魔冥界改造組",
+     "url": "https://lin.ee/PIGl57D"
+    },
+    {
+     "product": "CX-00 新世紀福音戰士陀螺套組",
+     "url": "https://lin.ee/WmJoUS8"
+    },
+    {
+     "product": "CX-00 迪卡狂怒",
+     "url": "https://lin.ee/n7vHmJn"
+    },
+    {
+     "product": "CX-13 龍王閃擊",
+     "url": "https://lin.ee/QYXC2jO"
+    },
+    {
+     "product": "BXG-01 烈焰飛鳳S",
+     "url": "https://lin.ee/8L5bEuT"
+    }
+   ]
   },
   {
    "id": "s32",
@@ -999,7 +1032,28 @@ window.FUNBOX_DATA = {
    "lineId": "@344rybaf",
    "fb": "https://www.facebook.com/share/1EgGWhL2my/?mibextid=wwXIfr",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "BX-00 蒼龍神劍V2",
+     "url": "https://lin.ee/Wzb933k"
+    },
+    {
+     "product": "UX-03 魔導神杖",
+     "url": "https://lin.ee/89IKLoW"
+    },
+    {
+     "product": "CX-00 迪卡狂怒 FT3-60T",
+     "url": "https://lin.ee/qp5uKNV"
+    },
+    {
+     "product": "BXG-01 烈焰飛鳳S",
+     "url": "https://lin.ee/OY1mOAD"
+    },
+    {
+     "product": "BXG-04 銀牙烈虎S",
+     "url": "https://lin.ee/uz1SO3X"
+    }
+   ]
   },
   {
    "id": "s54",
@@ -1350,7 +1404,16 @@ window.FUNBOX_DATA = {
    "lineId": "@660hextn",
    "fb": "https://www.facebook.com/profile.php?id=61592730395195",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "UX-03 魔導神杖",
+     "url": "https://lin.ee/tTVZJiL"
+    },
+    {
+     "product": "CX-00 迪卡狂怒",
+     "url": "https://lin.ee/noJHrDS"
+    }
+   ]
   },
   {
    "id": "s73",
@@ -1512,6 +1575,92 @@ window.FUNBOX_DATA = {
     {
      "product": "CX-12 鳳凰閃焰",
      "url": "https://lin.ee/xiyDX4H"
+    }
+   ]
+  },
+  {
+   "id": "r_南紡購物中心",
+   "city": "台南市",
+   "name": "Funbox 南紡購物中心店",
+   "lineId": "",
+   "fb": "",
+   "start": "11:00",
+   "items": [
+    {
+     "product": "BX-00 蒼龍神劍3-60F V2",
+     "url": "https://lin.ee/N9xT18Y"
+    },
+    {
+     "product": "BX-26 獨角刺心",
+     "url": "https://lin.ee/qPpBg8T"
+    },
+    {
+     "product": "BX-37 雙重極限衝擊戰鬥盤 豪華組",
+     "url": "https://lin.ee/9yMBcwM"
+    },
+    {
+     "product": "UX-03 魔導神杖",
+     "url": "https://lin.ee/R5Wvqu8"
+    },
+    {
+     "product": "UX-19 子彈獅鷲H",
+     "url": "https://lin.ee/9uLvzN9"
+    },
+    {
+     "product": "UX-21 惡魔冥界改造組",
+     "url": "https://lin.ee/PosArcs"
+    },
+    {
+     "product": "CX-00 新世紀福音戰士陀螺套組",
+     "url": "https://lin.ee/U9tqjfR"
+    },
+    {
+     "product": "CX-00 迪卡狂怒 FT3-60T",
+     "url": "https://lin.ee/oMoH3gA"
+    },
+    {
+     "product": "CX-13 龍王閃擊",
+     "url": "https://lin.ee/ttu0Mv9"
+    }
+   ]
+  },
+  {
+   "id": "r_新仁",
+   "city": "台南市",
+   "name": "來玩聚 新仁店",
+   "lineId": "",
+   "fb": "",
+   "start": "11:00",
+   "items": [
+    {
+     "product": "UX-03 魔導神杖",
+     "url": "https://lin.ee/sksPn3f"
+    },
+    {
+     "product": "CX-00 新世紀福音戰士陀螺套組",
+     "url": "https://lin.ee/PluK8ZL"
+    },
+    {
+     "product": "CX-00 迪卡狂怒 FT3-60T",
+     "url": "https://lin.ee/oJvAA2l"
+    }
+   ]
+  },
+  {
+   "id": "r_台東家樂福",
+   "city": "台東縣",
+   "name": "來玩聚 台東家樂福店",
+   "lineId": "",
+   "fb": "",
+   "start": "11:00",
+   "items": [
+    {
+     "product": "UX-03 魔導神杖",
+     "url": "https://lin.ee/ZzDKhAy"
+    },
+    {
+     "product": "CX-00 迪卡狂怒 FT3-60T",
+     "url": "https://lin.ee/ZmlaPIV"
     }
    ]
   }
