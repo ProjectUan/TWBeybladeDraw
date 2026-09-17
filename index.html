@@ -151,6 +151,17 @@ a{color:var(--navy)}a:hover{color:var(--ink)}
 .sbtn.pin.on{background:var(--amber-soft);color:var(--amber);border-color:#f0c470}
 .sbtn.dis{background:var(--border-2);color:var(--faint);pointer-events:none}
 .sbtn.only{background:#fff;color:var(--navy);border-color:var(--border)}
+.sbtn.paste{background:#fff;color:var(--muted);border-color:var(--border)}
+.sbtn.paste:hover{border-color:var(--navy);color:var(--navy)}
+.mtag{display:inline-block;background:var(--amber-soft);color:var(--amber);border-radius:999px;padding:0 7px;font-size:11px;font-weight:700}
+.modal{position:fixed;inset:0;background:rgba(15,31,61,.45);z-index:70;display:flex;align-items:flex-end;justify-content:center;padding:0}
+.mbox{background:#fff;width:100%;max-width:560px;border-radius:var(--r) var(--r) 0 0;padding:16px 16px calc(16px + env(safe-area-inset-bottom));box-shadow:0 -8px 30px rgba(0,0,0,.2)}
+@media(min-width:600px){.modal{align-items:center;padding:20px}.mbox{border-radius:var(--r)}}
+.mh{display:flex;justify-content:space-between;align-items:center;font-size:15px;margin-bottom:6px}
+.mx{border:0;background:var(--bg);border-radius:50%;width:30px;height:30px;cursor:pointer;font-size:14px}
+.md{font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:10px}
+#pasteText{width:100%;min-height:160px;padding:10px 12px;border:1px solid var(--border);border-radius:var(--r-s);font-size:13px;font-family:inherit;resize:vertical}
+.mb{display:grid;grid-template-columns:2fr 1fr;gap:8px;margin-top:10px}
 .sbtn.only:hover{border-color:var(--navy)}
 .sbtn.only.on{background:var(--navy);color:#fff;border-color:var(--navy)}
 .sbtn.visited{background:#b4b8bf!important}
@@ -367,11 +378,19 @@ a{color:var(--navy)}a:hover{color:var(--ink)}
   <button class="bb next" id="barNext" onclick="quickNext()" disabled="">下一個 →</button>
 </div>
 <div class="toast" id="toast"></div>
+<div class="modal hidden" id="pasteModal" onclick="if(event.target===this)closePaste()">
+  <div class="mbox">
+    <div class="mh"><b id="pasteTitle">貼上 FB 抽選貼文</b><button class="mx" onclick="closePaste()" aria-label="關閉">✕</button></div>
+    <div class="md">到門市粉絲頁複製整篇抽選貼文貼進來，會自動抓出「商品名 + lin.ee 連結」。來源站尚未更新這間店時可先用這個，之後同步會保留你貼的連結 4 天。</div>
+    <textarea id="pasteText" placeholder="🌠UX-03 魔導神杖 https://lin.ee/xxxxxxx&#10;🌠BX-26 獨角刺心 https://lin.ee/yyyyyyy"></textarea>
+    <div class="mb"><button class="qbtn open" onclick="applyPaste()">解析並套用</button><button class="qbtn skip" onclick="closePaste()">取消</button></div>
+  </div>
+</div>
 
 <script>
 /* 載入 img/products.js（商品圖對照）與 data.js：同時支援 /BeybladeX/Draw 與 /BeybladeX/Draw/ 兩種網址，載入後才啟動主程式 */
 (function(){
-  var V="data.js?v=202609170533";
+  var V="data.js?v=202609171731";
   var path=location.pathname, base=/\.[a-z0-9]+$/i.test(path)?path.replace(/[^\/]*$/,""):(path.slice(-1)==="/"?path:path+"/");
   window.__funboxBase=base;
   function boot(){ if(typeof window.__funboxBoot==="function") window.__funboxBoot(); }
@@ -411,6 +430,9 @@ loadDrawn();
 
 /* ---------- 自動同步：從 funbox-line 抓最新商品連結 ---------- */
 var SYNC_URL='https://uxux11.github.io/funbox-line/', LS_SYNC='fbdraw_sync_cache_v1', syncState={status:'',at:0,remoteUpdated:''};
+var MANUAL_TTL=4*24*60*60*1000;
+function isManualFresh(s){ return !!(s.manualAt && (Date.now()-s.manualAt)<MANUAL_TTL && s.items && s.items.length); }
+function markManual(s){ s.manualAt=Date.now(); }
 function normName(s){ return String(s||'').toLowerCase().replace(/fun\s*box(\s*toys?)?|來玩聚|店|[-－_\s()（）陀螺販售]/g,''); }
 function parseRemote(html){
   var doc=new DOMParser().parseFromString(html,'text/html');
@@ -432,9 +454,11 @@ function applyRemote(r){
   r.stores.forEach(function(rs){
     var s=byNorm[normName(rs.name)];
     if(!s){ s={id:'r_'+normName(rs.name).replace(/[^a-z0-9\u4e00-\u9fff]/g,'').slice(0,20),city:rs.city,name:rs.name,lineId:'',fb:'',start:rs.start,items:[]}; DATA.stores.push(s); byNorm[normName(rs.name)]=s; }
-    s._seen=true; s.city=rs.city||s.city; s.start=rs.start||s.start; s.items=rs.items;
+    s._seen=true; s.city=rs.city||s.city; s.start=rs.start||s.start;
+    if(isManualFresh(s)){ var urls={}; rs.items.forEach(function(it){ urls[it.url]=1; }); s.items=rs.items.concat(s.items.filter(function(it){ return it.url && !urls[it.url]; })); }
+    else { s.items=rs.items; s.manualAt=0; }
   });
-  DATA.stores.forEach(function(s){ if(!s._seen) s.items=[]; delete s._seen; });
+  DATA.stores.forEach(function(s){ if(!s._seen && !isManualFresh(s)){ s.items=[]; s.manualAt=0; } delete s._seen; });
   if(r.title) DATA.title=r.title; if(r.period) DATA.period=r.period; if(r.updated) DATA.updated=r.updated; DATA.missing=r.missing||DATA.missing;
   loadDrawn();
   return true;
@@ -534,8 +558,8 @@ function renderList(){
     list.forEach(function(s){
       var items=visibleItems(s);
       var ln=lineUrl(s);
-      html+='<div class="store'+(pins[s.id]?' pinned':'')+(curStore===s.id?' focus':'')+'" id="store-'+s.id+'"><div class="shead"><div><div class="sname">'+esc(s.name)+'</div><div class="smeta">'+(s.start?'開抽時間 '+esc(s.start)+' · ':'')+(items.length?items.filter(function(it){return !isDrawn(s,it);}).length+' / '+items.length+' 未抽':'尚無商品連結')+'</div></div>';
-      html+='<div class="sacts"><button class="sbtn pin'+(pins[s.id]?' on':'')+'" onclick="togglePin(\''+s.id+'\')" title="鎖定門市">'+(pins[s.id]?'⭐':'☆')+'</button><button class="sbtn only'+(curStore===s.id?' on':'')+'" onclick="setStore('+(curStore===s.id?'null':'\''+s.id+'\'')+')">'+(curStore===s.id?'✕ 取消只抽':'只抽這店')+'</button><a class="sbtn fb" href="'+esc(fbUrl(s))+'" target="_blank" rel="noopener">FB</a>'+(ln?'<a class="sbtn ln" href="'+esc(ln)+'" target="_blank" rel="noopener" onclick="visitLine(\''+s.id+'\')"'+(visitedLine[s.id]?' style="background:#a0a0a0"':'')+'>LINE</a>':'')+'</div></div>';
+      html+='<div class="store'+(pins[s.id]?' pinned':'')+(curStore===s.id?' focus':'')+'" id="store-'+s.id+'"><div class="shead"><div><div class="sname">'+esc(s.name)+'</div><div class="smeta">'+(s.start?'開抽時間 '+esc(s.start)+' · ':'')+(items.length?items.filter(function(it){return !isDrawn(s,it);}).length+' / '+items.length+' 未抽':'尚無商品連結')+(isManualFresh(s)?' · <span class="mtag">手動貼文</span>':'')+'</div></div>';
+      html+='<div class="sacts"><button class="sbtn pin'+(pins[s.id]?' on':'')+'" onclick="togglePin(\''+s.id+'\')" title="鎖定門市">'+(pins[s.id]?'⭐':'☆')+'</button><button class="sbtn only'+(curStore===s.id?' on':'')+'" onclick="setStore('+(curStore===s.id?'null':'\''+s.id+'\'')+')">'+(curStore===s.id?'✕ 取消只抽':'只抽這店')+'</button><a class="sbtn fb" href="'+esc(fbUrl(s))+'" target="_blank" rel="noopener">FB</a>'+(ln?'<a class="sbtn ln" href="'+esc(ln)+'" target="_blank" rel="noopener" onclick="visitLine(\''+s.id+'\')"'+(visitedLine[s.id]?' style="background:#a0a0a0"':'')+'>LINE</a>':'')+'<button class="sbtn paste" onclick="openPaste(\''+s.id+'\')" title="貼上這間店的 FB 抽選貼文，自動抓出商品連結">貼上貼文</button></div></div>';
       html+='<div class="items">';
       if(!items.length) html+='<div class="empty">此門市目前沒有符合篩選的商品</div>';
       items.forEach(function(it,idx){
@@ -647,9 +671,9 @@ var openSet={}; window.openSet=openSet;
 function aItemRow(s,j,it){ var bad=it.url && !/^https?:\/\//i.test(it.url); return '<div class="aitem"><input value="'+esc(it.product)+'" placeholder="商品名稱（含型號、價格）" onchange="aItem(\''+s.id+'\','+j+',\'product\',this.value)"><input class="'+(bad?'bad':'')+'" value="'+esc(it.url)+'" placeholder="https://lin.ee/…" onchange="aItem(\''+s.id+'\','+j+',\'url\',this.value)"><button class="rm" onclick="aDelItem(\''+s.id+'\','+j+')">✕</button></div>'; }
 function findStore(id){ return DATA.stores.find(function(x){return x.id===id;}); }
 window.aField=function(id,f,v){ var s=findStore(id); if(!s) return; s[f]=v.trim(); saveData(); if(f==='name'||f==='city') renderAdminStores(); };
-window.aItem=function(id,j,f,v){ var s=findStore(id); if(!s||!s.items[j]) return; s.items[j][f]=v.trim(); saveData(); };
-window.aAddItem=function(id){ var s=findStore(id); s.items.push({product:'',url:''}); saveData(true); renderAdminStores(); };
-window.aDelItem=function(id,j){ var s=findStore(id); s.items.splice(j,1); saveData(); renderAdminStores(); };
+window.aItem=function(id,j,f,v){ var s=findStore(id); if(!s||!s.items[j]) return; s.items[j][f]=v.trim(); markManual(s); saveData(); };
+window.aAddItem=function(id){ var s=findStore(id); s.items.push({product:'',url:''}); markManual(s); saveData(true); renderAdminStores(); };
+window.aDelItem=function(id,j){ var s=findStore(id); s.items.splice(j,1); markManual(s); saveData(); renderAdminStores(); };
 window.aClearItems=function(id){ var s=findStore(id); if(!confirm('清空「'+s.name+'」的商品連結？')) return; s.items=[]; saveData(); renderAdminStores(); };
 window.aDelStore=function(id){ var s=findStore(id); if(!confirm('刪除門市「'+s.name+'」？')) return; DATA.stores=DATA.stores.filter(function(x){return x.id!==id;}); saveData(); renderAdminStores(); };
 window.aTogglePaste=function(id){ $('paste-'+id).classList.toggle('hidden'); };
@@ -669,7 +693,11 @@ function parsePost(text){
   });
   return out;
 }
-window.aParse=function(id,append){ var s=findStore(id); var items=parsePost($('pastetxt-'+id).value||''); if(!items.length){ alert('沒有解析到任何連結，請確認貼文裡有 lin.ee 或 line.me 網址'); return; } s.items=append?s.items.concat(items):items; saveData(); renderAdminStores(); toast('解析到 '+items.length+' 個商品'); };
+var pasteTarget=null;
+window.openPaste=function(id){ var s=findStore(id); if(!s) return; pasteTarget=id; $('pasteTitle').textContent='貼上貼文：'+s.name; $('pasteText').value=''; $('pasteModal').classList.remove('hidden'); setTimeout(function(){ $('pasteText').focus(); },50); };
+window.closePaste=function(){ $('pasteModal').classList.add('hidden'); pasteTarget=null; };
+window.applyPaste=function(){ var s=findStore(pasteTarget); if(!s) return; var items=parsePost($('pasteText').value||''); if(!items.length){ toast('沒有解析到 lin.ee / line.me 連結'); return; } var urls={}; items.forEach(function(it){ urls[it.url]=1; }); s.items=items.concat(s.items.filter(function(it){ return it.url && !urls[it.url]; })); markManual(s); saveData(true); closePaste(); currentItem=null; setPending(null); renderAll(); toast(s.name+'：套用 '+items.length+' 個商品連結'); };
+window.aParse=function(id,append){ var s=findStore(id); var items=parsePost($('pastetxt-'+id).value||''); if(!items.length){ alert('沒有解析到任何連結，請確認貼文裡有 lin.ee 或 line.me 網址'); return; } s.items=append?s.items.concat(items):items; markManual(s); saveData(); renderAdminStores(); renderAll(); toast('解析到 '+items.length+' 個商品'); };
 function dataJsText(){ var d=JSON.parse(JSON.stringify(DATA)); d.updated=d.updated||fmtNow(); return '// Funbox 抽陀螺 資料檔：更新連結時只需修改此檔（或用網頁的「管理模式」匯出後覆蓋）\nwindow.FUNBOX_DATA = '+JSON.stringify(d,null,1)+';\n'; }
 window.downloadDataJs=function(){ var blob=new Blob([dataJsText()],{type:'text/javascript;charset=utf-8'}); var a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='data.js'; document.body.appendChild(a); a.click(); setTimeout(function(){URL.revokeObjectURL(a.href);a.remove();},500); $('aStatus').textContent='✔ 已下載 data.js，覆蓋到網站即可更新'; };
 window.copyJson=function(){ var t=JSON.stringify(DATA,null,1); (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){toast('已複製 JSON');},function(){ prompt('請手動複製：',t); }); };
