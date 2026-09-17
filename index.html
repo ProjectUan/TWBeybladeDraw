@@ -6,7 +6,10 @@
 <meta name="theme-color" content="#0f1f3d">
 <meta name="description" content="Funbox 各門市戰鬥陀螺 LINE 抽選連結，依縣市與門市分組，手機一鍵連續抽。">
 <title>Funbox 抽陀螺 LINE 快速抽選</title>
-<link rel="icon" href="img/logo.png">
+<link rel="icon" type="image/png" sizes="64x64" href="img/favicon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="img/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-title" content="抽陀螺">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -397,6 +400,7 @@ a{color:var(--navy)}a:hover{color:var(--ink)}
   function load(src,ok,fail){ var s=document.createElement("script"); s.src=src; s.onload=ok; s.onerror=fail; document.head.appendChild(s); }
   window.addEventListener("DOMContentLoaded",function(){
     document.querySelectorAll("img.logo").forEach(function(i){ i.src=base+"img/logo.png"; });
+    document.querySelectorAll('link[rel="icon"],link[rel="apple-touch-icon"]').forEach(function(l){ l.href=base+l.getAttribute("href"); });
     load(base+"img/products.js",next,next);
     function next(){ load(base+V,boot,function(){ load(V,boot,boot); }); }
   });
