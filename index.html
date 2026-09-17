@@ -561,7 +561,7 @@ function renderList(){
       html+='<div class="store'+(pins[s.id]?' pinned':'')+(curStore===s.id?' focus':'')+'" id="store-'+s.id+'"><div class="shead"><div><div class="sname">'+esc(s.name)+'</div><div class="smeta">'+(s.start?'開抽時間 '+esc(s.start)+' · ':'')+(items.length?items.filter(function(it){return !isDrawn(s,it);}).length+' / '+items.length+' 未抽':'尚無商品連結')+(isManualFresh(s)?' · <span class="mtag">手動貼文</span>':'')+'</div></div>';
       html+='<div class="sacts"><button class="sbtn pin'+(pins[s.id]?' on':'')+'" onclick="togglePin(\''+s.id+'\')" title="鎖定門市">'+(pins[s.id]?'⭐':'☆')+'</button><button class="sbtn only'+(curStore===s.id?' on':'')+'" onclick="setStore('+(curStore===s.id?'null':'\''+s.id+'\'')+')">'+(curStore===s.id?'✕ 取消只抽':'只抽這店')+'</button><a class="sbtn fb" href="'+esc(fbUrl(s))+'" target="_blank" rel="noopener">FB</a>'+(ln?'<a class="sbtn ln" href="'+esc(ln)+'" target="_blank" rel="noopener" onclick="visitLine(\''+s.id+'\')"'+(visitedLine[s.id]?' style="background:#a0a0a0"':'')+'>LINE</a>':'')+'<button class="sbtn paste" onclick="openPaste(\''+s.id+'\')" title="貼上這間店的 FB 抽選貼文，自動抓出商品連結">貼上貼文</button></div></div>';
       html+='<div class="items">';
-      if(!items.length) html+='<div class="empty">此門市目前沒有符合篩選的商品</div>';
+      if(!items.length) html+='<div class="empty">'+(s.items.length?'此門市目前沒有符合篩選的商品':'來源站尚未收錄這間店的抽選連結。粉絲頁已有貼文的話，按右上「貼上貼文」把整篇貼進來即可')+'</div>';
       items.forEach(function(it,idx){
         var d=isDrawn(s,it), st=startOf(it.product), ny=st && now<st;
         var realIdx=s.items.indexOf(it);
