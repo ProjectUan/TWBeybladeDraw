@@ -2,13 +2,11 @@
 window.FUNBOX_DATA = {
  "title": "9/18 9/19 抽選",
  "period": "2026/09/18 11:00~2026/09/19 21:00",
- "updated": "2026/09/18 06:21",
+ "updated": "2026/09/18 08:12",
  "missing": [
-  "Funbox Toys-大葉高島屋（施工中）",
-  "Funbox 宏匯廣場店（施工中）",
-  "Funbox 花蓮遠東店（沒有進貨）",
-  "Funbox 豐原太平洋店（沒有進貨）",
-  "Fun box 義大2館（維修中）"
+  "新店裕隆城（舉辦比賽）",
+  "高島屋百貨（門店改裝暫停抽選）",
+  "宏匯廣場（門店改裝暫停抽選）"
  ],
  "stores": [
   {
@@ -1200,7 +1198,16 @@ window.FUNBOX_DATA = {
    "lineId": "@241cmnww",
    "fb": "",
    "start": "10:00",
-   "items": []
+   "items": [
+    {
+     "product": "UX-03 魔導神杖",
+     "url": "https://lin.ee/riOHMC5"
+    },
+    {
+     "product": "CX-00 迪卡狂怒 FT3-60T",
+     "url": "https://lin.ee/p2bwfmK"
+    }
+   ]
   },
   {
    "id": "s62",
@@ -1271,7 +1278,20 @@ window.FUNBOX_DATA = {
    "lineId": "@xhi2668e",
    "fb": "https://m.facebook.com/profile.php?id=61591804545442",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "BX-00 蒼龍神劍3-60F V2",
+     "url": "https://lin.ee/UYeL73Y"
+    },
+    {
+     "product": "CX-00 迪卡狂怒 FT3-60T",
+     "url": "https://lin.ee/xrUrNkP"
+    },
+    {
+     "product": "CX-13 龍王閃擊",
+     "url": "https://lin.ee/pnlGQaz"
+    }
+   ]
   },
   {
    "id": "s67",
