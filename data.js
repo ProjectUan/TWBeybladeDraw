@@ -2,7 +2,7 @@
 window.FUNBOX_DATA = {
  "title": "9/18 9/19 抽選",
  "period": "2026/09/18 11:00~2026/09/19 21:00",
- "updated": "2026/09/18 11:21",
+ "updated": "2026/09/18 12:09",
  "missing": [
   "新店裕隆城（舉辦比賽）",
   "高島屋百貨（門店改裝暫停抽選）",
@@ -1123,7 +1123,7 @@ window.FUNBOX_DATA = {
     },
     {
      "product": "CX-13 龍王閃擊",
-     "url": "https://lin.ee/UBtjOiG"
+     "url": "https://lin.ee/UBtjOtG"
     },
     {
      "product": "CX-00 迪卡狂怒 FT3-60T",
