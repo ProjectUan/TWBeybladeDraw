@@ -2,14 +2,10 @@
 window.FUNBOX_DATA = {
  "title": "10/02 10/03 抽選",
  "period": "抽選/購買時間：2026/10/02 11:00~2026/10/03 21:00",
- "updated": "2026/10/02 06:24",
+ "updated": "2026/10/02 11:51",
  "missing": [
-  "高島屋百貨（門店改裝暫停抽選）",
-  "宏匯廣場（門店改裝暫停抽選）",
-  "新竹遠東（尚未更新抽選資訊）",
-  "新竹巨城（尚未更新抽選資訊）",
-  "新竹享平方（尚未更新抽選資訊）",
-  "來玩聚-台北地下街店（尚未更新抽選資訊）"
+  "Funbox-宏匯廣場",
+  "Funbox-新竹遠東"
  ],
  "stores": [
   {
@@ -479,7 +475,92 @@ window.FUNBOX_DATA = {
    "lineId": "@924ngwfb",
    "fb": "http://www.facebook.com/share/14jPaVWXoLJ/?mibextid=wwXlfr",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "UX-01 蒼龍爆刃",
+     "url": "https://lin.ee/PbjUJ6q"
+    },
+    {
+     "product": "UX-03 魔導神杖",
+     "url": "https://lin.ee/rhhsRet"
+    },
+    {
+     "product": "UX-13 魔像奇岩",
+     "url": "https://lin.ee/Qb7IMdj"
+    },
+    {
+     "product": "UX-14 天蠍長矛0-70Z",
+     "url": "https://lin.ee/yLVVAoJ"
+    },
+    {
+     "product": "UX-16 時鐘幻象 隨機強化組",
+     "url": "https://lin.ee/zX1SadG"
+    },
+    {
+     "product": "UX-17 隕星龍騎士3–70J",
+     "url": "https://lin.ee/P2dXWqi"
+    },
+    {
+     "product": "UX-19 子彈獅鷺H",
+     "url": "https://lin.ee/R8lCBXx"
+    },
+    {
+     "product": "UX-20 榮耀武神LF",
+     "url": "https://lin.ee/5lEU734"
+    },
+    {
+     "product": "CX-00 新世紀福音戰士改造組",
+     "url": "https://lin.ee/XtWfYTi"
+    },
+    {
+     "product": "CX-00 迪卡狂怒FT3-60T",
+     "url": "https://lin.ee/Tep7HVa"
+    },
+    {
+     "product": "CX-01 蒼龍勇氣",
+     "url": "https://lin.ee/82F7sMR"
+    },
+    {
+     "product": "CX-02 魔導至尊",
+     "url": "https://lin.ee/QrNFLD0"
+    },
+    {
+     "product": "CX-03 應仙幽冥",
+     "url": "https://lin.ee/ZXqB6hP"
+    },
+    {
+     "product": "CX-05 隨機強化組 Vol.6",
+     "url": "https://lin.ee/oTzKLZQ"
+    },
+    {
+     "product": "CX-08 隨機強化組 Vol.7",
+     "url": "https://lin.ee/ZDPcd3J"
+    },
+    {
+     "product": "CX-11 帝王威能",
+     "url": "https://lin.ee/6SQ40rm"
+    },
+    {
+     "product": "CX-13 龍王閃擊",
+     "url": "https://lin.ee/ZIN6qFt"
+    },
+    {
+     "product": "CX-14 騎士堡壘",
+     "url": "https://lin.ee/WAt5luP"
+    },
+    {
+     "product": "CX-15 狂怒邪神",
+     "url": "https://lin.ee/ofD3GT7"
+    },
+    {
+     "product": "CX-16 極限衝擊戰鬥組C",
+     "url": "https://lin.ee/SyyO8SZ"
+    },
+    {
+     "product": "CX-17 隨機強化組Vol.10",
+     "url": "https://lin.ee/N3cN7EO"
+    }
+   ]
   },
   {
    "id": "s09",
@@ -574,7 +655,128 @@ window.FUNBOX_DATA = {
    "lineId": "@248eexma",
    "fb": "https://reurl.cc/MW3NdL",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "BX-08 三合一對戰組",
+     "url": "https://lin.ee/y6GPrUi"
+    },
+    {
+     "product": "BX-13 騎士長槍",
+     "url": "https://lin.ee/8iR1FzG"
+    },
+    {
+     "product": "BX-38 赫燃天鳳",
+     "url": "https://lin.ee/Uke7GL7"
+    },
+    {
+     "product": "BX-44 三角強襲",
+     "url": "https://lin.ee/q1y3jZG"
+    },
+    {
+     "product": "BX-45 武士魂斬",
+     "url": "https://lin.ee/XhjxdaF"
+    },
+    {
+     "product": "UX-01 蒼龍爆刃",
+     "url": "https://lin.ee/XxLRAwB"
+    },
+    {
+     "product": "UX-02 惡魔戰錘",
+     "url": "https://lin.ee/oyfHc0xQ"
+    },
+    {
+     "product": "UX-03 魔導神杖",
+     "url": "https://lin.ee/TYTZbeT"
+    },
+    {
+     "product": "UX-13 魔像奇岩",
+     "url": "https://lin.ee/Uw77DmB"
+    },
+    {
+     "product": "UX-14 天蠍長矛0-70Z",
+     "url": "https://lin.ee/uISgAPC"
+    },
+    {
+     "product": "UX-16 時鐘幻象 隨機強化組",
+     "url": "https://lin.ee/p58lY3K"
+    },
+    {
+     "product": "UX-17 隕星龍騎士3-70J",
+     "url": "https://lin.ee/6yBT0g6"
+    },
+    {
+     "product": "UX-19 子彈獅鷲H",
+     "url": "https://lin.ee/wP3dguR"
+    },
+    {
+     "product": "UX-20 榮耀武神LF",
+     "url": "https://lin.ee/Z80uent"
+    },
+    {
+     "product": "CX-00 新世紀福音戰士改造組",
+     "url": "https://lin.ee/WUJ2H2u"
+    },
+    {
+     "product": "CX-01 蒼龍勇氣",
+     "url": "https://lin.ee/rfCe3wR"
+    },
+    {
+     "product": "CX-02 魔導至尊",
+     "url": "https://lin.ee/nfOtrc8r"
+    },
+    {
+     "product": "CX-03 英仙幽冥",
+     "url": "https://lin.ee/q4y3no7"
+    },
+    {
+     "product": "CX-05 隨機強化組 Vol.6",
+     "url": "https://lin.ee/x4NWDb3"
+    },
+    {
+     "product": "CX-06 極狐九尾 隨機強化組",
+     "url": "https://lin.ee/UcNb89l"
+    },
+    {
+     "product": "CX-07 天馬爆擊",
+     "url": "https://lin.ee/T270E5S"
+    },
+    {
+     "product": "CX-08 隨機強化組 Vol.7",
+     "url": "https://lin.ee/uyYuBv7"
+    },
+    {
+     "product": "CX-11 帝王威能",
+     "url": "https://lin.ee/87VPFDd"
+    },
+    {
+     "product": "CX-12 鳳凰閃焰",
+     "url": "https://lin.ee/7udHbE8"
+    },
+    {
+     "product": "CX-13 龍王閃擊",
+     "url": "https://lin.ee/5wjkqjI"
+    },
+    {
+     "product": "CX-14 騎士堡壘",
+     "url": "https://lin.ee/UifYFhH"
+    },
+    {
+     "product": "CX-15 邪神狂怒",
+     "url": "https://lin.ee/975DiRL"
+    },
+    {
+     "product": "CX-16 極限衝擊對戰組C",
+     "url": "https://lin.ee/zw8SxKx"
+    },
+    {
+     "product": "CX-17 隨機強化組 Vol.10",
+     "url": "https://lin.ee/PRwsjN9"
+    },
+    {
+     "product": "BXG-22 龍騎士S",
+     "url": "https://lin.ee/ZFES70V"
+    }
+   ]
   },
   {
    "id": "s11",
@@ -782,8 +984,65 @@ window.FUNBOX_DATA = {
    "name": "FUNBOX 比漾廣場店",
    "lineId": "@ufq5307a",
    "fb": "https://www.facebook.com/profile.php?id=61592677934745",
-   "start": "11:00",
-   "items": []
+   "start": "開店",
+   "items": [
+    {
+     "product": "UX-01 蒼龍爆刃",
+     "url": "https://lin.ee/noYFfx9"
+    },
+    {
+     "product": "UX-13 魔像奇岩",
+     "url": "https://lin.ee/S2Qrrds"
+    },
+    {
+     "product": "UX-16 時鐘幻象 隨機強化組",
+     "url": "https://lin.ee/rEJgzEU4"
+    },
+    {
+     "product": "UX-17 隕星龍騎士3-70J",
+     "url": "https://lin.ee/sGIwB4Q"
+    },
+    {
+     "product": "UX-19 子彈獅鷲H",
+     "url": "https://lin.ee/TFJYlZZ"
+    },
+    {
+     "product": "CX-00 新世紀福音戰士改造組",
+     "url": "https://lin.ee/6faC9fp"
+    },
+    {
+     "product": "CX-02 魔導至尊",
+     "url": "https://lin.ee/t6PJwyT"
+    },
+    {
+     "product": "CX-03 英仙幽冥",
+     "url": "https://lin.ee/7qhbG9Q"
+    },
+    {
+     "product": "CX-05 隨機強化組 Vol.6",
+     "url": "https://lin.ee/oIRRHvO"
+    },
+    {
+     "product": "CX-08 隨機強化組 Vol.7",
+     "url": "https://lin.ee/QM5OW8Y"
+    },
+    {
+     "product": "CX-13 龍王閃擊",
+     "url": "https://lin.ee/n5zyofR"
+    },
+    {
+     "product": "CX-15 邪神狂怒",
+     "url": "https://lin.ee/UCqL2B1"
+    },
+    {
+     "product": "CX-16 極限衝擊對戰組C",
+     "url": "https://lin.ee/xqtNhb0"
+    },
+    {
+     "product": "CX-17 隨機強化組 Vol.10",
+     "url": "https://lin.ee/Tuy1RmV"
+    }
+   ]
   },
   {
    "id": "s18",
@@ -953,7 +1212,88 @@ window.FUNBOX_DATA = {
    "lineId": "@lae4656h",
    "fb": "https://www.facebook.com/profile.php?id=61591728303067",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "UX-01 蒼龍爆刃",
+     "url": "https://lin.ee/O3gPJno"
+    },
+    {
+     "product": "UX-03 魔導神杖",
+     "url": "https://lin.ee/7FuB2JN"
+    },
+    {
+     "product": "UX-13 魔像奇岩",
+     "url": "https://lin.ee/5dLHEKD"
+    },
+    {
+     "product": "UX-14 天蠍長矛0-70Z",
+     "url": "https://lin.ee/oDPYCzB"
+    },
+    {
+     "product": "UX-15 鮫鯊狂鱗改造組",
+     "url": "https://lin.ee/pOHot8Z"
+    },
+    {
+     "product": "UX-16 時鐘幻象 隨機強化組",
+     "url": "https://lin.ee/Q7EH5Yj"
+    },
+    {
+     "product": "UX-17 隕星龍騎士3-70J",
+     "url": "https://lin.ee/ut5HHKQ"
+    },
+    {
+     "product": "UX-19 子彈獅鷲H",
+     "url": "https://lin.ee/6ngNAHW"
+    },
+    {
+     "product": "CX-00 新世紀福音戰士改造組",
+     "url": "https://lin.ee/O7JlgqT"
+    },
+    {
+     "product": "CX-01 蒼龍勇氣",
+     "url": "https://lin.ee/rP89l88R"
+    },
+    {
+     "product": "CX-02 魔導至尊",
+     "url": "https://lin.ee/Qthwqqq"
+    },
+    {
+     "product": "CX-03 英仙幽冥",
+     "url": "https://lin.ee/Rz53QhJ"
+    },
+    {
+     "product": "CX-05 隨機強化組 Vol.6",
+     "url": "https://lin.ee/TIwUk9e"
+    },
+    {
+     "product": "CX-08 隨機強化組 Vol.7",
+     "url": "https://lin.ee/Zt7JXLo"
+    },
+    {
+     "product": "CX-11 帝王威能",
+     "url": "https://lin.ee/vHzKyX7"
+    },
+    {
+     "product": "CX-13 龍王閃擊",
+     "url": "https://lin.ee/xAr8YD3"
+    },
+    {
+     "product": "CX-14 騎士堡壘",
+     "url": "https://lin.ee/9KjNpEGi"
+    },
+    {
+     "product": "CX-15 邪神狂怒",
+     "url": "https://lin.ee/PdQfuW1"
+    },
+    {
+     "product": "CX-16 極限衝擊對戰組C",
+     "url": "https://lin.ee/9CvPAvL"
+    },
+    {
+     "product": "CX-17 隨機強化組 Vol.10",
+     "url": "https://lin.ee/7JVbMv8E"
+    }
+   ]
   },
   {
    "id": "s22",
@@ -962,7 +1302,56 @@ window.FUNBOX_DATA = {
    "lineId": "@504tdsbb",
    "fb": "https://www.facebook.com/profile.php?id=61590975990981&locale=zh_TW",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "UX-01 蒼龍爆刃",
+     "url": "https://lin.ee/v3J5cYUs"
+    },
+    {
+     "product": "UX-03 魔導神杖",
+     "url": "https://lin.ee/XJk9n6P"
+    },
+    {
+     "product": "UX-13 魔像奇岩",
+     "url": "https://lin.ee/vjDidmd"
+    },
+    {
+     "product": "UX-16 時鐘幻象 隨機強化組",
+     "url": "https://lin.ee/PyKEzar"
+    },
+    {
+     "product": "UX-17 隕星龍騎士",
+     "url": "https://lin.ee/RZwzTda"
+    },
+    {
+     "product": "CX-00 新世紀福音戰士改造組",
+     "url": "https://lin.ee/ukydeCH"
+    },
+    {
+     "product": "CX-02 魔導至尊",
+     "url": "https://lin.ee/xiKUBpA"
+    },
+    {
+     "product": "CX-03 英仙幽冥",
+     "url": "https://lin.ee/oNWNnn2"
+    },
+    {
+     "product": "CX-05 隨機強化組 Vol.6",
+     "url": "https://lin.ee/NwFHHWK"
+    },
+    {
+     "product": "CX-08 隨機強化組 Vol.7",
+     "url": "https://lin.ee/SbUyTW9"
+    },
+    {
+     "product": "CX-13 龍王閃擊",
+     "url": "https://lin.ee/PknIUUx"
+    },
+    {
+     "product": "CX-15 邪神狂怒",
+     "url": "https://lin.ee/OB8Xw9m"
+    }
+   ]
   },
   {
    "id": "s23",
@@ -971,7 +1360,84 @@ window.FUNBOX_DATA = {
    "lineId": "@099ldnvw",
    "fb": "https://www.facebook.com/profile.php?id=100063657227053",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "UX-01 蒼龍爆刃",
+     "url": "https://lin.ee/reJHsq4"
+    },
+    {
+     "product": "UX-03 魔導神杖",
+     "url": "https://lin.ee/wLydxDh"
+    },
+    {
+     "product": "UX-13 魔像奇岩",
+     "url": "https://lin.ee/N0NrXKk"
+    },
+    {
+     "product": "UX-14 天蠍長矛",
+     "url": "https://lin.ee/8VFVIFl"
+    },
+    {
+     "product": "UX-16 時鐘幻象隨機強化組",
+     "url": "https://lin.ee/YzI0Vxa"
+    },
+    {
+     "product": "UX-17 隕星龍騎士",
+     "url": "https://lin.ee/sExC6fP"
+    },
+    {
+     "product": "UX-19 子彈獅鷲",
+     "url": "https://lin.ee/pMVbpYC"
+    },
+    {
+     "product": "CX-00 新世紀福音戰士陀螺套組",
+     "url": "https://lin.ee/NHmYdSP"
+    },
+    {
+     "product": "CX-01 蒼龍勇氣",
+     "url": "https://lin.ee/TqcB1ns"
+    },
+    {
+     "product": "CX-02 魔導至尊",
+     "url": "https://lin.ee/r8Y83CU"
+    },
+    {
+     "product": "CX-03 英仙幽冥",
+     "url": "https://lin.ee/XUCFMhj"
+    },
+    {
+     "product": "CX-05 隨機強化組 Vol.6",
+     "url": "https://lin.ee/uDfpUu2"
+    },
+    {
+     "product": "CX-08 隨機強化組 Vol.7",
+     "url": "https://lin.ee/TkpCCTF"
+    },
+    {
+     "product": "CX-13 龍王閃擊",
+     "url": "https://lin.ee/xt7MeAV"
+    },
+    {
+     "product": "CX-14 騎士堡壘",
+     "url": "https://lin.ee/szPu9E0Q"
+    },
+    {
+     "product": "CX-15 邪神狂怒",
+     "url": "https://lin.ee/oke5ZnY"
+    },
+    {
+     "product": "CX-16 極限衝擊對戰組C",
+     "url": "https://lin.ee/wg9bg81"
+    },
+    {
+     "product": "CX-17 隨機強化組Vol.10",
+     "url": "https://lin.ee/UwYIfW7"
+    },
+    {
+     "product": "CX-19 鱷魚裂甲隨機強化組",
+     "url": "https://lin.ee/zCdj5Xe"
+    }
+   ]
   },
   {
    "id": "s24",
@@ -980,7 +1446,52 @@ window.FUNBOX_DATA = {
    "lineId": "@xcs3672w",
    "fb": "https://www.facebook.com/profile.php?id=61558958859748",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "BX-00 暴風天馬3-70RA",
+     "url": "https://lin.ee/7MyqcVm"
+    },
+    {
+     "product": "BX-26 獨角刺心",
+     "url": "https://lin.ee/T2PvSOf"
+    },
+    {
+     "product": "UX-13 魔像奇岩",
+     "url": "https://lin.ee/Zg3ahb8"
+    },
+    {
+     "product": "CX-00 迪卡狂怒 FT3-60T",
+     "url": "https://lin.ee/NGPJRoy"
+    },
+    {
+     "product": "CX-03 英仙幽冥",
+     "url": "https://lin.ee/Pz8HRqB"
+    },
+    {
+     "product": "CX-05 隨機強化組 Vol.6",
+     "url": "https://lin.ee/tSSGlAP"
+    },
+    {
+     "product": "CX-11 帝王威能",
+     "url": "https://lin.ee/v8bZqmG"
+    },
+    {
+     "product": "CX-16 極限衝擊對戰組C",
+     "url": "https://lin.ee/W3acUzc"
+    },
+    {
+     "product": "CX-17 隨機強化組 Vol.10",
+     "url": "https://lin.ee/VdkB0KI"
+    },
+    {
+     "product": "CX-19 鱷魚裂甲",
+     "url": "https://lin.ee/SADKVzp"
+    },
+    {
+     "product": "BXG-01 烈焰飛鳳S",
+     "url": "https://lin.ee/YueZB4o"
+    }
+   ]
   },
   {
    "id": "s25",
@@ -989,7 +1500,72 @@ window.FUNBOX_DATA = {
    "lineId": "@bix0595a",
    "fb": "https://www.facebook.com/profile.php?id=100064240476385",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "UX-01 蒼龍爆刃",
+     "url": "https://lin.ee/QRPvifh"
+    },
+    {
+     "product": "UX-13 魔像奇岩",
+     "url": "https://lin.ee/UQPBWZj"
+    },
+    {
+     "product": "UX-14 天蠍長矛0-70Z",
+     "url": "https://lin.ee/nLJ2SMF"
+    },
+    {
+     "product": "UX-15 鮫鯊狂鱗改造組",
+     "url": "https://lin.ee/5PEGzZy"
+    },
+    {
+     "product": "UX-16 時鐘幻象 隨機強化組",
+     "url": "https://lin.ee/PYR4OW5"
+    },
+    {
+     "product": "UX-17 隕星龍騎士3-70J",
+     "url": "https://lin.ee/pS12M0jq"
+    },
+    {
+     "product": "CX-00 新世紀福音戰士改造組",
+     "url": "https://lin.ee/plR7W2Y"
+    },
+    {
+     "product": "CX-00 迪卡狂怒 FT3-60T",
+     "url": "https://lin.ee/zC0sOFd"
+    },
+    {
+     "product": "CX-01 蒼龍勇氣",
+     "url": "https://lin.ee/yACCSDR"
+    },
+    {
+     "product": "CX-02 魔導至尊",
+     "url": "https://lin.ee/vGq3I9Q"
+    },
+    {
+     "product": "CX-03 英仙幽冥",
+     "url": "https://lin.ee/XwKdcr7"
+    },
+    {
+     "product": "CX-05 隨機強化組 Vol.6",
+     "url": "https://lin.ee/NwUkESs"
+    },
+    {
+     "product": "CX-08 隨機強化組 Vol.7",
+     "url": "https://lin.ee/wRoTbaw"
+    },
+    {
+     "product": "CX-13 龍王閃擊",
+     "url": "https://lin.ee/tfuF5fC"
+    },
+    {
+     "product": "CX-14 騎士堡壘",
+     "url": "https://lin.ee/nmgfN5l"
+    },
+    {
+     "product": "CX-16 極限衝擊對戰組C",
+     "url": "https://lin.ee/5hHawsc"
+    }
+   ]
   },
   {
    "id": "s26",
@@ -998,7 +1574,80 @@ window.FUNBOX_DATA = {
    "lineId": "@403qwxdn",
    "fb": "https://www.facebook.com/profile.php?id=100083960592067",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "UX-01 蒼龍爆刃",
+     "url": "https://lin.ee/sZc11XQ"
+    },
+    {
+     "product": "UX-03 魔導神杖",
+     "url": "https://lin.ee/7trPFAj"
+    },
+    {
+     "product": "UX-13 魔像奇岩",
+     "url": "https://lin.ee/Rki1sbZ"
+    },
+    {
+     "product": "UX-16 時鐘幻象 隨機強化組",
+     "url": "https://lin.ee/93ngYkEH"
+    },
+    {
+     "product": "UX-17 隕星龍騎士",
+     "url": "https://lin.ee/qBYYgZ4"
+    },
+    {
+     "product": "UX-19 子彈獅鷲",
+     "url": "https://lin.ee/SLc7K8Z"
+    },
+    {
+     "product": "CX-00 新世紀福音戰士改造組",
+     "url": "https://lin.ee/Q6U4mxN"
+    },
+    {
+     "product": "CX-01 蒼龍勇氣",
+     "url": "https://lin.ee/V3DzpoX"
+    },
+    {
+     "product": "CX-02 魔導至尊",
+     "url": "https://lin.ee/w7CBfrm"
+    },
+    {
+     "product": "CX-03 英仙幽冥",
+     "url": "https://lin.ee/Y9oqTte"
+    },
+    {
+     "product": "CX-05 隨機強化組 Vol.6",
+     "url": "https://lin.ee/8dIFsWl"
+    },
+    {
+     "product": "CX-08 隨機強化組 Vol.7",
+     "url": "https://lin.ee/P7H9IiWq"
+    },
+    {
+     "product": "CX-11 帝王威能",
+     "url": "https://lin.ee/YrlyZqS"
+    },
+    {
+     "product": "CX-13 龍王閃擊",
+     "url": "https://lin.ee/6cK8S1f"
+    },
+    {
+     "product": "CX-14 騎士堡壘",
+     "url": "https://lin.ee/z8dTJCD"
+    },
+    {
+     "product": "CX-15 邪神狂怒",
+     "url": "https://lin.ee/x1n4Oqi"
+    },
+    {
+     "product": "CX-16 極限衝擊對戰組C",
+     "url": "https://lin.ee/SorVv86"
+    },
+    {
+     "product": "CX-17 隨機強化組 Vol.10",
+     "url": "https://lin.ee/7ZG7WKF"
+    }
+   ]
   },
   {
    "id": "s27",
@@ -1094,7 +1743,92 @@ window.FUNBOX_DATA = {
    "lineId": "@532otwmb",
    "fb": "https://www.facebook.com/share/1D2TZJ7pr3/?mibextid=wwXIfr",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "UX-01 蒼龍爆刃",
+     "url": "https://lin.ee/o4Vndbj"
+    },
+    {
+     "product": "UX-03 魔導神杖",
+     "url": "https://lin.ee/zNwYVL6"
+    },
+    {
+     "product": "UX-13 魔像奇岩",
+     "url": "https://lin.ee/NHzo4Ve"
+    },
+    {
+     "product": "UX-14 天蠍長矛",
+     "url": "https://lin.ee/9qmUBmX"
+    },
+    {
+     "product": "UX-15 絞鯊狂鱗改造組",
+     "url": "https://lin.ee/om2fbWM"
+    },
+    {
+     "product": "UX-16 時鐘幻象",
+     "url": "https://lin.ee/w1zRKum"
+    },
+    {
+     "product": "UX-17 隕星龍騎士",
+     "url": "https://lin.ee/qVH6r5A"
+    },
+    {
+     "product": "UX-19 子彈獅鷲",
+     "url": "https://lin.ee/vul3thz"
+    },
+    {
+     "product": "UX-20 榮耀武神",
+     "url": "https://lin.ee/ZjyJtwD"
+    },
+    {
+     "product": "CX-00 EVA 福音戰士聯名款套組",
+     "url": "https://lin.ee/NyDNkok"
+    },
+    {
+     "product": "CX-01 蒼龍勇氣",
+     "url": "https://lin.ee/Z2wXC6L"
+    },
+    {
+     "product": "CX-02 魔導至尊",
+     "url": "https://lin.ee/rIbgYoU"
+    },
+    {
+     "product": "CX-03 英仙幽冥",
+     "url": "https://lin.ee/7yLAdyv"
+    },
+    {
+     "product": "CX-05 隨機強化組 Vol.6",
+     "url": "https://lin.ee/Yrkem29"
+    },
+    {
+     "product": "CX-08 隨機強化組 Vol.7",
+     "url": "https://lin.ee/x7zspnU"
+    },
+    {
+     "product": "CX-11 帝王威能",
+     "url": "https://lin.ee/8s0fUB3"
+    },
+    {
+     "product": "CX-13 龍王閃擊",
+     "url": "https://lin.ee/Yk1GVH3"
+    },
+    {
+     "product": "CX-14 騎士堡壘",
+     "url": "https://lin.ee/oO1A888"
+    },
+    {
+     "product": "CX-15 邪神狂怒",
+     "url": "https://lin.ee/up8RBTT"
+    },
+    {
+     "product": "CX-16 極限衝擊對戰組C",
+     "url": "https://lin.ee/RFoXr6N"
+    },
+    {
+     "product": "CX-17 隨機強化組 Vol.10",
+     "url": "https://lin.ee/TcMeBr5"
+    }
+   ]
   },
   {
    "id": "s30",
@@ -1205,7 +1939,116 @@ window.FUNBOX_DATA = {
    "lineId": "@062qoqex",
    "fb": "https://www.facebook.com/share/193j7smii9/?mibextid=wwXIfr",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "BX-00 暴風天馬3 7-70RA",
+     "url": "https://lin.ee/nl7Vmg7"
+    },
+    {
+     "product": "BX-00 蒼龍神劍3-60F",
+     "url": "https://lin.ee/TU4bzap"
+    },
+    {
+     "product": "BX-09 戰鬥陀螺X通行證",
+     "url": "https://lin.ee/npKh6nx"
+    },
+    {
+     "product": "UX-01 蒼龍爆刃",
+     "url": "https://lin.ee/sc5pPQ9"
+    },
+    {
+     "product": "UX-03 魔導神杖",
+     "url": "https://lin.ee/PbCerHq"
+    },
+    {
+     "product": "UX-13 魔像奇岩",
+     "url": "https://lin.ee/u1MSr86"
+    },
+    {
+     "product": "UX-14 天蠍長矛0-70Z",
+     "url": "https://lin.ee/YkUQqFV"
+    },
+    {
+     "product": "UX-15 鮫鯊狂鱗改造組",
+     "url": "https://lin.ee/5pqzZ5M"
+    },
+    {
+     "product": "UX-16 時鐘幻象 隨機強化組",
+     "url": "https://lin.ee/qS8DFEZ"
+    },
+    {
+     "product": "UX-17 隕星龍騎士3-70J",
+     "url": "https://lin.ee/STCvVJI"
+    },
+    {
+     "product": "UX-19 子彈獅鷲 5-70H",
+     "url": "https://lin.ee/TC7CXsj"
+    },
+    {
+     "product": "UX-20 榮耀女武神",
+     "url": "https://lin.ee/yImV6qP"
+    },
+    {
+     "product": "CX-00 超人迪加",
+     "url": "https://lin.ee/uuQ9Jg0"
+    },
+    {
+     "product": "CX-01 蒼龍勇氣",
+     "url": "https://lin.ee/nlqKVbd"
+    },
+    {
+     "product": "CX-02 魔導至尊",
+     "url": "https://lin.ee/yRnbG0b9"
+    },
+    {
+     "product": "CX-03 英仙幽冥",
+     "url": "https://lin.ee/5Fl9qOt"
+    },
+    {
+     "product": "CX-05 隨機強化組 Vol.6",
+     "url": "https://lin.ee/9cRt8kc"
+    },
+    {
+     "product": "CX-08 隨機強化組 Vol.7",
+     "url": "https://lin.ee/ro8VjMI"
+    },
+    {
+     "product": "CX-14 騎士堡壘",
+     "url": "https://lin.ee/RMHoSYa"
+    },
+    {
+     "product": "CX-15 邪神狂怒",
+     "url": "https://lin.ee/8etvQVZ"
+    },
+    {
+     "product": "CX-16 極限衝擊對戰組C",
+     "url": "https://lin.ee/XVb7jH4"
+    },
+    {
+     "product": "CX-17 隨機強化組 Vol.10",
+     "url": "https://lin.ee/5fICuzX"
+    },
+    {
+     "product": "CX-19 鱷魚裂甲",
+     "url": "https://lin.ee/qyI4dkt"
+    },
+    {
+     "product": "BXG-01 烈焰飛鳳S",
+     "url": "https://lin.ee/9X1PtAGz"
+    },
+    {
+     "product": "CX-00新世紀福音戰士 戰鬥陀螺套組",
+     "url": "https://lin.ee/oiVs2SM"
+    },
+    {
+     "product": "CX-11帝王威能",
+     "url": "https://lin.ee/ZBeb2vz"
+    },
+    {
+     "product": "CX-13龍王閃擊",
+     "url": "https://lin.ee/xmHkOK4"
+    }
+   ]
   },
   {
    "id": "s32",
@@ -1214,7 +2057,40 @@ window.FUNBOX_DATA = {
    "lineId": "@185vowmo",
    "fb": "https://www.facebook.com/share/1DZmr5Njyk/?mibextid=wwXIfr",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "UX-14 天蠍長矛",
+     "url": "https://lin.ee/VEwlj3Z"
+    },
+    {
+     "product": "UX-16 時鐘幻象 隨機強化組",
+     "url": "https://lin.ee/qKW4438"
+    },
+    {
+     "product": "CX-00 新世紀福音戰士改造組",
+     "url": "https://lin.ee/tuETpzQ"
+    },
+    {
+     "product": "CX-01 蒼龍勇氣",
+     "url": "https://lin.ee/UhqYhga"
+    },
+    {
+     "product": "CX-02 魔導至尊",
+     "url": "https://lin.ee/9pSgZTI"
+    },
+    {
+     "product": "CX-08 隨機強化組",
+     "url": "https://lin.ee/Nt3fPy1"
+    },
+    {
+     "product": "CX-13 龍王閃擊",
+     "url": "https://lin.ee/O9kzK48"
+    },
+    {
+     "product": "CX-14 騎士堡壘",
+     "url": "https://lin.ee/UjwJOYj"
+    }
+   ]
   },
   {
    "id": "s33",
@@ -1363,7 +2239,108 @@ window.FUNBOX_DATA = {
    "lineId": "@829adhop",
    "fb": "https://www.facebook.com/profile.php?id=61592814215979&locale=zh_TW",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "BX-00 蒼龍神劍",
+     "url": "https://lin.ee/6Ryr7qP"
+    },
+    {
+     "product": "BX-09 通行證",
+     "url": "https://lin.ee/PaDS1fM"
+    },
+    {
+     "product": "UX-01 蒼龍爆刃",
+     "url": "https://lin.ee/6eT49fr"
+    },
+    {
+     "product": "UX-03 魔導神杖",
+     "url": "https://lin.ee/XI7dYe2"
+    },
+    {
+     "product": "UX-13 魔像奇岩",
+     "url": "https://lin.ee/z2YCS7K"
+    },
+    {
+     "product": "UX-14 天蠍長矛",
+     "url": "https://lin.ee/UL3XV1c"
+    },
+    {
+     "product": "UX-15 鮫鯊狂鱗",
+     "url": "https://lin.ee/W31mMZx"
+    },
+    {
+     "product": "UX-17 隕星龍騎士",
+     "url": "https://lin.ee/YQayWa5"
+    },
+    {
+     "product": "UX-19 子彈獅鷲",
+     "url": "https://lin.ee/9GP45F3"
+    },
+    {
+     "product": "UX-20 榮耀武神",
+     "url": "https://lin.ee/SQ6R5UZ"
+    },
+    {
+     "product": "CX-00 新世紀福音戰士改造組",
+     "url": "https://lin.ee/xpoDngM"
+    },
+    {
+     "product": "CX-00 迪卡狂怒",
+     "url": "https://lin.ee/YpzjBbu"
+    },
+    {
+     "product": "CX-01 蒼龍勇氣",
+     "url": "https://lin.ee/pBG9fBa"
+    },
+    {
+     "product": "CX-02 魔導至尊",
+     "url": "https://lin.ee/w4WKMTD"
+    },
+    {
+     "product": "CX-03 英仙幽冥",
+     "url": "https://lin.ee/TQt02RD"
+    },
+    {
+     "product": "CX-05 隨機強化組 Vol.6",
+     "url": "https://lin.ee/pdevRAC"
+    },
+    {
+     "product": "CX-11 帝王威能",
+     "url": "https://lin.ee/wJUwpvL"
+    },
+    {
+     "product": "CX-13 龍王閃擊",
+     "url": "https://lin.ee/8PhXGiP"
+    },
+    {
+     "product": "CX-14 騎士堡壘",
+     "url": "https://lin.ee/r7646Gs"
+    },
+    {
+     "product": "CX-15 時鐘幻象 隨機強化組",
+     "url": "https://lin.ee/xCn44dh"
+    },
+    {
+     "product": "CX-15 邪神狂怒",
+     "url": "https://lin.ee/9A9B5EW"
+    },
+    {
+     "product": "CX-16 極限對戰組",
+     "url": "https://lin.ee/VYW3t2Z"
+    },
+    {
+     "product": "CX-16 極限衝擊對戰組C",
+     "url": "https://lin.ee/VYW3t2Z"
+    },
+    {
+     "product": "CX-17 隨機強化組Vol.10",
+     "url": "https://lin.ee/PsEPZL5"
+    },
+    {
+     "product": "CX-19 鱷魚裂甲",
+     "url": "https://lin.ee/8OFfQNw"
+    }
+   ]
   },
   {
    "id": "s36",
@@ -1372,7 +2349,60 @@ window.FUNBOX_DATA = {
    "lineId": "@815dstuy",
    "fb": "https://www.facebook.com/p/Funbox-%E5%8F%B0%E4%B8%AD%E4%B8%AD%E5%8F%8B-100063893358626/",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "BX-37 雙重極限衝擊戰鬥盤 豪華組",
+     "url": "https://lin.ee/OfthxDz"
+    },
+    {
+     "product": "UX-01 蒼龍爆刃",
+     "url": "https://lin.ee/wCpdbfvV"
+    },
+    {
+     "product": "UX-03 魔導神杖",
+     "url": "https://lin.ee/T5gf3Jb"
+    },
+    {
+     "product": "UX-13 魔像奇岩",
+     "url": "https://lin.ee/8KFlrHI"
+    },
+    {
+     "product": "UX-14 天蠍長矛0-70Z",
+     "url": "https://lin.ee/u3o7ZTF"
+    },
+    {
+     "product": "UX-16 時鐘幻象 隨機強化組",
+     "url": "https://lin.ee/sTHhfhi"
+    },
+    {
+     "product": "UX-17 隕星龍騎士3-70J",
+     "url": "https://lin.ee/tbKGJfj"
+    },
+    {
+     "product": "CX-02 魔導至尊",
+     "url": "https://lin.ee/pBfrTtd"
+    },
+    {
+     "product": "CX-03 英仙幽冥",
+     "url": "https://lin.ee/9HCFsUF"
+    },
+    {
+     "product": "CX-05 隨機強化組 Vol.6",
+     "url": "https://lin.ee/r0abeBb"
+    },
+    {
+     "product": "CX-08 隨機強化組 Vol.7",
+     "url": "https://lin.ee/w9UZsPt"
+    },
+    {
+     "product": "CX-13 龍王閃擊",
+     "url": "https://lin.ee/o6brDyW"
+    },
+    {
+     "product": "CX-15 邪神狂怒",
+     "url": "https://lin.ee/zaoyPO4c"
+    }
+   ]
   },
   {
    "id": "s37",
@@ -1408,16 +2438,114 @@ window.FUNBOX_DATA = {
    "lineId": "@605dilqq",
    "fb": "https://www.facebook.com/share/19F2BoUzUv/?mibextid=wwXIfr",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "UX-01 蒼龍爆刃",
+     "url": "https://lin.ee/pVXqTUd"
+    },
+    {
+     "product": "UX-03 魔導神杖",
+     "url": "https://lin.ee/yjfE6iR"
+    },
+    {
+     "product": "UX-13 魔像奇岩",
+     "url": "https://lin.ee/5k1p0rg"
+    },
+    {
+     "product": "UX-17 隕星龍騎士3-70J",
+     "url": "https://lin.ee/xqpp8vp"
+    },
+    {
+     "product": "CX-00 新世紀福音戰士改造組",
+     "url": "https://lin.ee/YAtm2xC"
+    },
+    {
+     "product": "CX-02 魔導至尊",
+     "url": "https://lin.ee/oO57IwA"
+    },
+    {
+     "product": "CX-03 英仙幽冥",
+     "url": "https://lin.ee/UMMeButB"
+    },
+    {
+     "product": "CX-05 隨機強化組 Vol.6",
+     "url": "https://lin.ee/sYP1GsH"
+    },
+    {
+     "product": "CX-15 邪神狂怒",
+     "url": "https://lin.ee/O6uBkyH"
+    },
+    {
+     "product": "CX-16 極限衝擊對戰組C",
+     "url": "https://lin.ee/Ykspe7D"
+    },
+    {
+     "product": "CX-17 隨機強化組 Vol.10",
+     "url": "https://lin.ee/RYgRC5H"
+    }
+   ]
   },
   {
    "id": "s41",
-   "city": "台中市",
+   "city": "高雄市",
    "name": "Funbox-漢神洲際店",
    "lineId": "@218xxrbx",
    "fb": "https://www.facebook.com/profile.php?id=61592777043158",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "UX-01 蒼龍爆刃",
+     "url": "https://lin.ee/UoXQWTI"
+    },
+    {
+     "product": "UX-13 魔像奇岩",
+     "url": "https://lin.ee/NfVF0VP3"
+    },
+    {
+     "product": "UX-16 時鐘幻象 隨機強化組",
+     "url": "https://lin.ee/6heIYfn"
+    },
+    {
+     "product": "UX-17 隕星龍騎士",
+     "url": "https://lin.ee/VIrUcA6"
+    },
+    {
+     "product": "UX-20 榮耀武神LF",
+     "url": "https://lin.ee/WVqTXiY"
+    },
+    {
+     "product": "CX-00 新世紀福音戰士改造組",
+     "url": "https://lin.ee/WgxvK8Q"
+    },
+    {
+     "product": "CX-02 魔導至尊",
+     "url": "https://lin.ee/9p6nEMs"
+    },
+    {
+     "product": "CX-03 英仙幽冥",
+     "url": "https://lin.ee/qQMc1EL"
+    },
+    {
+     "product": "CX-05 隨機強化組 Vol.6",
+     "url": "https://lin.ee/XUNpFS3"
+    },
+    {
+     "product": "CX-08 隨機強化組 Vol.7",
+     "url": "https://lin.ee/TeLufin"
+    },
+    {
+     "product": "CX-13 龍王閃擊",
+     "url": "https://lin.ee/qhUeLnMz"
+    },
+    {
+     "product": "CX-14 騎士堡壘",
+     "url": "https://lin.ee/NERKbco"
+    },
+    {
+     "product": "CX-15 邪神狂怒",
+     "url": "https://lin.ee/PUkJAQP"
+    }
+   ]
   },
   {
    "id": "s42",
@@ -1426,7 +2554,80 @@ window.FUNBOX_DATA = {
    "lineId": "@620dfrfm",
    "fb": "https://www.facebook.com/profile.php?id=61591544926718",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "UX-01 蒼龍爆刃",
+     "url": "https://lin.ee/Q8luDO9"
+    },
+    {
+     "product": "UX-03 魔導神杖",
+     "url": "https://lin.ee/9lRGoV4"
+    },
+    {
+     "product": "UX-13 魔像奇岩",
+     "url": "https://lin.ee/WAHWb0S"
+    },
+    {
+     "product": "UX-14 天蠍長矛0-70Z",
+     "url": "https://lin.ee/oKWNJYW"
+    },
+    {
+     "product": "UX-15 鮫鯊狂鱗改造組",
+     "url": "https://lin.ee/YATNjPO"
+    },
+    {
+     "product": "UX-16 時鐘幻象 隨機強化組",
+     "url": "https://lin.ee/SGg9UZ5"
+    },
+    {
+     "product": "UX-17 隕星龍騎士3-70J",
+     "url": "https://lin.ee/QRlPkRg"
+    },
+    {
+     "product": "UX-19 子彈獅鷲H",
+     "url": "https://lin.ee/WvrSjOJ"
+    },
+    {
+     "product": "UX-20 榮耀武神LF",
+     "url": "https://lin.ee/VCQg6rF"
+    },
+    {
+     "product": "CX-00 新世紀福音戰士改造組",
+     "url": "https://lin.ee/TK4rndo"
+    },
+    {
+     "product": "CX-02 魔導至尊",
+     "url": "https://lin.ee/5gqcCTb"
+    },
+    {
+     "product": "CX-03 英仙幽冥",
+     "url": "https://lin.ee/SvAiUKr"
+    },
+    {
+     "product": "CX-05 隨機強化組 Vol.6",
+     "url": "https://lin.ee/YxaZTrI"
+    },
+    {
+     "product": "CX-08 隨機強化組 Vol.7",
+     "url": "https://lin.ee/u04feJP"
+    },
+    {
+     "product": "CX-11 帝王威能",
+     "url": "https://lin.ee/rPXChuS"
+    },
+    {
+     "product": "CX-13 龍王閃擊",
+     "url": "https://lin.ee/ol2D0Bj"
+    },
+    {
+     "product": "CX-15 邪神狂怒",
+     "url": "https://lin.ee/Y8dRzd0"
+    },
+    {
+     "product": "CX-17 隨機強化組 Vol.10",
+     "url": "https://lin.ee/zw9hyZZ"
+    }
+   ]
   },
   {
    "id": "s43",
@@ -1435,7 +2636,40 @@ window.FUNBOX_DATA = {
    "lineId": "@hdg3289a",
    "fb": "https://www.facebook.com/share/1J3PLMbDSN/?mibextid=wwXIfr",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "UX-03 魔導神杖",
+     "url": "https://lin.ee/Pl0KFnA"
+    },
+    {
+     "product": "UX-14 天蠍長矛0-70Z",
+     "url": "https://lin.ee/UDLsF04"
+    },
+    {
+     "product": "UX-19 子彈獅鷲H",
+     "url": "https://lin.ee/5KvMHOU"
+    },
+    {
+     "product": "CX-01 蒼龍勇氣",
+     "url": "https://lin.ee/OSnfmj8"
+    },
+    {
+     "product": "CX-11 帝王威能",
+     "url": "https://lin.ee/XGNtKk8"
+    },
+    {
+     "product": "CX-14 騎士堡壘",
+     "url": "https://lin.ee/Up7iM6c"
+    },
+    {
+     "product": "CX-16 極限衝擊對戰組C",
+     "url": "https://lin.ee/qGvDztj"
+    },
+    {
+     "product": "CX-17 隨機強化組 Vol.10",
+     "url": "https://lin.ee/pSVZdka"
+    }
+   ]
   },
   {
    "id": "s44",
@@ -1764,10 +2998,6 @@ window.FUNBOX_DATA = {
      "url": "https://lin.ee/rKR6qB5"
     },
     {
-     "product": "UX-03魔導神杖",
-     "url": "https://lin.ee/PUd2uJ7"
-    },
-    {
      "product": "UX-13 磨像奇岩",
      "url": "https://lin.ee/ZMbDZs9"
     },
@@ -1796,20 +3026,8 @@ window.FUNBOX_DATA = {
      "url": "https://lin.ee/Slz335O"
     },
     {
-     "product": "CX-00新世紀福音戰士改造組",
-     "url": "https://lin.ee/6FpqaM2"
-    },
-    {
-     "product": "CX-01蒼龍勇氣",
-     "url": "https://lin.ee/vqL0nv9P"
-    },
-    {
      "product": "CX-02 魔導至尊",
      "url": "https://lin.ee/sCz8Nue"
-    },
-    {
-     "product": "CX-03英仙幽冥",
-     "url": "https://lin.ee/YBaWJjn"
     },
     {
      "product": "CX-05 隨機強化組Vo1.6",
@@ -1846,6 +3064,22 @@ window.FUNBOX_DATA = {
     {
      "product": "CX-19  鱷魚裂甲",
      "url": "https://lin.ee/OUjqcUE"
+    },
+    {
+     "product": "CX-00新世紀福音戰士改造組",
+     "url": "https://lin.ee/6FpqaM2"
+    },
+    {
+     "product": "CX-01蒼龍勇氣",
+     "url": "https://lin.ee/vqL0nv9P"
+    },
+    {
+     "product": "CX-03英仙幽冥",
+     "url": "https://lin.ee/YBaWJjn"
+    },
+    {
+     "product": "UX-03魔導神杖",
+     "url": "https://lin.ee/PUd2uJ7"
     }
    ]
   },
@@ -1858,18 +3092,6 @@ window.FUNBOX_DATA = {
    "start": "11:00",
    "items": [
     {
-     "product": "BX-09戰鬥陀螺X通行證",
-     "url": "https://lin.ee/rgTp6Mgi"
-    },
-    {
-     "product": "UX-01蒼龍爆刃",
-     "url": "https://lin.ee/zD0JjPuW"
-    },
-    {
-     "product": "UX-03魔導神杖",
-     "url": "https://lin.ee/YJ5XCJo"
-    },
-    {
      "product": "UX-13 魔像奇岩",
      "url": "https://lin.ee/7wFtTWW"
     },
@@ -1878,24 +3100,8 @@ window.FUNBOX_DATA = {
      "url": "https://lin.ee/QnNhAM5"
     },
     {
-     "product": "UX-15鮫鯊狂鱗改造組",
-     "url": "https://lin.ee/7FMj5BY"
-    },
-    {
      "product": "UX-16 時鐘幻象 隨機強化組",
      "url": "https://lin.ee/xarGnx5"
-    },
-    {
-     "product": "UX-17隕星騎士3-70j",
-     "url": "https://lin.ee/NDA1WOf"
-    },
-    {
-     "product": "UX-19子彈獅鷲H",
-     "url": "https://lin.ee/XSThFsw"
-    },
-    {
-     "product": "CX-00新世紀福音戰士改造組",
-     "url": "https://lin.ee/Nq1APGfU"
     },
     {
      "product": "CX-01 蒼龍勇氣",
@@ -1918,10 +3124,6 @@ window.FUNBOX_DATA = {
      "url": "https://lin.ee/Ty7j6oJ"
     },
     {
-     "product": "CX-11帝王威能",
-     "url": "https://lin.ee/74nrVPa"
-    },
-    {
      "product": "CX-13 龍王閃擊",
      "url": "https://lin.ee/6PCYBqz"
     },
@@ -1940,6 +3142,38 @@ window.FUNBOX_DATA = {
     {
      "product": "CX-17 隨機強化組Vol.10",
      "url": "https://lin.ee/7KgFa7I"
+    },
+    {
+     "product": "BX-09戰鬥陀螺X通行證",
+     "url": "https://lin.ee/rgTp6Mgi"
+    },
+    {
+     "product": "CX-00新世紀福音戰士改造組",
+     "url": "https://lin.ee/Nq1APGfU"
+    },
+    {
+     "product": "CX-11帝王威能",
+     "url": "https://lin.ee/74nrVPa"
+    },
+    {
+     "product": "UX-01蒼龍爆刃",
+     "url": "https://lin.ee/zD0JjPuW"
+    },
+    {
+     "product": "UX-03魔導神杖",
+     "url": "https://lin.ee/YJ5XCJo"
+    },
+    {
+     "product": "UX-15鮫鯊狂鱗改造組",
+     "url": "https://lin.ee/7FMj5BY"
+    },
+    {
+     "product": "UX-17隕星騎士3-70j",
+     "url": "https://lin.ee/NDA1WOf"
+    },
+    {
+     "product": "UX-19子彈獅鷲H",
+     "url": "https://lin.ee/XSThFsw"
     }
    ]
   },
@@ -1950,7 +3184,52 @@ window.FUNBOX_DATA = {
    "lineId": "@121vsdww",
    "fb": "https://www.facebook.com/profile.php?id=61591841012874",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "UX-03 魔導神杖",
+     "url": "https://lin.ee/ORBD8YQ"
+    },
+    {
+     "product": "UX-14 天蠍長矛0-70Z",
+     "url": "https://lin.ee/R9cfjLM"
+    },
+    {
+     "product": "UX-15 鮫鯊狂鱗改造組",
+     "url": "https://lin.ee/ThQhPOF"
+    },
+    {
+     "product": "UX-19 子彈獅鷲H",
+     "url": "https://lin.ee/7obL3OR"
+    },
+    {
+     "product": "UX-20 榮耀武神LF",
+     "url": "https://lin.ee/v1fdr6L"
+    },
+    {
+     "product": "CX-00 新世紀福音戰士改造組",
+     "url": "https://lin.ee/Ow26yfT"
+    },
+    {
+     "product": "CX-01 蒼龍勇氣",
+     "url": "https://lin.ee/o1VmrTM"
+    },
+    {
+     "product": "CX-11 帝王威能",
+     "url": "https://lin.ee/wV9knFP"
+    },
+    {
+     "product": "CX-14 騎士堡壘",
+     "url": "https://lin.ee/WB3sQxE"
+    },
+    {
+     "product": "CX-17 隨機強化組 Vol.10",
+     "url": "https://lin.ee/RQWytYe0"
+    },
+    {
+     "product": "CX-19 鱷魚裂甲 隨機強化組",
+     "url": "https://lin.ee/7br4d6r"
+    }
+   ]
   },
   {
    "id": "s50",
@@ -2225,8 +3504,81 @@ window.FUNBOX_DATA = {
    "name": "Funbox -夢時代店",
    "lineId": "@ott3541o",
    "fb": "https://www.facebook.com/share/1iiWSKHcvP/?mibextid=wwXIfr",
-   "start": "10:30",
-   "items": []
+   "start": "11:00",
+   "items": [
+    {
+     "product": "UX-01 蒼龍爆刃",
+     "url": "https://lin.ee/99VGCpDG"
+    },
+    {
+     "product": "UX-03 魔導神杖",
+     "url": "https://lin.ee/w18JPfL"
+    },
+    {
+     "product": "UX-13 魔像奇岩",
+     "url": "https://lin.ee/XkNUyZY"
+    },
+    {
+     "product": "UX-14 天蠍長矛0-70Z",
+     "url": "https://lin.ee/Nf1c28M"
+    },
+    {
+     "product": "UX-15 鮫鯊狂鱗改造組",
+     "url": "https://lin.ee/pt27cXy"
+    },
+    {
+     "product": "UX-16 時鐘幻象 隨機強化組",
+     "url": "https://lin.ee/VPnvzfD"
+    },
+    {
+     "product": "UX-17 隕星龍騎士3-70J",
+     "url": "https://lin.ee/qwqN6An"
+    },
+    {
+     "product": "CX-00 新世紀福音戰士改造組",
+     "url": "https://lin.ee/7lICqR95"
+    },
+    {
+     "product": "CX-01 蒼龍勇氣",
+     "url": "https://lin.ee/S2j6XBI"
+    },
+    {
+     "product": "CX-02 魔導至尊",
+     "url": "https://lin.ee/O4INC6k"
+    },
+    {
+     "product": "CX-03 英仙幽冥",
+     "url": "https://lin.ee/7KuJ092q"
+    },
+    {
+     "product": "CX-05 隨機強化組 Vol.6",
+     "url": "https://lin.ee/9iyP7hd"
+    },
+    {
+     "product": "CX-08 隨機強化組 Vol.7",
+     "url": "https://lin.ee/z5Xylyn"
+    },
+    {
+     "product": "CX-13 龍王閃擊",
+     "url": "https://lin.ee/qw5zEmz"
+    },
+    {
+     "product": "CX-14 騎士堡壘",
+     "url": "https://lin.ee/S9t43wUu"
+    },
+    {
+     "product": "CX-15 邪神狂怒",
+     "url": "https://lin.ee/NWUaiSq"
+    },
+    {
+     "product": "CX-16 極限衝擊對戰組C",
+     "url": "https://lin.ee/SR9H1ae"
+    },
+    {
+     "product": "CX-17 隨機強化組 Vol.10",
+     "url": "https://lin.ee/5v9i7JX"
+    }
+   ]
   },
   {
    "id": "s57",
@@ -2339,7 +3691,68 @@ window.FUNBOX_DATA = {
    "lineId": "@ldh6278d",
    "fb": "https://www.facebook.com/share/1JMvwfTqpu/?mibextid=wwXIfr",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "UX-01 蒼龍爆刃",
+     "url": "https://lin.ee/OWiW8el"
+    },
+    {
+     "product": "UX-03 魔導神杖",
+     "url": "https://lin.ee/NVv2R7e"
+    },
+    {
+     "product": "UX-13 魔像奇岩",
+     "url": "https://lin.ee/n11HC60"
+    },
+    {
+     "product": "UX-16 時鐘幻象 隨機強化組",
+     "url": "https://lin.ee/TgSFczP"
+    },
+    {
+     "product": "UX-17 隕星龍騎士3-70J",
+     "url": "https://lin.ee/PiXif9z"
+    },
+    {
+     "product": "UX-19 子彈獅鷲H",
+     "url": "https://lin.ee/S60kCY2"
+    },
+    {
+     "product": "CX-00 新世紀福音戰士改造組",
+     "url": "https://lin.ee/YXrZDpo"
+    },
+    {
+     "product": "CX-02 魔導至尊",
+     "url": "https://lin.ee/5ZwaWPM"
+    },
+    {
+     "product": "CX-03 英仙幽冥",
+     "url": "https://lin.ee/ubQQDob"
+    },
+    {
+     "product": "CX-05 隨機強化組 Vol.6",
+     "url": "https://lin.ee/Xk5Qz9E"
+    },
+    {
+     "product": "CX-08 隨機強化組 Vol.7",
+     "url": "https://lin.ee/oRmJyli"
+    },
+    {
+     "product": "CX-13 龍王閃擊",
+     "url": "https://lin.ee/uMsbQe6"
+    },
+    {
+     "product": "CX-15 邪神狂怒",
+     "url": "https://lin.ee/tS5b8eg"
+    },
+    {
+     "product": "CX-16 極限衝擊對戰組C",
+     "url": "https://lin.ee/rnm57wh"
+    },
+    {
+     "product": "CX-17 隨機強化組 Vol.10",
+     "url": "https://lin.ee/qYUyqrE"
+    }
+   ]
   },
   {
    "id": "s60",
@@ -2446,7 +3859,64 @@ window.FUNBOX_DATA = {
    "lineId": "@241cmnww",
    "fb": "",
    "start": "10:00",
-   "items": []
+   "items": [
+    {
+     "product": "BX-00 蒼龍神劍",
+     "url": "https://lin.ee/VOSWdO8H"
+    },
+    {
+     "product": "UX-03 魔導神杖",
+     "url": "https://lin.ee/uSiqa1a"
+    },
+    {
+     "product": "UX-13 魔像奇岩",
+     "url": "https://lin.ee/si2PER1r"
+    },
+    {
+     "product": "UX-19 子彈獅鷲H",
+     "url": "https://lin.ee/sSCyfqvK"
+    },
+    {
+     "product": "CX-00 新世紀福音戰士改造組",
+     "url": "https://lin.ee/YteQ0bc"
+    },
+    {
+     "product": "CX-01 蒼龍勇氣",
+     "url": "https://lin.ee/yahDap5"
+    },
+    {
+     "product": "CX-02 魔導至尊",
+     "url": "https://lin.ee/txbeF9H"
+    },
+    {
+     "product": "CX-03 英仙幽冥",
+     "url": "https://lin.ee/UY96EE5"
+    },
+    {
+     "product": "CX-08 隨機強化組",
+     "url": "https://lin.ee/OwHx14R"
+    },
+    {
+     "product": "CX-11 帝王威能",
+     "url": "https://lin.ee/X7Gkom4"
+    },
+    {
+     "product": "CX-14 騎士堡壘",
+     "url": "https://lin.ee/pQtNJyN"
+    },
+    {
+     "product": "CX-15 邪神狂怒",
+     "url": "https://lin.ee/7uxgVr3"
+    },
+    {
+     "product": "CX-16 極限衝擊對戰組C",
+     "url": "https://lin.ee/Ny4y07b"
+    },
+    {
+     "product": "CX-19 鱷魚裂甲",
+     "url": "https://lin.ee/Q2lJjwU"
+    }
+   ]
   },
   {
    "id": "s62",
@@ -2454,8 +3924,49 @@ window.FUNBOX_DATA = {
    "name": "Funbox高雄義享店",
    "lineId": "@777nkbeo",
    "fb": "https://www.facebook.com/share/1EGnZY5Wad/",
-   "start": "10:30",
-   "items": []
+   "start": "11:00",
+   "items": [
+    {
+     "product": "UX-13 魔像奇岩",
+     "url": "https://lin.ee/6sgZUiO"
+    },
+    {
+     "product": "UX-16 時鐘幻象 隨機強化組",
+     "url": "https://lin.ee/SeCNP57"
+    },
+    {
+     "product": "UX-19 子彈獅鷲H",
+     "url": "https://lin.ee/xGuwBY2"
+    },
+    {
+     "product": "CX-02 魔導至尊",
+     "url": "https://lin.ee/vbT3Rz5"
+    },
+    {
+     "product": "CX-03 英仙幽冥",
+     "url": "https://lin.ee/OXsCTaM"
+    },
+    {
+     "product": "CX-05 隨機強化組 Vol.6",
+     "url": "https://lin.ee/RTSmBHO"
+    },
+    {
+     "product": "CX-08 隨機強化組 Vol.7",
+     "url": "https://lin.ee/rG8atIv"
+    },
+    {
+     "product": "CX-13 龍王閃擊",
+     "url": "https://lin.ee/xRShQSL"
+    },
+    {
+     "product": "CX-14 騎士堡壘",
+     "url": "https://lin.ee/oGSy3gE"
+    },
+    {
+     "product": "CX-15 邪神狂怒",
+     "url": "https://lin.ee/uribvIJl"
+    }
+   ]
   },
   {
    "id": "s63",
@@ -2464,7 +3975,64 @@ window.FUNBOX_DATA = {
    "lineId": "@204edsnm",
    "fb": "https://www.facebook.com/share/1Asnih4jRc/?mibextid=wwXIfr",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "UX-01 蒼龍爆刃",
+     "url": "https://lin.ee/9mGMeVEe"
+    },
+    {
+     "product": "UX-03 魔導神杖",
+     "url": "https://lin.ee/Ovj4j0Z"
+    },
+    {
+     "product": "UX-16 時鐘幻象隨機強化組",
+     "url": "https://lin.ee/6LyKu8M"
+    },
+    {
+     "product": "UX-17 隕星龍騎士",
+     "url": "https://lin.ee/SkZyFxf"
+    },
+    {
+     "product": "UX-19 子彈獅鷲",
+     "url": "https://lin.ee/TGqVQk7"
+    },
+    {
+     "product": "UX-20 榮耀武神",
+     "url": "https://lin.ee/Z2zvFuD"
+    },
+    {
+     "product": "CX-01 蒼龍勇氣",
+     "url": "https://lin.ee/ouFWdNI"
+    },
+    {
+     "product": "CX-02 魔導至尊",
+     "url": "https://lin.ee/nJ8HqgN"
+    },
+    {
+     "product": "CX-03 英仙幽冥",
+     "url": "https://lin.ee/516JcK0"
+    },
+    {
+     "product": "CX-05 隨機強化組",
+     "url": "https://lin.ee/SoN7MMg"
+    },
+    {
+     "product": "CX-08 隨機強化組",
+     "url": "https://lin.ee/zCzvC3z"
+    },
+    {
+     "product": "CX-13 龍王閃擊",
+     "url": "https://lin.ee/TuMP90v"
+    },
+    {
+     "product": "CX-14 騎士堡壘",
+     "url": "https://lin.ee/NNq6Pem"
+    },
+    {
+     "product": "CX-15 邪神狂怒",
+     "url": "https://lin.ee/z7LMcdf"
+    }
+   ]
   },
   {
    "id": "s64",
@@ -2473,7 +4041,96 @@ window.FUNBOX_DATA = {
    "lineId": "@obz8096L",
    "fb": "https://www.facebook.com/100057115973730/",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "BX-09 戰鬥陀螺X通行證",
+     "url": "https://lin.ee/ZqNeBil"
+    },
+    {
+     "product": "UX-01 蒼龍爆刃",
+     "url": "https://lin.ee/TcjMDib"
+    },
+    {
+     "product": "UX-03 魔導神杖",
+     "url": "https://lin.ee/nEDiYk7"
+    },
+    {
+     "product": "UX-13 魔像奇岩",
+     "url": "https://lin.ee/wqaG7eR"
+    },
+    {
+     "product": "UX-16 時鐘幻象 隨機強化組",
+     "url": "https://lin.ee/6N5Do2O"
+    },
+    {
+     "product": "UX-17 隕星龍騎士3-70J",
+     "url": "https://lin.ee/ny67yIX"
+    },
+    {
+     "product": "UX-19 子彈獅鷲",
+     "url": "https://lin.ee/UrmhqVI"
+    },
+    {
+     "product": "UX-20 榮耀武神LF",
+     "url": "https://lin.ee/r8qfELA"
+    },
+    {
+     "product": "CX-00 新世紀福音戰士改造組",
+     "url": "https://lin.ee/pgWEgcQ"
+    },
+    {
+     "product": "CX-00 迪卡狂怒",
+     "url": "https://lin.ee/ZkmlBA6"
+    },
+    {
+     "product": "CX-01 蒼龍勇氣",
+     "url": "https://lin.ee/PLykWic"
+    },
+    {
+     "product": "CX-02 魔導至尊",
+     "url": "https://lin.ee/vONxyMe"
+    },
+    {
+     "product": "CX-03 英仙幽冥",
+     "url": "https://lin.ee/yC7RlL8"
+    },
+    {
+     "product": "CX-05 隨機強化組Vol.6",
+     "url": "https://lin.ee/P0umM4V"
+    },
+    {
+     "product": "CX-08 隨機強化組Vol.7",
+     "url": "https://lin.ee/9rrNAry"
+    },
+    {
+     "product": "CX-11 帝王威能",
+     "url": "https://lin.ee/RH1D0kR"
+    },
+    {
+     "product": "CX-13 龍王閃擊",
+     "url": "https://lin.ee/oELPo5l"
+    },
+    {
+     "product": "CX-14 騎士堡壘",
+     "url": "https://lin.ee/vATuNk8"
+    },
+    {
+     "product": "CX-15 邪神狂怒",
+     "url": "https://lin.ee/9gZvA7PK"
+    },
+    {
+     "product": "CX-16 極限衝擊對戰組C",
+     "url": "https://lin.ee/t6pWPUs"
+    },
+    {
+     "product": "CX-17 隨機強化組 Vol.10",
+     "url": "https://lin.ee/5gcYsas"
+    },
+    {
+     "product": "CX-19 鱷魚裂甲",
+     "url": "https://lin.ee/tU2WYKS"
+    }
+   ]
   },
   {
    "id": "s65",
@@ -2969,7 +4626,68 @@ window.FUNBOX_DATA = {
    "lineId": "@094mvrhb",
    "fb": "https://www.facebook.com/profile.php?id=61592589610506",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "UX-01 蒼龍爆刃",
+     "url": "https://lin.ee/QKD9Osa"
+    },
+    {
+     "product": "UX-13 魔像奇岩",
+     "url": "https://lin.ee/54Q2CRqH"
+    },
+    {
+     "product": "UX-14 天蠍長矛",
+     "url": "https://lin.ee/8xatl22"
+    },
+    {
+     "product": "UX-16 時鐘幻象 隨機強化組",
+     "url": "https://lin.ee/ZdfxqyV"
+    },
+    {
+     "product": "UX-17 隕星龍騎士",
+     "url": "https://lin.ee/OfIPlgl"
+    },
+    {
+     "product": "CX-00 新世紀福音戰士改造組",
+     "url": "https://lin.ee/Nf6q3Pn"
+    },
+    {
+     "product": "CX-02 魔導至尊",
+     "url": "https://lin.ee/nUT2uDd"
+    },
+    {
+     "product": "CX-03 英仙幽冥",
+     "url": "https://lin.ee/o8ncjvw"
+    },
+    {
+     "product": "CX-05 隨機強化組 Vol.6",
+     "url": "https://lin.ee/UBPjAgm"
+    },
+    {
+     "product": "CX-08 隨機強化組 Vol.7",
+     "url": "https://lin.ee/psEuROw"
+    },
+    {
+     "product": "CX-13 龍王閃擊",
+     "url": "https://lin.ee/7ruhIWW"
+    },
+    {
+     "product": "CX-14 騎士堡壘",
+     "url": "https://lin.ee/QTe3Ybd"
+    },
+    {
+     "product": "CX-15 邪神狂怒",
+     "url": "https://lin.ee/UkAlH0o"
+    },
+    {
+     "product": "CX-16 極限衝擊對戰組C",
+     "url": "https://lin.ee/ze2SI4Qe"
+    },
+    {
+     "product": "CX-17 隨機強化組 Vol.10",
+     "url": "https://lin.ee/RXtWhNO"
+    }
+   ]
   },
   {
    "id": "s75",
@@ -3276,10 +4994,6 @@ window.FUNBOX_DATA = {
      "url": "https://lin.ee/u8q8A63"
     },
     {
-     "product": "CX-11帝王威能",
-     "url": "https://lin.ee/xYbNzrt"
-    },
-    {
      "product": "CX-13 龍王閃擊",
      "url": "https://lin.ee/ovMCFg4"
     },
@@ -3302,6 +5016,10 @@ window.FUNBOX_DATA = {
     {
      "product": "CX-19 鱷魚裂甲 隨機強化組",
      "url": "https://lin.ee/75PGLJm"
+    },
+    {
+     "product": "CX-11帝王威能",
+     "url": "https://lin.ee/xYbNzrt"
     }
    ]
   },
@@ -3494,10 +5212,6 @@ window.FUNBOX_DATA = {
      "url": "https://lin.ee/tTAhGT3"
     },
     {
-     "product": "CX-00福音戰士改造組",
-     "url": "https://lin.ee/oSniLZu"
-    },
-    {
      "product": "CX-02 魔導至尊",
      "url": "https://lin.ee/tq0RqsK"
     },
@@ -3532,6 +5246,10 @@ window.FUNBOX_DATA = {
     {
      "product": "CX-17 隨機強化組 Vol.10",
      "url": "https://lin.ee/5o4Q1jz"
+    },
+    {
+     "product": "CX-00福音戰士改造組",
+     "url": "https://lin.ee/oSniLZu"
     }
    ]
   },
@@ -3542,7 +5260,84 @@ window.FUNBOX_DATA = {
    "lineId": "",
    "fb": "",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "UX-01 蒼龍爆刃",
+     "url": "https://lin.ee/QqwgA45"
+    },
+    {
+     "product": "UX-03 魔導神杖",
+     "url": "https://lin.ee/WIxQwyy"
+    },
+    {
+     "product": "UX-13 魔像奇岩",
+     "url": "https://lin.ee/Z8tXDez"
+    },
+    {
+     "product": "UX-14 天蠍長矛0-70Z",
+     "url": "https://lin.ee/vdKChg1"
+    },
+    {
+     "product": "UX-15 鮫鯊狂鱗改造組",
+     "url": "https://lin.ee/Rsdc9uj"
+    },
+    {
+     "product": "UX-16 時鐘幻象 隨機強化組",
+     "url": "https://lin.ee/SAFJM25"
+    },
+    {
+     "product": "UX-17 隕星龍騎士3-70J",
+     "url": "https://lin.ee/PEFu54TW"
+    },
+    {
+     "product": "UX-19 子彈獅鷲H",
+     "url": "https://lin.ee/WFsuzt6"
+    },
+    {
+     "product": "CX-00 新世紀福音戰士改造組",
+     "url": "https://lin.ee/TrL9TCS"
+    },
+    {
+     "product": "CX-01 蒼龍勇氣",
+     "url": "https://lin.ee/UFPlUUe"
+    },
+    {
+     "product": "CX-02 魔導至尊",
+     "url": "https://lin.ee/Sox3NHV"
+    },
+    {
+     "product": "CX-03 英仙幽冥",
+     "url": "https://lin.ee/URZXKCR"
+    },
+    {
+     "product": "CX-05 隨機強化組Vol.6",
+     "url": "https://lin.ee/QD7kmOT"
+    },
+    {
+     "product": "CX-08 隨機強化組Vol.7",
+     "url": "https://lin.ee/SmUmBtU"
+    },
+    {
+     "product": "CX-11 帝王威能",
+     "url": "https://lin.ee/VxkLt4x"
+    },
+    {
+     "product": "CX-13 龍王閃擊",
+     "url": "https://lin.ee/RjTDsqS"
+    },
+    {
+     "product": "CX-14 騎士堡壘",
+     "url": "https://lin.ee/P2QzDLj"
+    },
+    {
+     "product": "CX-15 邪神狂怒",
+     "url": "https://lin.ee/vJFKxfc"
+    },
+    {
+     "product": "CX-16 極限衝擊對戰組C",
+     "url": "https://lin.ee/6G6Z4hg"
+    }
+   ]
   },
   {
    "id": "r_桃園新光站前",
@@ -3594,7 +5389,72 @@ window.FUNBOX_DATA = {
    "lineId": "",
    "fb": "",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "UX-01 蒼龍爆刃",
+     "url": "https://lin.ee/SLilizX"
+    },
+    {
+     "product": "UX-03 魔導神杖",
+     "url": "https://lin.ee/8CDBzNi"
+    },
+    {
+     "product": "UX-13 魔像奇岩",
+     "url": "https://lin.ee/ZTJWbU4"
+    },
+    {
+     "product": "UX-14 天蝎長矛",
+     "url": "https://lin.ee/RG7j8aK"
+    },
+    {
+     "product": "UX-16 時鐘幻象 隨機強化組",
+     "url": "https://lin.ee/w7JVPiQ"
+    },
+    {
+     "product": "UX-17 隕星龍騎士",
+     "url": "https://lin.ee/saOhAOe"
+    },
+    {
+     "product": "UX-19 子彈獅鷲",
+     "url": "https://lin.ee/WjXTmos"
+    },
+    {
+     "product": "CX-00 新世紀福音戰士改造組",
+     "url": "https://lin.ee/X0sWK5L"
+    },
+    {
+     "product": "CX-02 魔導至尊",
+     "url": "https://lin.ee/YDUl22m"
+    },
+    {
+     "product": "CX-03 英仙幽冥",
+     "url": "https://lin.ee/VDiGM0c"
+    },
+    {
+     "product": "CX-05 隨機強化組 Vol.6",
+     "url": "https://lin.ee/X929Z7Y"
+    },
+    {
+     "product": "CX-08 隨機強化組Vol.7",
+     "url": "https://lin.ee/XJKQBzo"
+    },
+    {
+     "product": "CX-13 龍王閃擊",
+     "url": "https://lin.ee/nXrFbjt"
+    },
+    {
+     "product": "CX-14 騎士堡壘",
+     "url": "https://lin.ee/t4oZlHYb"
+    },
+    {
+     "product": "CX-15 邪神狂怒",
+     "url": "https://lin.ee/NLTN8sX"
+    },
+    {
+     "product": "CX-16 極限衝擊對戰組C",
+     "url": "https://lin.ee/9eYInTc"
+    }
+   ]
   },
   {
    "id": "r_新光三越南西",
@@ -3603,7 +5463,96 @@ window.FUNBOX_DATA = {
    "lineId": "",
    "fb": "",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "UX-01 蒼龍爆刃",
+     "url": "https://lin.ee/tydqpYo"
+    },
+    {
+     "product": "UX-03 魔導神杖",
+     "url": "https://lin.ee/wN2DVdo"
+    },
+    {
+     "product": "UX-13 魔像奇岩",
+     "url": "https://lin.ee/V7tdKVR"
+    },
+    {
+     "product": "UX-14 天蠍長矛0-70Z",
+     "url": "https://lin.ee/qUsRztr"
+    },
+    {
+     "product": "UX-15 鮫鯊狂鱗改造組",
+     "url": "https://lin.ee/6OZGMTh"
+    },
+    {
+     "product": "UX-16 時鐘幻象 隨機強化組",
+     "url": "https://lin.ee/QkLylug"
+    },
+    {
+     "product": "UX-17 隕星龍騎士3-70J",
+     "url": "https://lin.ee/7eyJcYr"
+    },
+    {
+     "product": "UX-19 子彈獅鷲H",
+     "url": "https://lin.ee/8oJwcSx"
+    },
+    {
+     "product": "CX-00 新世紀福音戰士改造組",
+     "url": "https://lin.ee/wFSOsAO"
+    },
+    {
+     "product": "CX-01 蒼龍勇氣",
+     "url": "https://lin.ee/POqNjzf"
+    },
+    {
+     "product": "CX-02 魔導至尊",
+     "url": "https://lin.ee/PZLKWOC"
+    },
+    {
+     "product": "CX-03 英仙幽冥",
+     "url": "https://lin.ee/ttvxi5E"
+    },
+    {
+     "product": "CX-05 隨機強化組Vol.6",
+     "url": "https://lin.ee/nuh1fLT"
+    },
+    {
+     "product": "CX-08 隨機強化組Vol.7",
+     "url": "https://lin.ee/8sGOjsG"
+    },
+    {
+     "product": "CX-11 帝王威能",
+     "url": "https://lin.ee/uJJH8B7"
+    },
+    {
+     "product": "CX-13 龍王閃擊",
+     "url": "https://lin.ee/roPFacj"
+    },
+    {
+     "product": "CX-14 騎士堡壘",
+     "url": "https://lin.ee/UDYWnOy"
+    },
+    {
+     "product": "CX-15 邪神狂怒",
+     "url": "https://lin.ee/wr5ISCy"
+    },
+    {
+     "product": "CX-16 極限衝擊對戰組C",
+     "url": "https://lin.ee/X0J1bEk"
+    },
+    {
+     "product": "CX-17 隨機強化組Vol.10",
+     "url": "https://lin.ee/PLhoPI6"
+    },
+    {
+     "product": "CX-19 鱷魚裂甲",
+     "url": "https://lin.ee/TEpqQVL"
+    },
+    {
+     "product": "BXG-04 銀牙烈虎S",
+     "url": "https://lin.ee/y6BpNK9E"
+    }
+   ]
   },
   {
    "id": "r_汐科遠雄",
@@ -3812,7 +5761,104 @@ window.FUNBOX_DATA = {
    "lineId": "",
    "fb": "",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "BX-09 戰鬥陀螺X通行證",
+     "url": "https://lin.ee/UTWPDCW"
+    },
+    {
+     "product": "UX-01 蒼龍爆刃",
+     "url": "https://lin.ee/z3DY0id"
+    },
+    {
+     "product": "UX-03 魔導神杖",
+     "url": "https://lin.ee/QSmGUtI"
+    },
+    {
+     "product": "UX-13 魔像奇岩",
+     "url": "https://lin.ee/618dI1o"
+    },
+    {
+     "product": "UX-14 天蠍長矛0-70Z",
+     "url": "https://lin.ee/Z2QAOwy"
+    },
+    {
+     "product": "UX-15 鮫鯊狂鱗改造組",
+     "url": "https://lin.ee/qWX3xPe"
+    },
+    {
+     "product": "UX-16 時鐘幻象 隨機強化組",
+     "url": "https://lin.ee/NDeDOWI"
+    },
+    {
+     "product": "UX-17 隕星龍騎士3-70J",
+     "url": "https://lin.ee/vj8u5ET"
+    },
+    {
+     "product": "UX-19 子彈獅鷲H",
+     "url": "https://lin.ee/9N70Iuj"
+    },
+    {
+     "product": "UX-20 榮耀武神LF",
+     "url": "https://lin.ee/sMVjOBm"
+    },
+    {
+     "product": "CX-00 新世紀福音戰士改造組",
+     "url": "https://lin.ee/sR4KOR9"
+    },
+    {
+     "product": "CX-00 迪卡狂怒 FT3-60T",
+     "url": "https://lin.ee/SDAFS47"
+    },
+    {
+     "product": "CX-01 蒼龍勇氣",
+     "url": "https://lin.ee/yujpjnf"
+    },
+    {
+     "product": "CX-02 魔導至尊",
+     "url": "https://lin.ee/uKiuKRz"
+    },
+    {
+     "product": "CX-03 英仙幽冥",
+     "url": "https://lin.ee/O5mPmdc"
+    },
+    {
+     "product": "CX-05 隨機強化組 Vol.6",
+     "url": "https://lin.ee/XhfZ8HP"
+    },
+    {
+     "product": "CX-08 隨機強化組 Vol.7",
+     "url": "https://lin.ee/OzHTm3r"
+    },
+    {
+     "product": "CX-11 帝王威能",
+     "url": "https://lin.ee/spRcAED"
+    },
+    {
+     "product": "CX-13 龍王閃擊",
+     "url": "https://lin.ee/v2aCH1k"
+    },
+    {
+     "product": "CX-14 騎士堡壘",
+     "url": "https://lin.ee/vN5ohr3"
+    },
+    {
+     "product": "CX-15 邪神狂怒",
+     "url": "https://lin.ee/55sL2Vs"
+    },
+    {
+     "product": "CX-16 極限衝擊對戰組C",
+     "url": "https://lin.ee/qrXvle5"
+    },
+    {
+     "product": "CX-17 隨機強化組 Vol.10",
+     "url": "https://lin.ee/PqXMFRr"
+    },
+    {
+     "product": "CX-19 鱷魚裂甲 隨機強化組",
+     "url": "https://lin.ee/WhFn0Nh"
+    }
+   ]
   },
   {
    "id": "r_新光三越站前",
@@ -3992,6 +6038,80 @@ window.FUNBOX_DATA = {
    "fb": "",
    "start": "11:00",
    "items": []
+  },
+  {
+   "id": "r_宜蘭新月廣場",
+   "city": "宜蘭縣",
+   "name": "Funbox 宜蘭新月廣場店",
+   "lineId": "",
+   "fb": "",
+   "start": "11:00",
+   "items": [
+    {
+     "product": "UX-01 蒼龍爆刃",
+     "url": "https://lin.ee/QxUmAi9"
+    },
+    {
+     "product": "UX-03 魔導神杖",
+     "url": "https://lin.ee/Oep9Hul"
+    },
+    {
+     "product": "UX-13 魔像奇岩",
+     "url": "https://lin.ee/V57bs49"
+    },
+    {
+     "product": "UX-16 時鐘幻象 隨機強化組",
+     "url": "https://lin.ee/XHS00nw"
+    },
+    {
+     "product": "UX-17 隕星龍騎士3-70J",
+     "url": "https://lin.ee/w8jAcWs"
+    },
+    {
+     "product": "UX-19 子彈獅鷲H",
+     "url": "https://lin.ee/zMd1T0V"
+    },
+    {
+     "product": "CX-00 新世紀福音戰士改造組",
+     "url": "https://lin.ee/RouM1nR"
+    },
+    {
+     "product": "CX-01 蒼龍勇氣",
+     "url": "https://lin.ee/qE5PfrE"
+    },
+    {
+     "product": "CX-02 魔導至尊",
+     "url": "https://lin.ee/yFknON1"
+    },
+    {
+     "product": "CX-03 英仙幽冥",
+     "url": "https://lin.ee/9FW9VkU"
+    },
+    {
+     "product": "CX-05 隨機強化組 Vol.6",
+     "url": "https://lin.ee/rOSKXiS"
+    },
+    {
+     "product": "CX-08 隨機強化組 Vol.7",
+     "url": "https://lin.ee/WdKjdjC"
+    },
+    {
+     "product": "CX-13 龍王閃擊",
+     "url": "https://lin.ee/Oyz7EPJ"
+    },
+    {
+     "product": "CX-14 騎士堡壘",
+     "url": "https://lin.ee/r6FbEyg"
+    },
+    {
+     "product": "CX-15 邪神狂怒",
+     "url": "https://lin.ee/SraW1n2"
+    },
+    {
+     "product": "CX-16 極限衝擊對戰組C",
+     "url": "https://lin.ee/v4xlws9b"
+    }
+   ]
   }
  ]
 };
