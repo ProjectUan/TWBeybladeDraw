@@ -2,11 +2,12 @@
 window.FUNBOX_DATA = {
  "title": "11/06 11/07 抽選",
  "period": "抽選開始：2026/11/06 11:00 ｜ 抽選/購買時間：2026/11/06 11:00~2026/11/07 21:00",
- "updated": "2026/11/05 23:31",
+ "updated": "2026/11/06 08:40",
  "missing": [
   "Funbox-台中遠東",
   "Funbox-遠百信義A13",
-  "Funbox-台中遠雄店"
+  "Funbox-台中遠雄店",
+  "Funbox-樹林秀泰"
  ],
  "stores": [
   {
@@ -176,7 +177,12 @@ window.FUNBOX_DATA = {
    "lineId": "@585clqqg",
    "fb": "https://www.facebook.com/profile.php?id=61584956488867",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "BX-53 極限衝擊對戰組",
+     "url": "https://lin.ee/pdG2WRf"
+    }
+   ]
   },
   {
    "id": "s17",
@@ -313,7 +319,12 @@ window.FUNBOX_DATA = {
    "lineId": "@532otwmb",
    "fb": "https://www.facebook.com/share/1D2TZJ7pr3/?mibextid=wwXIfr",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "BX-53 極限衝擊對戰組",
+     "url": "https://lin.ee/UwJ5crG"
+    }
+   ]
   },
   {
    "id": "s30",
@@ -555,7 +566,12 @@ window.FUNBOX_DATA = {
    "lineId": "@373rxyat",
    "fb": "https://www.facebook.com/share/19JiPRLTe3/?mibextid=wwXIfr",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "BX-53 極限衝擊對戰組",
+     "url": "https://lin.ee/uTNylL8"
+    }
+   ]
   },
   {
    "id": "s53",
@@ -564,7 +580,12 @@ window.FUNBOX_DATA = {
    "lineId": "@344rybaf",
    "fb": "https://www.facebook.com/share/1EgGWhL2my/?mibextid=wwXIfr",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "BX-53 極限衝擊對戰組",
+     "url": "https://lin.ee/9iwDfob"
+    }
+   ]
   },
   {
    "id": "s54",
@@ -624,7 +645,12 @@ window.FUNBOX_DATA = {
    "lineId": "@845nallq",
    "fb": "https://www.facebook.com/share/19E7invurA/?mibextid=wwXIfr",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "BX-53 極限衝擊對戰組",
+     "url": "https://lin.ee/P72hRM3"
+    }
+   ]
   },
   {
    "id": "s59",
@@ -784,7 +810,7 @@ window.FUNBOX_DATA = {
    "name": "Funbox 美麗華店",
    "lineId": "@660hextn",
    "fb": "https://www.facebook.com/profile.php?id=61592730395195",
-   "start": "11:11",
+   "start": "11:00",
    "items": [
     {
      "product": "BX-53 極限衝擊對戰組",
@@ -799,7 +825,12 @@ window.FUNBOX_DATA = {
    "lineId": "",
    "fb": "",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "BX-53 極限衝擊對戰組",
+     "url": "https://lin.ee/9sKv9Ek"
+    }
+   ]
   },
   {
    "id": "s74",
@@ -988,7 +1019,12 @@ window.FUNBOX_DATA = {
    "lineId": "",
    "fb": "",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "BX-53 極限衝擊對戰組",
+     "url": "https://lin.ee/sMjqSbg"
+    }
+   ]
   },
   {
    "id": "r_新誠品裕隆城",
@@ -1048,12 +1084,7 @@ window.FUNBOX_DATA = {
    "lineId": "",
    "fb": "",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/pdG2WRf"
-    }
-   ]
+   "items": []
   },
   {
    "id": "r_星奇市汐科遠雄",
@@ -1062,12 +1093,7 @@ window.FUNBOX_DATA = {
    "lineId": "",
    "fb": "",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/sMjqSbg"
-    }
-   ]
+   "items": []
   },
   {
    "id": "r_麗嬰國際高雄sogo",
@@ -1181,6 +1207,20 @@ window.FUNBOX_DATA = {
    "fb": "",
    "start": "10:00",
    "items": []
+  },
+  {
+   "id": "r_斗六家樂福",
+   "city": "雲林縣",
+   "name": "Funbox-斗六家樂福",
+   "lineId": "",
+   "fb": "",
+   "start": "10:00",
+   "items": [
+    {
+     "product": "BX-53 極限衝擊對戰組",
+     "url": "https://lin.ee/9SCnRAA"
+    }
+   ]
   }
  ]
 };
