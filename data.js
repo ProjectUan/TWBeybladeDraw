@@ -2,7 +2,7 @@
 window.FUNBOX_DATA = {
  "title": "11/06 11/07 抽選",
  "period": "抽選開始：2026/11/06 11:00 ｜ 抽選/購買時間：2026/11/06 11:00~2026/11/07 21:00",
- "updated": "2026/11/06 11:18",
+ "updated": "2026/11/06 16:17",
  "missing": [
   "Funbox-台中遠東",
   "Funbox-遠百信義A13",
@@ -11,7 +11,8 @@ window.FUNBOX_DATA = {
   "Funbox-高雄大立",
   "Funbox-新屏家樂福",
   "Funbox-澎坊商場",
-  "Funbox-台東家樂福"
+  "來玩聚-台東家樂福",
+  "來玩聚-台北地下街店"
  ],
  "stores": [
   {
@@ -543,7 +544,12 @@ window.FUNBOX_DATA = {
    "lineId": "@958tzuco",
    "fb": "",
    "start": "10:00",
-   "items": []
+   "items": [
+    {
+     "product": "BX-53 極限衝擊對戰組",
+     "url": "https://lin.ee/xL2EDyF"
+    }
+   ]
   },
   {
    "id": "s45",
@@ -552,7 +558,12 @@ window.FUNBOX_DATA = {
    "lineId": "@766sgllj",
    "fb": "",
    "start": "10:00",
-   "items": []
+   "items": [
+    {
+     "product": "BX-53 極限衝擊對戰組",
+     "url": "https://lin.ee/tPLQUjp"
+    }
+   ]
   },
   {
    "id": "s46",
@@ -561,7 +572,12 @@ window.FUNBOX_DATA = {
    "lineId": "@rsp8657s",
    "fb": "",
    "start": "10:00",
-   "items": []
+   "items": [
+    {
+     "product": "BX-53 極限衝擊對戰組",
+     "url": "https://lin.ee/9SCnRAA"
+    }
+   ]
   },
   {
    "id": "s47",
@@ -1309,12 +1325,7 @@ window.FUNBOX_DATA = {
    "lineId": "",
    "fb": "",
    "start": "10:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/9SCnRAA"
-    }
-   ]
+   "items": []
   },
   {
    "id": "r_新竹享平方",
@@ -1337,12 +1348,7 @@ window.FUNBOX_DATA = {
    "lineId": "",
    "fb": "",
    "start": "10:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/xL2EDyF"
-    }
-   ]
+   "items": []
   },
   {
    "id": "r_彰化萬家福",
@@ -1351,12 +1357,7 @@ window.FUNBOX_DATA = {
    "lineId": "",
    "fb": "",
    "start": "10:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/tPLQUjp"
-    }
-   ]
+   "items": []
   }
  ]
 };
