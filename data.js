@@ -1,8 +1,8 @@
 // Funbox 抽陀螺 資料檔：更新連結時只需修改此檔（或用網頁的「管理模式」匯出後覆蓋）
 window.FUNBOX_DATA = {
- "title": "11/06 11/07 抽選",
- "period": "抽選開始：2026/11/06 11:00 ｜ 抽選/購買時間：2026/11/06 11:00~2026/11/07 21:00",
- "updated": "2026/11/06 16:17",
+ "title": "11/13 11/14 抽選",
+ "period": "抽選/購買時間：2026/11/13～2026/11/14\n購買資格券有效期間：11/13 11:00～22:00、11/14 11:00～21:00",
+ "updated": "2026/11/12 15:35",
  "missing": [
   "Funbox-台中遠東",
   "Funbox-遠百信義A13",
@@ -24,8 +24,16 @@ window.FUNBOX_DATA = {
    "start": "11:00",
    "items": [
     {
+     "product": "BX-52 輝耀龍騎士 6-60LC",
+     "url": "https://lin.ee/nhXyQXF"
+    },
+    {
      "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/PDLwxMi"
+     "url": "https://lin.ee/ZRrk19b"
+    },
+    {
+     "product": "BX-56 左迴旋風發射器 白紫",
+     "url": "https://lin.ee/ZRba1Y3"
     }
    ]
   },
@@ -45,12 +53,7 @@ window.FUNBOX_DATA = {
    "lineId": "@lcn7452p",
    "fb": "https://www.facebook.com/funboxsogo",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/zUOYgbu"
-    }
-   ]
+   "items": []
   },
   {
    "id": "s04",
@@ -59,12 +62,7 @@ window.FUNBOX_DATA = {
    "lineId": "@377cbfue",
    "fb": "https://www.facebook.com/profile.php?id=61592597564673",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/Tvg4gmQ"
-    }
-   ]
+   "items": []
   },
   {
    "id": "s05",
@@ -73,12 +71,7 @@ window.FUNBOX_DATA = {
    "lineId": "@983dfazy",
    "fb": "https://www.facebook.com/profile.php?id=61593106704912&locale=zh_TW",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/zFsHsNC"
-    }
-   ]
+   "items": []
   },
   {
    "id": "s06",
@@ -96,12 +89,7 @@ window.FUNBOX_DATA = {
    "lineId": "@237annfd",
    "fb": "https://www.facebook.com/share/1K6XRBMujq/",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/VmSR2SW"
-    }
-   ]
+   "items": []
   },
   {
    "id": "s08",
@@ -128,12 +116,7 @@ window.FUNBOX_DATA = {
    "lineId": "@248eexma",
    "fb": "https://reurl.cc/MW3NdL",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/pwLOJHL"
-    }
-   ]
+   "items": []
   },
   {
    "id": "s11",
@@ -187,12 +170,7 @@ window.FUNBOX_DATA = {
    "lineId": "@585clqqg",
    "fb": "https://www.facebook.com/profile.php?id=61584956488867",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/pdG2WRf"
-    }
-   ]
+   "items": []
   },
   {
    "id": "s17",
@@ -201,12 +179,7 @@ window.FUNBOX_DATA = {
    "lineId": "@ufq5307a",
    "fb": "https://www.facebook.com/profile.php?id=61592677934745",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/tvn4mmW"
-    }
-   ]
+   "items": []
   },
   {
    "id": "s18",
@@ -215,12 +188,7 @@ window.FUNBOX_DATA = {
    "lineId": "@944creff",
    "fb": "https://www.facebook.com/share/1Db8rVD6Hk/?mibextid=wwXIfr",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/6Zz23bD"
-    }
-   ]
+   "items": []
   },
   {
    "id": "s19",
@@ -229,12 +197,7 @@ window.FUNBOX_DATA = {
    "lineId": "@zgq9395a",
    "fb": "https://www.facebook.com/profile.php?id=61575325211390&locale=zh_TW",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/6t8OV07"
-    }
-   ]
+   "items": []
   },
   {
    "id": "s20",
@@ -252,12 +215,7 @@ window.FUNBOX_DATA = {
    "lineId": "@lae4656h",
    "fb": "https://www.facebook.com/profile.php?id=61591728303067",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/qHsTQcR"
-    }
-   ]
+   "items": []
   },
   {
    "id": "s22",
@@ -266,12 +224,7 @@ window.FUNBOX_DATA = {
    "lineId": "@504tdsbb",
    "fb": "https://www.facebook.com/profile.php?id=61590975990981&locale=zh_TW",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/xu4ngXk"
-    }
-   ]
+   "items": []
   },
   {
    "id": "s23",
@@ -280,12 +233,7 @@ window.FUNBOX_DATA = {
    "lineId": "@099ldnvw",
    "fb": "https://www.facebook.com/profile.php?id=100063657227053",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/ZKBjVZn"
-    }
-   ]
+   "items": []
   },
   {
    "id": "s24",
@@ -294,12 +242,7 @@ window.FUNBOX_DATA = {
    "lineId": "@xcs3672w",
    "fb": "https://www.facebook.com/profile.php?id=61558958859748",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/8J5DQlz"
-    }
-   ]
+   "items": []
   },
   {
    "id": "s25",
@@ -308,12 +251,7 @@ window.FUNBOX_DATA = {
    "lineId": "@bix0595a",
    "fb": "https://www.facebook.com/profile.php?id=100064240476385",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/69Fzp8o"
-    }
-   ]
+   "items": []
   },
   {
    "id": "s26",
@@ -333,8 +271,16 @@ window.FUNBOX_DATA = {
    "start": "11:00",
    "items": [
     {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/XGDunvA"
+     "product": "BX-09 戰鬥陀螺X通行證",
+     "url": "https://lin.ee/Pj6Obbh"
+    },
+    {
+     "product": "BX-52 輝耀龍騎士 6-60LC",
+     "url": "https://lin.ee/8K8Kisu"
+    },
+    {
+     "product": "BX-56 左迴旋風發射器 白紫",
+     "url": "https://lin.ee/8ofXw9k"
     }
    ]
   },
@@ -347,8 +293,16 @@ window.FUNBOX_DATA = {
    "start": "11:00",
    "items": [
     {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/oAWkyiI"
+     "product": "BB90524 BX-09 戰鬥陀螺X通行證",
+     "url": "https://lin.ee/RbMveeT"
+    },
+    {
+     "product": "BB08555 BX-52 輝耀龍騎士 6-60LC",
+     "url": "https://lin.ee/T4jRht1"
+    },
+    {
+     "product": "BB05891 BX-56 左迴旋風發射器（白）",
+     "url": "https://lin.ee/yDI27Vx"
     }
    ]
   },
@@ -359,12 +313,7 @@ window.FUNBOX_DATA = {
    "lineId": "@532otwmb",
    "fb": "https://www.facebook.com/share/1D2TZJ7pr3/?mibextid=wwXIfr",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/UwJ5crG"
-    }
-   ]
+   "items": []
   },
   {
    "id": "s30",
@@ -373,12 +322,7 @@ window.FUNBOX_DATA = {
    "lineId": "@642vdyvq",
    "fb": "https://www.facebook.com/ZhubeiFunbox/?locale=zh_TW",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/nh8N2rC"
-    }
-   ]
+   "items": []
   },
   {
    "id": "s31",
@@ -396,12 +340,7 @@ window.FUNBOX_DATA = {
    "lineId": "@185vowmo",
    "fb": "https://www.facebook.com/share/1DZmr5Njyk/?mibextid=wwXIfr",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/S3BQ2Y3"
-    }
-   ]
+   "items": []
   },
   {
    "id": "s33",
@@ -412,8 +351,12 @@ window.FUNBOX_DATA = {
    "start": "11:00",
    "items": [
     {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/ORS4uRs"
+     "product": "BX-52 輝耀龍騎士 6-60LC",
+     "url": "https://lin.ee/XzMDrIh"
+    },
+    {
+     "product": "BX-56 左迴旋風發射器 白紫",
+     "url": "https://lin.ee/wqn6V1I"
     }
    ]
   },
@@ -424,12 +367,7 @@ window.FUNBOX_DATA = {
    "lineId": "@526bsjmb",
    "fb": "https://www.facebook.com/share/1JaCvYo7ao/",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/ucNt4EJ"
-    }
-   ]
+   "items": []
   },
   {
    "id": "s35",
@@ -438,12 +376,7 @@ window.FUNBOX_DATA = {
    "lineId": "@829adhop",
    "fb": "https://www.facebook.com/profile.php?id=61592814215979&locale=zh_TW",
    "start": "10:30",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/UecqWGi"
-    }
-   ]
+   "items": []
   },
   {
    "id": "s36",
@@ -452,12 +385,7 @@ window.FUNBOX_DATA = {
    "lineId": "@815dstuy",
    "fb": "https://www.facebook.com/p/Funbox-%E5%8F%B0%E4%B8%AD%E4%B8%AD%E5%8F%8B-100063893358626/",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/Xls9IhsE"
-    }
-   ]
+   "items": []
   },
   {
    "id": "s37",
@@ -493,12 +421,7 @@ window.FUNBOX_DATA = {
    "lineId": "@605dilqq",
    "fb": "https://www.facebook.com/share/19F2BoUzUv/?mibextid=wwXIfr",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/OHPoiXA"
-    }
-   ]
+   "items": []
   },
   {
    "id": "s41",
@@ -507,12 +430,7 @@ window.FUNBOX_DATA = {
    "lineId": "@218xxrbx",
    "fb": "https://www.facebook.com/profile.php?id=61592777043158",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/74bssDIr"
-    }
-   ]
+   "items": []
   },
   {
    "id": "s42",
@@ -521,12 +439,7 @@ window.FUNBOX_DATA = {
    "lineId": "@620dfrfm",
    "fb": "https://www.facebook.com/profile.php?id=61591544926718",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/R5eQluD"
-    }
-   ]
+   "items": []
   },
   {
    "id": "s43",
@@ -544,12 +457,7 @@ window.FUNBOX_DATA = {
    "lineId": "@958tzuco",
    "fb": "",
    "start": "10:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/xL2EDyF"
-    }
-   ]
+   "items": []
   },
   {
    "id": "s45",
@@ -558,12 +466,7 @@ window.FUNBOX_DATA = {
    "lineId": "@766sgllj",
    "fb": "",
    "start": "10:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/tPLQUjp"
-    }
-   ]
+   "items": []
   },
   {
    "id": "s46",
@@ -572,12 +475,7 @@ window.FUNBOX_DATA = {
    "lineId": "@rsp8657s",
    "fb": "",
    "start": "10:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/9SCnRAA"
-    }
-   ]
+   "items": []
   },
   {
    "id": "s47",
@@ -586,12 +484,7 @@ window.FUNBOX_DATA = {
    "lineId": "@gno1826d",
    "fb": "https://www.facebook.com/profile.php?id=61592768918548",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/qT7lL54"
-    }
-   ]
+   "items": []
   },
   {
    "id": "s48",
@@ -600,12 +493,7 @@ window.FUNBOX_DATA = {
    "lineId": "@zhj4962p",
    "fb": "https://www.facebook.com/share/1ELX2AJ1ue/?mibextid=wwXIfr",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/PPJa8qB"
-    }
-   ]
+   "items": []
   },
   {
    "id": "s49",
@@ -614,12 +502,7 @@ window.FUNBOX_DATA = {
    "lineId": "@121vsdww",
    "fb": "https://www.facebook.com/profile.php?id=61591841012874",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/575d8lX"
-    }
-   ]
+   "items": []
   },
   {
    "id": "s50",
@@ -637,12 +520,7 @@ window.FUNBOX_DATA = {
    "lineId": "@212isujx",
    "fb": "https://www.facebook.com/share/1981qXi5wG/",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/OcLE0No"
-    }
-   ]
+   "items": []
   },
   {
    "id": "s52",
@@ -651,12 +529,7 @@ window.FUNBOX_DATA = {
    "lineId": "@373rxyat",
    "fb": "https://www.facebook.com/share/19JiPRLTe3/?mibextid=wwXIfr",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/uTNylL8"
-    }
-   ]
+   "items": []
   },
   {
    "id": "s53",
@@ -665,12 +538,7 @@ window.FUNBOX_DATA = {
    "lineId": "@344rybaf",
    "fb": "https://www.facebook.com/share/1EgGWhL2my/?mibextid=wwXIfr",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/9iwDfob"
-    }
-   ]
+   "items": []
   },
   {
    "id": "s54",
@@ -688,12 +556,7 @@ window.FUNBOX_DATA = {
    "lineId": "@fko7562c",
    "fb": "https://www.facebook.com/share/1EhNbSScWd/",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/qp5A2CG"
-    }
-   ]
+   "items": []
   },
   {
    "id": "s56",
@@ -702,12 +565,7 @@ window.FUNBOX_DATA = {
    "lineId": "@ott3541o",
    "fb": "https://www.facebook.com/share/1iiWSKHcvP/?mibextid=wwXIfr",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/6cABqwU"
-    }
-   ]
+   "items": []
   },
   {
    "id": "s57",
@@ -716,12 +574,7 @@ window.FUNBOX_DATA = {
    "lineId": "@022itqlw",
    "fb": "",
    "start": "10:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/ObOlKaZ"
-    }
-   ]
+   "items": []
   },
   {
    "id": "s58",
@@ -730,12 +583,7 @@ window.FUNBOX_DATA = {
    "lineId": "@845nallq",
    "fb": "https://www.facebook.com/share/19E7invurA/?mibextid=wwXIfr",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/P72hRM3"
-    }
-   ]
+   "items": []
   },
   {
    "id": "s59",
@@ -744,12 +592,7 @@ window.FUNBOX_DATA = {
    "lineId": "@ldh6278d",
    "fb": "https://www.facebook.com/share/1JMvwfTqpu/?mibextid=wwXIfr",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/7YXUCTu"
-    }
-   ]
+   "items": []
   },
   {
    "id": "s60",
@@ -758,12 +601,7 @@ window.FUNBOX_DATA = {
    "lineId": "@897upgfr",
    "fb": "https://www.facebook.com/share/1LrCbM7p9k/?mibextid=wwXIfr",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/PsIA9y7Q"
-    }
-   ]
+   "items": []
   },
   {
    "id": "s61",
@@ -772,12 +610,7 @@ window.FUNBOX_DATA = {
    "lineId": "@241cmnww",
    "fb": "",
    "start": "10:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/PpVQMlN"
-    }
-   ]
+   "items": []
   },
   {
    "id": "s62",
@@ -795,12 +628,7 @@ window.FUNBOX_DATA = {
    "lineId": "@204edsnm",
    "fb": "https://www.facebook.com/share/1Asnih4jRc/?mibextid=wwXIfr",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/yNKVKHo"
-    }
-   ]
+   "items": []
   },
   {
    "id": "s64",
@@ -809,12 +637,7 @@ window.FUNBOX_DATA = {
    "lineId": "@obz8096L",
    "fb": "https://www.facebook.com/100057115973730/",
    "start": "10:30",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/7AHngjX"
-    }
-   ]
+   "items": []
   },
   {
    "id": "s65",
@@ -823,12 +646,7 @@ window.FUNBOX_DATA = {
    "lineId": "@ess7711t",
    "fb": "https://www.facebook.com/share/1bsqHbH5yg/?mibextid=wwXIfr",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/pE1w1ZJ"
-    }
-   ]
+   "items": []
   },
   {
    "id": "s66",
@@ -837,12 +655,7 @@ window.FUNBOX_DATA = {
    "lineId": "@xhi2668e",
    "fb": "https://m.facebook.com/profile.php?id=61591804545442",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/TGlOKTH"
-    }
-   ]
+   "items": []
   },
   {
    "id": "s67",
@@ -851,7 +664,24 @@ window.FUNBOX_DATA = {
    "lineId": "@308oaews",
    "fb": "",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "BX-09 戰鬥陀螺X通行證",
+     "url": "https://lin.ee/sSrtbw1"
+    },
+    {
+     "product": "BX-52 輝耀龍騎士 6-60LC",
+     "url": "https://lin.ee/vl2QoEa"
+    },
+    {
+     "product": "BX-53 極限衝擊對戰組",
+     "url": "https://lin.ee/NAH1H9kQ"
+    },
+    {
+     "product": "BX-56 左迴旋風發射器",
+     "url": "https://lin.ee/pBwZ9bX"
+    }
+   ]
   },
   {
    "id": "s68",
@@ -871,8 +701,16 @@ window.FUNBOX_DATA = {
    "start": "11:00",
    "items": [
     {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/vm13nnh"
+     "product": "BX-09 戰鬥陀螺X通行證（原價 $995）",
+     "url": "https://lin.ee/uUvqy6e"
+    },
+    {
+     "product": "BX-52 輝耀龍騎士6-60LC（原價 $495）",
+     "url": "https://lin.ee/O13VpFr"
+    },
+    {
+     "product": "BX-56 左迴旋旋風發射器白紫（原價 $250）",
+     "url": "https://lin.ee/6nOHIpW"
     }
    ]
   },
@@ -901,12 +739,7 @@ window.FUNBOX_DATA = {
    "lineId": "@660hextn",
    "fb": "https://www.facebook.com/profile.php?id=61592730395195",
    "start": "11:11",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/Zkgl6KR"
-    }
-   ]
+   "items": []
   },
   {
    "id": "s73",
@@ -915,12 +748,7 @@ window.FUNBOX_DATA = {
    "lineId": "",
    "fb": "",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/9sKv9Ek"
-    }
-   ]
+   "items": []
   },
   {
    "id": "s74",
@@ -929,12 +757,7 @@ window.FUNBOX_DATA = {
    "lineId": "@094mvrhb",
    "fb": "https://www.facebook.com/profile.php?id=61592589610506",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/NiTp9aN"
-    }
-   ]
+   "items": []
   },
   {
    "id": "s75",
@@ -943,12 +766,7 @@ window.FUNBOX_DATA = {
    "lineId": "@bxd6822t",
    "fb": "https://www.facebook.com/share/1BwVM2Q3UP",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/Ub94gYU"
-    }
-   ]
+   "items": []
   },
   {
    "id": "s76",
@@ -966,12 +784,7 @@ window.FUNBOX_DATA = {
    "lineId": "",
    "fb": "",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/XnFY0wC"
-    }
-   ]
+   "items": []
   },
   {
    "id": "r_鳳山",
@@ -980,12 +793,7 @@ window.FUNBOX_DATA = {
    "lineId": "",
    "fb": "",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/XnU9eyl"
-    }
-   ]
+   "items": []
   },
   {
    "id": "r_花蓮",
@@ -996,8 +804,16 @@ window.FUNBOX_DATA = {
    "start": "11:00",
    "items": [
     {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/5nondXS"
+     "product": "BX-09 戰鬥陀螺X通行證",
+     "url": "https://lin.ee/S09AhV5"
+    },
+    {
+     "product": "BX-52 輝耀龍騎士 6-60LC",
+     "url": "https://lin.ee/PR5W4Po"
+    },
+    {
+     "product": "BX-56 左迴旋風發射器 白紫",
+     "url": "https://lin.ee/PoJDK3u"
     }
    ]
   },
@@ -1017,12 +833,7 @@ window.FUNBOX_DATA = {
    "lineId": "",
    "fb": "",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/yduBiAE"
-    }
-   ]
+   "items": []
   },
   {
    "id": "r_南紡購物中心",
@@ -1031,12 +842,7 @@ window.FUNBOX_DATA = {
    "lineId": "",
    "fb": "",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/6DjeVDP"
-    }
-   ]
+   "items": []
   },
   {
    "id": "r_新仁",
@@ -1045,12 +851,7 @@ window.FUNBOX_DATA = {
    "lineId": "",
    "fb": "",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/8J8uWXa"
-    }
-   ]
+   "items": []
   },
   {
    "id": "r_台東家樂福",
@@ -1068,12 +869,7 @@ window.FUNBOX_DATA = {
    "lineId": "",
    "fb": "",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/WEWWtTB"
-    }
-   ]
+   "items": []
   },
   {
    "id": "r_新竹遠雄湳雅",
@@ -1100,12 +896,7 @@ window.FUNBOX_DATA = {
    "lineId": "",
    "fb": "",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/6RUJsXy"
-    }
-   ]
+   "items": []
   },
   {
    "id": "r_汐科遠雄",
@@ -1114,12 +905,7 @@ window.FUNBOX_DATA = {
    "lineId": "",
    "fb": "",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/sMjqSbg"
-    }
-   ]
+   "items": []
   },
   {
    "id": "r_新誠品裕隆城",
@@ -1128,12 +914,7 @@ window.FUNBOX_DATA = {
    "lineId": "",
    "fb": "",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/w7Lm5za"
-    }
-   ]
+   "items": []
   },
   {
    "id": "r_台中遠東",
@@ -1151,12 +932,7 @@ window.FUNBOX_DATA = {
    "lineId": "",
    "fb": "",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/XYb3WDA"
-    }
-   ]
+   "items": []
   },
   {
    "id": "r_大葉高島屋",
@@ -1167,8 +943,12 @@ window.FUNBOX_DATA = {
    "start": "11:00",
    "items": [
     {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/vvvRyVH"
+     "product": "BX-52 輝耀龍騎士 6-60LC",
+     "url": "https://lin.ee/TGFVXtn"
+    },
+    {
+     "product": "BX-56 左迴旋風發射器 白紫",
+     "url": "https://lin.ee/9IJRxWT"
     }
    ]
   },
@@ -1188,7 +968,20 @@ window.FUNBOX_DATA = {
    "lineId": "",
    "fb": "",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "BX-52 耀輝龍騎士 6-60LC",
+     "url": "https://lin.ee/RxjB9wg"
+    },
+    {
+     "product": "BX-53 極限衝擊對戰組",
+     "url": "https://lin.ee/oxmdKSJ"
+    },
+    {
+     "product": "BX-56 左迴旋風發射器 白紫",
+     "url": "https://lin.ee/nEOXcH6"
+    }
+   ]
   },
   {
    "id": "r_麗嬰國際高雄sogo",
@@ -1208,8 +1001,16 @@ window.FUNBOX_DATA = {
    "start": "11:00",
    "items": [
     {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/wYBwDB7"
+     "product": "BX-09 通行證",
+     "url": "https://lin.ee/NEgcgvi"
+    },
+    {
+     "product": "BX-52 輝耀龍騎士 6-60LC",
+     "url": "https://lin.ee/9SxS4M0"
+    },
+    {
+     "product": "BX-56 左迴旋風發射器 白紫",
+     "url": "https://lin.ee/P8s230E"
     }
    ]
   },
@@ -1229,12 +1030,7 @@ window.FUNBOX_DATA = {
    "lineId": "",
    "fb": "",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/YCM7TCI"
-    }
-   ]
+   "items": []
   },
   {
    "id": "r_桃園環球a19",
@@ -1243,12 +1039,7 @@ window.FUNBOX_DATA = {
    "lineId": "",
    "fb": "",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/8qlf64g"
-    }
-   ]
+   "items": []
   },
   {
    "id": "r_台中漢神洲際",
@@ -1302,12 +1093,7 @@ window.FUNBOX_DATA = {
    "lineId": "",
    "fb": "",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/w85yziv"
-    }
-   ]
+   "items": []
   },
   {
    "id": "r_楠梓家樂福",
@@ -1334,12 +1120,7 @@ window.FUNBOX_DATA = {
    "lineId": "",
    "fb": "",
    "start": "11:00",
-   "items": [
-    {
-     "product": "BX-53 極限衝擊對戰組",
-     "url": "https://lin.ee/uE0o6oA"
-    }
-   ]
+   "items": []
   },
   {
    "id": "r_員林大潤發",
