@@ -2,9 +2,11 @@
 window.FUNBOX_DATA = {
  "title": "11/13 11/14 抽選",
  "period": "抽選/購買時間：2026/11/13～2026/11/14\n購買資格券有效期間：11/13 11:00～22:00、11/14 11:00～21:00",
- "updated": "2026/11/12 22:52",
+ "updated": "2026/11/13 00:44",
  "missing": [
-  "Funbox文心秀泰"
+  "Funbox文心秀泰",
+  "Funbox-台中遠東",
+  "Funbox樹林秀泰"
  ],
  "stores": [
   {
@@ -400,7 +402,20 @@ window.FUNBOX_DATA = {
    "lineId": "@642vdyvq",
    "fb": "https://www.facebook.com/ZhubeiFunbox/?locale=zh_TW",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "BX-52 輝耀龍騎士 6-60LC $495",
+     "url": "https://lin.ee/td4kgoc"
+    },
+    {
+     "product": "BX-53 極限衝擊對戰組 $1995",
+     "url": "https://lin.ee/7ikpwGZ"
+    },
+    {
+     "product": "BX-56 左迴旋風發射器 白紫 $250",
+     "url": "https://lin.ee/VktiksV"
+    }
+   ]
   },
   {
    "id": "s31",
@@ -628,7 +643,20 @@ window.FUNBOX_DATA = {
    "lineId": "@msq0107x",
    "fb": "https://www.facebook.com/profile.php?id=100057043616291&mibextid=wwXIfr&mibextid=wwXIfr",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "BX-09 戰鬥陀螺X通行證",
+     "url": "https://lin.ee/O6wfsCg"
+    },
+    {
+     "product": "BX-52 輝耀龍騎士 6-60LC",
+     "url": "https://lin.ee/xUDDwKS"
+    },
+    {
+     "product": "BX-56 左迴旋風發射器 白紫",
+     "url": "https://lin.ee/5grOP1u"
+    }
+   ]
   },
   {
    "id": "s51",
@@ -1225,7 +1253,20 @@ window.FUNBOX_DATA = {
    "lineId": "",
    "fb": "",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "BX-09 戰鬥陀螺X通行證",
+     "url": "https://lin.ee/N2K86MU"
+    },
+    {
+     "product": "BX-52 輝耀龍騎士 6-60LC",
+     "url": "https://lin.ee/n9VZHII"
+    },
+    {
+     "product": "BX-56 左迴旋風發射器 白紫",
+     "url": "https://lin.ee/vEEwRLv"
+    }
+   ]
   },
   {
    "id": "r_星奇市汐科遠雄",
