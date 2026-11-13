@@ -2,7 +2,7 @@
 window.FUNBOX_DATA = {
  "title": "11/13 11/14 抽選",
  "period": "抽選/購買時間：2026/11/13～2026/11/14\n購買資格券有效期間：11/13 11:00～22:00、11/14 11:00～21:00",
- "updated": "2026/11/13 10:51",
+ "updated": "2026/11/13 11:00",
  "missing": [
   "Funbox文心秀泰",
   "Funbox-台中遠東",
@@ -149,7 +149,24 @@ window.FUNBOX_DATA = {
    "lineId": "@924ngwfb",
    "fb": "http://www.facebook.com/share/14jPaVWXoLJ/?mibextid=wwXlfr",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "BX-09 戰鬥陀螺X通行證",
+     "url": "https://lin.ee/V1RJItI"
+    },
+    {
+     "product": "BX-52 輝耀龍騎士6-60LC",
+     "url": "https://lin.ee/qpVXu29"
+    },
+    {
+     "product": "BX-53 極限衝擊對戰組",
+     "url": "https://lin.ee/vm1YE5j"
+    },
+    {
+     "product": "BX-56 左迴旋風發射器 白紫",
+     "url": "https://lin.ee/5TAN7SW"
+    }
+   ]
   },
   {
    "id": "s09",
@@ -260,7 +277,16 @@ window.FUNBOX_DATA = {
    "lineId": "@ufq5307a",
    "fb": "https://www.facebook.com/profile.php?id=61592677934745",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "BX-52 輝耀龍騎士 6-60LC",
+     "url": "https://lin.ee/v5kx8bA"
+    },
+    {
+     "product": "BX-56 左迴旋風發射器 白紫",
+     "url": "https://lin.ee/5E0BpUt"
+    }
+   ]
   },
   {
    "id": "s18",
@@ -327,7 +353,16 @@ window.FUNBOX_DATA = {
    "lineId": "@504tdsbb",
    "fb": "https://www.facebook.com/profile.php?id=61590975990981&locale=zh_TW",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "BX-52 輝耀龍騎士 6-60LC",
+     "url": "https://lin.ee/W2UM9kOk"
+    },
+    {
+     "product": "BX-56 左迴旋風發射器 白紫",
+     "url": "https://lin.ee/PKHUvgv"
+    }
+   ]
   },
   {
    "id": "s23",
@@ -336,7 +371,24 @@ window.FUNBOX_DATA = {
    "lineId": "@099ldnvw",
    "fb": "https://www.facebook.com/profile.php?id=100063657227053",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "BX-09 戰鬥陀螺X通行證",
+     "url": "https://lin.ee/oxuz39H"
+    },
+    {
+     "product": "BX-52 輝耀龍騎士 6-60LC",
+     "url": "https://lin.ee/QBHPX5r"
+    },
+    {
+     "product": "BX-53 極限衝擊對戰組",
+     "url": "https://lin.ee/xuCiBav"
+    },
+    {
+     "product": "BX-56 左迴旋風發射器 白紫",
+     "url": "https://lin.ee/7S5CtGf"
+    }
+   ]
   },
   {
    "id": "s24",
@@ -345,7 +397,24 @@ window.FUNBOX_DATA = {
    "lineId": "@xcs3672w",
    "fb": "https://www.facebook.com/profile.php?id=61558958859748",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "BX-09 戰鬥陀螺X通行證",
+     "url": "https://lin.ee/soo8T9X"
+    },
+    {
+     "product": "BX-52 輝耀龍騎士 6-60LC",
+     "url": "https://lin.ee/rcyoWLQ0"
+    },
+    {
+     "product": "BX-53 極限衝擊對戰組",
+     "url": "https://lin.ee/RCmdVn6"
+    },
+    {
+     "product": "BX-56 左迴旋風發射器 白紫",
+     "url": "https://lin.ee/On7Mdyj"
+    }
+   ]
   },
   {
    "id": "s25",
@@ -354,7 +423,20 @@ window.FUNBOX_DATA = {
    "lineId": "@bix0595a",
    "fb": "https://www.facebook.com/profile.php?id=100064240476385",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "BX-52 輝耀龍騎士6-60LC",
+     "url": "https://lin.ee/xJhJdXp"
+    },
+    {
+     "product": "BX-53 極限衝擊對戰組",
+     "url": "https://lin.ee/XidmqovB"
+    },
+    {
+     "product": "BX-56 左迴旋炫風發射器 白紫",
+     "url": "https://lin.ee/sIUfGup"
+    }
+   ]
   },
   {
    "id": "s26",
@@ -363,7 +445,16 @@ window.FUNBOX_DATA = {
    "lineId": "@403qwxdn",
    "fb": "https://www.facebook.com/profile.php?id=100083960592067",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "BX-52 輝耀龍騎士 6-60LC",
+     "url": "https://lin.ee/Wf5dkNw"
+    },
+    {
+     "product": "BX-56 左迴旋風發射器 白紫",
+     "url": "https://lin.ee/u9lfZtI"
+    }
+   ]
   },
   {
    "id": "s27",
@@ -486,7 +577,20 @@ window.FUNBOX_DATA = {
    "lineId": "@185vowmo",
    "fb": "https://www.facebook.com/share/1DZmr5Njyk/?mibextid=wwXIfr",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "BX-09 戰鬥陀螺X通行證",
+     "url": "https://lin.ee/WEEqeOp"
+    },
+    {
+     "product": "BX-52 輝耀龍騎士 6-60LC",
+     "url": "https://lin.ee/P6zmygi"
+    },
+    {
+     "product": "BX-56 左迴旋風發射器 白紫",
+     "url": "https://lin.ee/WzivZaE"
+    }
+   ]
   },
   {
    "id": "s33",
@@ -534,8 +638,21 @@ window.FUNBOX_DATA = {
    "name": "Funbox麗寶一期店",
    "lineId": "@829adhop",
    "fb": "https://www.facebook.com/profile.php?id=61592814215979&locale=zh_TW",
-   "start": "10:30",
-   "items": []
+   "start": "11:00",
+   "items": [
+    {
+     "product": "BX-09 戰鬥陀螺X通行證",
+     "url": "https://lin.ee/necCWBT"
+    },
+    {
+     "product": "BX-52 輝耀龍騎士6-60LC",
+     "url": "https://lin.ee/7I8cdb6"
+    },
+    {
+     "product": "BX-56 左迴旋風發射器 白紫",
+     "url": "https://lin.ee/ScmImWp"
+    }
+   ]
   },
   {
    "id": "s36",
@@ -584,7 +701,24 @@ window.FUNBOX_DATA = {
    "lineId": "",
    "fb": "",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "BX-09 戰鬥陀螺X通行證",
+     "url": "https://lin.ee/ZtMlo6n"
+    },
+    {
+     "product": "BX-52 輝耀龍騎士 6-60LC",
+     "url": "https://lin.ee/6RBkOGq"
+    },
+    {
+     "product": "BX-53 極限衝擊對戰組",
+     "url": "https://lin.ee/oI7injI"
+    },
+    {
+     "product": "BX-56 左迴旋風發射器 白紫",
+     "url": "https://lin.ee/SNLHrZs"
+    }
+   ]
   },
   {
    "id": "s40",
@@ -602,7 +736,16 @@ window.FUNBOX_DATA = {
    "lineId": "@218xxrbx",
    "fb": "https://www.facebook.com/profile.php?id=61592777043158",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "BX-52 輝耀龍騎士",
+     "url": "https://lin.ee/8G4of6n"
+    },
+    {
+     "product": "BX-56 旋風發射器（白紫）",
+     "url": "https://lin.ee/tgXUTuX"
+    }
+   ]
   },
   {
    "id": "s42",
@@ -611,7 +754,20 @@ window.FUNBOX_DATA = {
    "lineId": "@620dfrfm",
    "fb": "https://www.facebook.com/profile.php?id=61591544926718",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "BX-09 戰鬥陀螺X通行證",
+     "url": "https://lin.ee/QR7IKxk"
+    },
+    {
+     "product": "BX-52 輝耀龍騎士6-60LC",
+     "url": "https://lin.ee/s5UpZpH"
+    },
+    {
+     "product": "BX-56 左迴旋風發射器 白紫",
+     "url": "https://lin.ee/RXfZuzl"
+    }
+   ]
   },
   {
    "id": "s43",
@@ -735,7 +891,16 @@ window.FUNBOX_DATA = {
    "lineId": "@121vsdww",
    "fb": "https://www.facebook.com/profile.php?id=61591841012874",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "BX-52 輝耀龍騎士6-60LC",
+     "url": "https://lin.ee/Tp03T0I"
+    },
+    {
+     "product": "BX-56 左迴旋風發射器 白紫",
+     "url": "https://lin.ee/nOFuA4Z"
+    }
+   ]
   },
   {
    "id": "s50",
@@ -1047,8 +1212,21 @@ window.FUNBOX_DATA = {
    "name": "Funbox Toys－高雄左營店",
    "lineId": "@obz8096L",
    "fb": "https://www.facebook.com/100057115973730/",
-   "start": "10:30",
-   "items": []
+   "start": "11:00",
+   "items": [
+    {
+     "product": "BX-09 戰鬥陀螺X通行證",
+     "url": "https://lin.ee/ND0KoMP"
+    },
+    {
+     "product": "BX-52 輝耀龍騎士 6-60LC",
+     "url": "https://lin.ee/oGQMPuK"
+    },
+    {
+     "product": "BX-56 左迴旋風發射器 白紫",
+     "url": "https://lin.ee/P1Dcx2h"
+    }
+   ]
   },
   {
    "id": "s65",
@@ -1184,8 +1362,17 @@ window.FUNBOX_DATA = {
    "name": "Funbox 美麗華店",
    "lineId": "@660hextn",
    "fb": "https://www.facebook.com/profile.php?id=61592730395195",
-   "start": "11:11",
-   "items": []
+   "start": "11:00",
+   "items": [
+    {
+     "product": "BX-09 戰鬥陀螺X通行證",
+     "url": "https://lin.ee/RH0ghdl"
+    },
+    {
+     "product": "BX-52 輝耀龍騎士",
+     "url": "https://lin.ee/yeK2syD"
+    }
+   ]
   },
   {
    "id": "s73",
@@ -1426,7 +1613,16 @@ window.FUNBOX_DATA = {
    "lineId": "",
    "fb": "",
    "start": "11:00",
-   "items": []
+   "items": [
+    {
+     "product": "BX-52 輝耀龍騎士 6-60LC",
+     "url": "https://lin.ee/O2PdQ9A"
+    },
+    {
+     "product": "BX-56 左迴旋風發射器 白紫",
+     "url": "https://lin.ee/xRbKNso"
+    }
+   ]
   },
   {
    "id": "r_汐科遠雄",
@@ -1728,6 +1924,32 @@ window.FUNBOX_DATA = {
     {
      "product": "BX-56 左迴旋拉線發射器白紫色",
      "url": "https://lin.ee/sgYcP5L"
+    }
+   ]
+  },
+  {
+   "id": "r_義大世界購物廣場義大2館",
+   "city": "高雄市",
+   "name": "義大世界購物廣場 fun box 義大2館",
+   "lineId": "",
+   "fb": "",
+   "start": "11:00",
+   "items": [
+    {
+     "product": "BX-09 戰鬥陀螺X通行證",
+     "url": "https://lin.ee/VMtQ1Ld"
+    },
+    {
+     "product": "BX-52 輝耀龍騎士 6-60LC",
+     "url": "https://lin.ee/sT5BOT4"
+    },
+    {
+     "product": "BX-53 極限衝擊對戰組",
+     "url": "https://lin.ee/9sRMb2fn"
+    },
+    {
+     "product": "BX-56 左迴旋風發射器 白紫",
+     "url": "https://lin.ee/SYEMB2m"
     }
    ]
   }
